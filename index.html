@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive AI Engineering Roadmap - From zero to production-ready AI engineer">
+    <meta name="author" content="AI Engineering Roadmap">
     <title>AI Engineering Roadmap - Interactive Learning System</title>
     <style>
         * {
@@ -101,6 +103,7 @@
             justify-content: center;
             color: white;
             font-weight: bold;
+            width: 0%;
         }
 
         .filters {
@@ -200,6 +203,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .priority-badge {
@@ -274,7 +278,7 @@
         }
 
         .checkbox.checked::after {
-            content: '✓';
+            content: '\2713';
             color: white;
             font-weight: bold;
         }
@@ -298,6 +302,10 @@
 
         .milestone-content {
             color: #78350f;
+        }
+
+        .milestone-content p {
+            margin-bottom: 8px;
         }
 
         .resources {
@@ -342,6 +350,14 @@
             margin-bottom: 10px;
         }
 
+        .assessment ul {
+            padding-left: 20px;
+        }
+
+        .assessment li {
+            margin-bottom: 5px;
+        }
+
         .btn-reset {
             background: var(--danger);
             color: white;
@@ -376,6 +392,30 @@
             transform: translateY(-2px);
         }
 
+        .hidden {
+            display: none !important;
+        }
+
+        .github-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .github-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.8rem;
@@ -393,14 +433,25 @@
             .filter-btn {
                 width: 100%;
             }
-        }
 
-        .hidden {
-            display: none !important;
+            .github-link {
+                position: static;
+                display: block;
+                margin: 10px 20px;
+                text-align: center;
+            }
+
+            .section h3 {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <a href="https://github.com/yourusername/ai-engineering-roadmap" target="_blank" class="github-link">
+        ⭐ Star on GitHub
+    </a>
+
     <div class="container">
         <div class="header">
             <h1>🚀 AI Engineering Roadmap</h1>
@@ -436,11 +487,11 @@
         </div>
 
         <div class="filters">
-            <button class="filter-btn active" onclick="filterByPriority('all')">All Topics</button>
-            <button class="filter-btn" onclick="filterByPriority('core')">Core Skills</button>
-            <button class="filter-btn" onclick="filterByPriority('high-roi')">High ROI</button>
-            <button class="filter-btn" onclick="filterByPriority('optional')">Optional</button>
-            <button class="filter-btn" onclick="filterByPriority('advanced')">Advanced</button>
+            <button class="filter-btn active" onclick="filterByPriority('all', event)">All Topics</button>
+            <button class="filter-btn" onclick="filterByPriority('core', event)">Core Skills</button>
+            <button class="filter-btn" onclick="filterByPriority('high-roi', event)">High ROI</button>
+            <button class="filter-btn" onclick="filterByPriority('optional', event)">Optional</button>
+            <button class="filter-btn" onclick="filterByPriority('advanced', event)">Advanced</button>
         </div>
 
         <div id="roadmapContent"></div>
@@ -456,7 +507,445 @@
                     hours: '60-80 hours',
                     sections: [
                         {
-                            title: 'Core Python Syntax',
+                            title: 'LLM API Mastery',
+                            duration: 'Week 24-26, 30-35 hours',
+                            topics: [
+                                { text: 'OpenAI API (GPT-4, GPT-3.5)', priority: 'core' },
+                                { text: 'Anthropic API (Claude)', priority: 'high-roi' },
+                                { text: 'API authentication', priority: 'core' },
+                                { text: 'Streaming responses', priority: 'core' },
+                                { text: 'Token management', priority: 'core' },
+                                { text: 'Cost optimization', priority: 'core' },
+                                { text: 'Error handling and retries', priority: 'core' },
+                                { text: 'Rate limiting', priority: 'high-roi' },
+                                { text: 'Caching responses', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'OpenAI API Docs', url: 'https://platform.openai.com/docs/introduction' },
+                                { name: 'Anthropic Docs', url: 'https://docs.anthropic.com/claude/reference/getting-started-with-the-api' }
+                            ],
+                            assessment: [
+                                'Can you implement streaming responses?',
+                                'Can you optimize token costs?',
+                                'Can you handle API failures?'
+                            ]
+                        },
+                        {
+                            title: 'Prompt Engineering',
+                            duration: 'Week 26-28, 25-30 hours',
+                            topics: [
+                                { text: 'System vs user messages', priority: 'core' },
+                                { text: 'Few-shot prompting', priority: 'core' },
+                                { text: 'Chain-of-thought', priority: 'high-roi' },
+                                { text: 'Structured output (JSON mode)', priority: 'core' },
+                                { text: 'Function calling', priority: 'core' },
+                                { text: 'Prompt templates', priority: 'core' },
+                                { text: 'Iterative refinement', priority: 'high-roi' },
+                                { text: 'Handling context limits', priority: 'core' }
+                            ],
+                            resources: [
+                                { name: 'OpenAI Prompt Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+                                { name: 'Learn Prompting', url: 'https://learnprompting.org/' }
+                            ],
+                            assessment: [
+                                'Can you design prompts for structured output?',
+                                'Can you implement function calling?',
+                                'Can you reduce hallucinations?'
+                            ]
+                        },
+                        {
+                            title: 'Vector Databases & Embeddings',
+                            duration: 'Week 28-30, 25-30 hours',
+                            topics: [
+                                { text: 'Embeddings APIs (OpenAI)', priority: 'core' },
+                                { text: 'Sentence transformers', priority: 'high-roi' },
+                                { text: 'Vector database concepts', priority: 'core' },
+                                { text: 'Pinecone/Weaviate/Qdrant (pick one)', priority: 'core' },
+                                { text: 'Creating collections', priority: 'core' },
+                                { text: 'Querying vectors', priority: 'core' },
+                                { text: 'Metadata filtering', priority: 'high-roi' },
+                                { text: 'Hybrid search', priority: 'advanced' }
+                            ],
+                            resources: [
+                                { name: 'Pinecone Learning', url: 'https://www.pinecone.io/learn/' },
+                                { name: 'OpenAI Embeddings', url: 'https://platform.openai.com/docs/guides/embeddings' }
+                            ],
+                            assessment: [
+                                'Can you generate and store embeddings?',
+                                'Can you implement similarity search?',
+                                'Can you combine vector + metadata search?'
+                            ]
+                        },
+                        {
+                            title: 'RAG Systems',
+                            duration: 'Week 30-33, 35-40 hours',
+                            topics: [
+                                { text: 'RAG architecture', priority: 'core' },
+                                { text: 'Document parsing', priority: 'core' },
+                                { text: 'Chunking strategies', priority: 'core' },
+                                { text: 'Embedding documents', priority: 'core' },
+                                { text: 'Retrieval techniques', priority: 'core' },
+                                { text: 'Context window management', priority: 'core' },
+                                { text: 'Query transformation', priority: 'high-roi' },
+                                { text: 'Reranking results', priority: 'high-roi' },
+                                { text: 'Citation tracking', priority: 'high-roi' },
+                                { text: 'Evaluating RAG systems', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'RAG from Scratch', url: 'https://www.youtube.com/playlist?list=PLfaIDFEXuae2LXbO1_PKyVJiQ23ZztA0x' },
+                                { name: 'Advanced RAG', url: 'https://www.pinecone.io/learn/advanced-rag-techniques/' }
+                            ],
+                            assessment: [
+                                'Can you build RAG from scratch?',
+                                'Can you choose chunking strategies?',
+                                'Can you evaluate retrieval quality?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'Production RAG System',
+                        time: '40-50 hours',
+                        description: 'Document Q&A with upload (PDF/TXT), intelligent chunking, vector DB, semantic search, citations, FastAPI + Streamlit, cost tracking, evaluation metrics, conversation history',
+                        validates: 'End-to-end AI engineering - THE portfolio project'
+                    }
+                },
+                {
+                    id: 'phase6',
+                    title: 'Phase 6: Frontend & UX',
+                    duration: '2-3 weeks',
+                    hours: '25-35 hours',
+                    sections: [
+                        {
+                            title: 'Streamlit',
+                            duration: 'Week 35-36, 20-25 hours',
+                            topics: [
+                                { text: 'Layout and components', priority: 'high-roi' },
+                                { text: 'Forms and user input', priority: 'core' },
+                                { text: 'Session state management', priority: 'core' },
+                                { text: 'File uploads', priority: 'high-roi' },
+                                { text: 'Streaming in UI', priority: 'high-roi' },
+                                { text: 'Caching with @st.cache', priority: 'high-roi' },
+                                { text: 'Deployment', priority: 'core' }
+                            ],
+                            resources: [
+                                { name: 'Streamlit Docs', url: 'https://docs.streamlit.io/' },
+                                { name: '30 Days of Streamlit', url: 'https://30days.streamlit.app/' }
+                            ],
+                            assessment: [
+                                'Can you build a chat interface?',
+                                'Can you handle file uploads?',
+                                'Can you deploy to production?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'Full-Stack AI App',
+                        time: '15-20 hours',
+                        description: 'Polish RAG system with Streamlit UI, file upload with progress, chat history, cost display, settings panel, share functionality',
+                        validates: 'Frontend + Backend integration'
+                    }
+                },
+                {
+                    id: 'phase7',
+                    title: 'Phase 7: Production Deployment',
+                    duration: '6-8 weeks',
+                    hours: '80-100 hours',
+                    sections: [
+                        {
+                            title: 'Docker & Containerization',
+                            duration: 'Week 38-40, 25-30 hours',
+                            topics: [
+                                { text: 'Docker fundamentals', priority: 'core' },
+                                { text: 'Writing Dockerfiles', priority: 'core' },
+                                { text: 'Multi-stage builds', priority: 'high-roi' },
+                                { text: 'Docker Compose', priority: 'core' },
+                                { text: 'Environment variables', priority: 'core' },
+                                { text: 'Volume mounting', priority: 'high-roi' },
+                                { text: 'Container networking', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'Docker Tutorial', url: 'https://docs.docker.com/get-started/' },
+                                { name: 'FastAPI in Docker', url: 'https://fastapi.tiangolo.com/deployment/docker/' }
+                            ],
+                            assessment: [
+                                'Can you containerize your FastAPI app?',
+                                'Can you use Docker Compose?',
+                                'Can you optimize image sizes?'
+                            ]
+                        },
+                        {
+                            title: 'Cloud Deployment',
+                            duration: 'Week 40-43, 35-40 hours',
+                            topics: [
+                                { text: 'GCP Cloud Run', priority: 'core' },
+                                { text: 'Secret management', priority: 'core' },
+                                { text: 'Managed databases', priority: 'core' },
+                                { text: 'Cloud storage', priority: 'high-roi' },
+                                { text: 'IAM and permissions', priority: 'high-roi' },
+                                { text: 'Cost monitoring', priority: 'core' }
+                            ],
+                            resources: [
+                                { name: 'GCP Free Tier', url: 'https://cloud.google.com/free' },
+                                { name: 'FastAPI Deployment', url: 'https://fastapi.tiangolo.com/deployment/' }
+                            ],
+                            assessment: [
+                                'Can you deploy to production?',
+                                'Can you manage secrets securely?',
+                                'Can you monitor costs?'
+                            ]
+                        },
+                        {
+                            title: 'Production Best Practices',
+                            duration: 'Week 43-45, 25-30 hours',
+                            topics: [
+                                { text: 'Structured logging', priority: 'core' },
+                                { text: 'Error tracking (Sentry)', priority: 'high-roi' },
+                                { text: 'Performance monitoring', priority: 'high-roi' },
+                                { text: 'Health checks', priority: 'core' },
+                                { text: 'Graceful shutdown', priority: 'high-roi' },
+                                { text: 'SSL/TLS certificates', priority: 'core' },
+                                { text: 'Caching (Redis)', priority: 'high-roi' },
+                                { text: 'Retry logic', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'Sentry Docs', url: 'https://docs.sentry.io/' },
+                                { name: 'Redis Quick Start', url: 'https://redis.io/docs/getting-started/' }
+                            ],
+                            assessment: [
+                                'Can you debug from logs?',
+                                'Can you implement error tracking?',
+                                'Can you set up caching?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'Production-Ready Deployment',
+                        time: '30-40 hours',
+                        description: 'Deploy RAG system with Docker, managed DB, vector DB cloud, secrets management, Sentry, logging, health checks, CI/CD, custom domain with SSL, cost monitoring',
+                        validates: 'Full production deployment stack'
+                    }
+                }
+            ]
+        };
+
+        let completedItems = new Set();
+        let currentFilter = 'all';
+
+        function init() {
+            loadProgress();
+            renderRoadmap();
+            updateStats();
+        }
+
+        function renderRoadmap() {
+            const content = document.getElementById('roadmapContent');
+            content.innerHTML = '';
+
+            roadmapData.phases.forEach(phase => {
+                const phaseEl = document.createElement('div');
+                phaseEl.className = 'phase';
+                phaseEl.id = phase.id;
+
+                let sectionsHTML = '';
+                phase.sections.forEach((section, sectionIdx) => {
+                    let topicsHTML = '';
+                    section.topics.forEach((topic, topicIdx) => {
+                        const itemId = phase.id + '-' + sectionIdx + '-' + topicIdx;
+                        const isCompleted = completedItems.has(itemId);
+                        const isVisible = currentFilter === 'all' || topic.priority === currentFilter;
+                        
+                        topicsHTML += '<div class="topic-item ' + (isCompleted ? 'completed' : '') + ' ' + (isVisible ? '' : 'hidden') + '" data-priority="' + topic.priority + '" onclick="toggleTopic(\'' + itemId + '\')">';
+                        topicsHTML += '<div class="checkbox ' + (isCompleted ? 'checked' : '') + '" id="cb-' + itemId + '"></div>';
+                        topicsHTML += '<span>' + topic.text + '</span>';
+                        topicsHTML += '<span class="priority-badge badge-' + topic.priority + '">' + topic.priority + '</span>';
+                        topicsHTML += '</div>';
+                    });
+
+                    let resourcesHTML = '';
+                    if (section.resources) {
+                        resourcesHTML = '<div class="resources"><h5>📚 Resources</h5><ul>';
+                        section.resources.forEach(res => {
+                            resourcesHTML += '<li><a href="' + res.url + '" target="_blank">' + res.name + '</a></li>';
+                        });
+                        resourcesHTML += '</ul></div>';
+                    }
+
+                    let assessmentHTML = '';
+                    if (section.assessment) {
+                        assessmentHTML = '<div class="assessment"><h5>✅ Self-Assessment</h5><ul>';
+                        section.assessment.forEach(item => {
+                            assessmentHTML += '<li>' + item + '</li>';
+                        });
+                        assessmentHTML += '</ul></div>';
+                    }
+
+                    sectionsHTML += '<div class="section">';
+                    sectionsHTML += '<h3>' + section.title + '<span style="font-size: 0.8rem; color: var(--gray); font-weight: normal;">' + section.duration + '</span></h3>';
+                    sectionsHTML += '<div class="topic">' + topicsHTML + '</div>';
+                    sectionsHTML += resourcesHTML;
+                    sectionsHTML += assessmentHTML;
+                    sectionsHTML += '</div>';
+                });
+
+                let milestoneHTML = '';
+                if (phase.milestone) {
+                    milestoneHTML = '<div class="milestone">';
+                    milestoneHTML += '<h4>🎯 ' + phase.milestone.title + '</h4>';
+                    milestoneHTML += '<div class="milestone-content">';
+                    milestoneHTML += '<p><strong>Time:</strong> ' + phase.milestone.time + '</p>';
+                    milestoneHTML += '<p><strong>Build:</strong> ' + phase.milestone.description + '</p>';
+                    milestoneHTML += '<p><strong>Validates:</strong> ' + phase.milestone.validates + '</p>';
+                    milestoneHTML += '</div></div>';
+                }
+
+                phaseEl.innerHTML = '<div class="phase-header" onclick="togglePhase(\'' + phase.id + '\')">';
+                phaseEl.innerHTML += '<div><h2>' + phase.title + '</h2></div>';
+                phaseEl.innerHTML += '<div class="phase-meta">';
+                phaseEl.innerHTML += '<span>⏱️ ' + phase.duration + '</span>';
+                phaseEl.innerHTML += '<span>📊 ' + phase.hours + '</span>';
+                phaseEl.innerHTML += '<span class="toggle-icon">▼</span>';
+                phaseEl.innerHTML += '</div></div>';
+                phaseEl.innerHTML += '<div class="phase-content">' + sectionsHTML + milestoneHTML + '</div>';
+
+                content.appendChild(phaseEl);
+            });
+        }
+
+        function togglePhase(phaseId) {
+            const phase = document.getElementById(phaseId);
+            phase.classList.toggle('expanded');
+        }
+
+        function toggleTopic(itemId) {
+            if (completedItems.has(itemId)) {
+                completedItems.delete(itemId);
+            } else {
+                completedItems.add(itemId);
+            }
+            saveProgress();
+            updateStats();
+            
+            const checkbox = document.getElementById('cb-' + itemId);
+            const item = checkbox.parentElement;
+            
+            checkbox.classList.toggle('checked');
+            item.classList.toggle('completed');
+        }
+
+        function filterByPriority(priority, event) {
+            currentFilter = priority;
+            
+            document.querySelectorAll('.filter-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.topic-item').forEach(function(item) {
+                if (priority === 'all' || item.dataset.priority === priority) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        function updateStats() {
+            let totalTopics = 0;
+            let totalHours = 0;
+
+            roadmapData.phases.forEach(function(phase) {
+                phase.sections.forEach(function(section) {
+                    totalTopics += section.topics.length;
+                });
+                const hours = phase.hours.split('-')[1].replace(' hours', '');
+                totalHours += parseInt(hours);
+            });
+
+            const completedCount = completedItems.size;
+            const progress = Math.round((completedCount / totalTopics) * 100);
+
+            document.getElementById('completedTopics').textContent = completedCount;
+            document.getElementById('totalTopics').textContent = totalTopics;
+            document.getElementById('hoursSpent').textContent = Math.round((completedCount / totalTopics) * totalHours);
+            document.getElementById('overallProgress').style.width = progress + '%';
+            document.getElementById('overallProgress').textContent = progress + '%';
+
+            let currentPhaseNum = 1;
+            roadmapData.phases.forEach(function(phase, idx) {
+                let phaseTopics = 0;
+                let phaseCompleted = 0;
+                
+                phase.sections.forEach(function(section, sIdx) {
+                    section.topics.forEach(function(topic, tIdx) {
+                        phaseTopics++;
+                        const itemId = phase.id + '-' + sIdx + '-' + tIdx;
+                        if (completedItems.has(itemId)) phaseCompleted++;
+                    });
+                });
+
+                if (phaseCompleted < phaseTopics && currentPhaseNum === idx + 1) {
+                    currentPhaseNum = idx + 1;
+                }
+            });
+            document.getElementById('currentPhase').textContent = 'Phase ' + currentPhaseNum;
+        }
+
+        function saveProgress() {
+            try {
+                localStorage.setItem('aiRoadmapProgress', JSON.stringify(Array.from(completedItems)));
+            } catch (e) {
+                console.error('Failed to save progress:', e);
+            }
+        }
+
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem('aiRoadmapProgress');
+                if (saved) {
+                    completedItems = new Set(JSON.parse(saved));
+                }
+            } catch (e) {
+                console.error('Failed to load progress:', e);
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                completedItems.clear();
+                localStorage.removeItem('aiRoadmapProgress');
+                renderRoadmap();
+                updateStats();
+            }
+        }
+
+        function exportProgress() {
+            const data = {
+                exportDate: new Date().toISOString(),
+                totalTopics: document.getElementById('totalTopics').textContent,
+                completedTopics: document.getElementById('completedTopics').textContent,
+                completedItems: Array.from(completedItems),
+                progress: document.getElementById('overallProgress').textContent
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ai-roadmap-progress-' + new Date().toISOString().split('T')[0] + '.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html> 'Core Python Syntax',
                             duration: 'Week 1-2, 20-25 hours',
                             topics: [
                                 { text: 'Variables, data types, type hints', priority: 'core' },
@@ -763,28 +1252,4 @@
                     hours: '100-120 hours',
                     sections: [
                         {
-                            title: 'LLM API Mastery',
-                            duration: 'Week 24-26, 30-35 hours',
-                            topics: [
-                                { text: 'OpenAI API (GPT-4, GPT-3.5)', priority: 'core' },
-                                { text: 'Anthropic API (Claude)', priority: 'high-roi' },
-                                { text: 'API authentication', priority: 'core' },
-                                { text: 'Streaming responses', priority: 'core' },
-                                { text: 'Token management', priority: 'core' },
-                                { text: 'Cost optimization', priority: 'core' },
-                                { text: 'Error handling and retries', priority: 'core' },
-                                { text: 'Rate limiting', priority: 'high-roi' },
-                                { text: 'Caching responses', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'OpenAI API Docs', url: 'https://platform.openai.com/docs/introduction' },
-                                { name: 'Anthropic Docs', url: 'https://docs.anthropic.com/claude/reference/getting-started-with-the-api' }
-                            ],
-                            assessment: [
-                                'Can you implement streaming responses?',
-                                'Can you optimize token costs?',
-                                'Can you handle API failures?'
-                            ]
-                        },
-                        {
-                            title: 'Prompt Engineering',
+                            title:
