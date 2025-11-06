@@ -517,7 +517,6 @@
             width: 10px;
             height: 10px;
             background: var(--primary);
-            position: absolute;
             animation: confetti-fall 3s linear forwards;
             z-index: 9999;
         }
@@ -629,8 +628,8 @@
 
         /* Highlight Search Results */
         .highlight {
-            background-color: yellow;
-            color: black;
+            background-color: var(--warning);
+            color: var(--dark);
             padding: 2px 4px;
             border-radius: 3px;
         }
@@ -1674,8 +1673,16 @@
 
         // Keyboard shortcuts
         document.addEventListener('keydown', function(e) {
+            // Helper function to check if we're in an input field
+            const isTyping = () => {
+                const element = document.activeElement;
+                return element.tagName === 'INPUT' || 
+                       element.tagName === 'TEXTAREA' || 
+                       element.isContentEditable;
+            };
+
             // '/' to focus search
-            if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+            if (e.key === '/' && !isTyping()) {
                 e.preventDefault();
                 document.getElementById('searchInput').focus();
             }
@@ -1693,7 +1700,7 @@
                 showShortcuts();
             }
             // 't' to toggle theme
-            if (e.key === 't' && document.activeElement.tagName !== 'INPUT') {
+            if (e.key === 't' && !isTyping()) {
                 toggleTheme();
             }
         });
