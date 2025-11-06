@@ -507,6 +507,313 @@
                     hours: '60-80 hours',
                     sections: [
                         {
+                            title: 'Core Python Syntax',
+                            duration: 'Week 1-2, 20-25 hours',
+                            topics: [
+                                { text: 'Variables, data types, type hints', priority: 'core' },
+                                { text: 'Control flow (if/else, loops)', priority: 'core' },
+                                { text: 'Functions (args, kwargs, decorators)', priority: 'core' },
+                                { text: 'Error handling (try/except)', priority: 'core' },
+                                { text: 'File I/O and context managers', priority: 'high-roi' },
+                                { text: 'Data structures (lists, dicts, sets)', priority: 'core' }
+                            ],
+                            resources: [
+                                { name: 'Python Official Tutorial', url: 'https://docs.python.org/3/tutorial/' },
+                                { name: 'Real Python Basics', url: 'https://realpython.com/learning-paths/python3-introduction/' }
+                            ],
+                            assessment: [
+                                'Can you write a function that reads a CSV and handles errors?',
+                                'Can you use list comprehensions effectively?',
+                                'Do you understand when to use tuples vs lists vs sets?'
+                            ]
+                        },
+                        {
+                            title: 'Object-Oriented Python',
+                            duration: 'Week 2-3, 15-20 hours',
+                            topics: [
+                                { text: 'Classes and objects', priority: 'core' },
+                                { text: '__init__, __str__, __repr__ methods', priority: 'core' },
+                                { text: 'Dataclasses (modern Python)', priority: 'high-roi' },
+                                { text: 'Inheritance and composition', priority: 'high-roi' },
+                                { text: 'Property decorators', priority: 'optional' }
+                            ],
+                            resources: [
+                                { name: 'Real Python - OOP', url: 'https://realpython.com/python3-object-oriented-programming/' },
+                                { name: 'Dataclasses Guide', url: 'https://realpython.com/python-data-classes/' }
+                            ],
+                            assessment: [
+                                'Can you create a User class with dataclass that validates email?',
+                                'Can you explain inheritance vs composition?'
+                            ]
+                        },
+                        {
+                            title: 'Production Python Tools',
+                            duration: 'Week 3-4, 15-20 hours',
+                            topics: [
+                                { text: 'Virtual environments (venv, requirements.txt)', priority: 'core' },
+                                { text: 'Git basics (clone, commit, push, branch)', priority: 'core' },
+                                { text: 'VS Code setup with Python', priority: 'core' },
+                                { text: 'Type hints and mypy', priority: 'high-roi' },
+                                { text: 'Logging (not print statements)', priority: 'core' },
+                                { text: 'Environment variables (.env)', priority: 'core' },
+                                { text: 'Poetry for dependencies', priority: 'optional' }
+                            ],
+                            resources: [
+                                { name: 'Git Handbook', url: 'https://guides.github.com/introduction/git-handbook/' },
+                                { name: 'Virtual Environments', url: 'https://realpython.com/python-virtual-environments-a-primer/' }
+                            ],
+                            assessment: [
+                                'Can you set up a new project with venv?',
+                                'Can you commit and push to GitHub?',
+                                'Can you add type hints and run mypy?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'CLI Task Manager',
+                        time: '10-15 hours',
+                        description: 'Build a command-line task manager with: JSON storage, dataclasses, error handling, logging, type hints, Git management',
+                        validates: 'Python fundamentals, OOP, file I/O, error handling'
+                    }
+                },
+                {
+                    id: 'phase2',
+                    title: 'Phase 2: Backend Engineering',
+                    duration: '6-8 weeks',
+                    hours: '80-100 hours',
+                    sections: [
+                        {
+                            title: 'HTTP & REST Fundamentals',
+                            duration: 'Week 5-6, 15-20 hours',
+                            topics: [
+                                { text: 'HTTP methods (GET, POST, PUT, DELETE)', priority: 'core' },
+                                { text: 'Status codes (200, 400, 401, 404, 500)', priority: 'core' },
+                                { text: 'Headers and authentication', priority: 'core' },
+                                { text: 'JSON serialization', priority: 'core' },
+                                { text: 'Query vs path vs body params', priority: 'core' },
+                                { text: 'REST principles', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'MDN HTTP Overview', url: 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview' },
+                                { name: 'REST API Tutorial', url: 'https://restfulapi.net/' }
+                            ],
+                            assessment: [
+                                'Can you explain PUT vs PATCH?',
+                                'Do you know when to use 401 vs 403?',
+                                'Can you design RESTful routes for a blog?'
+                            ]
+                        },
+                        {
+                            title: 'FastAPI Deep Dive',
+                            duration: 'Week 6-9, 40-50 hours',
+                            topics: [
+                                { text: 'Project setup and structure', priority: 'core' },
+                                { text: 'Route creation', priority: 'core' },
+                                { text: 'Pydantic models for validation', priority: 'core' },
+                                { text: 'Request/response models', priority: 'core' },
+                                { text: 'Dependency injection', priority: 'high-roi' },
+                                { text: 'Error handling', priority: 'core' },
+                                { text: 'Middleware basics', priority: 'high-roi' },
+                                { text: 'Background tasks', priority: 'high-roi' },
+                                { text: 'CORS configuration', priority: 'core' },
+                                { text: 'WebSocket for streaming', priority: 'high-roi' },
+                                { text: 'Testing with pytest', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'FastAPI Official Tutorial', url: 'https://fastapi.tiangolo.com/tutorial/' },
+                                { name: 'FastAPI Best Practices', url: 'https://github.com/zhanymkanov/fastapi-best-practices' }
+                            ],
+                            assessment: [
+                                'Can you build a CRUD API with validation?',
+                                'Can you implement dependency injection?',
+                                'Can you write tests for endpoints?'
+                            ]
+                        },
+                        {
+                            title: 'Database Integration',
+                            duration: 'Week 9-11, 25-30 hours',
+                            topics: [
+                                { text: 'SQL fundamentals (SELECT, JOIN)', priority: 'core' },
+                                { text: 'PostgreSQL setup', priority: 'core' },
+                                { text: 'SQLAlchemy ORM', priority: 'core' },
+                                { text: 'Async database operations', priority: 'high-roi' },
+                                { text: 'Alembic migrations', priority: 'core' },
+                                { text: 'Connection pooling', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'SQLBolt Interactive Tutorial', url: 'https://sqlbolt.com/' },
+                                { name: 'SQLAlchemy Tutorial', url: 'https://docs.sqlalchemy.org/en/20/tutorial/' }
+                            ],
+                            assessment: [
+                                'Can you write complex JOIN queries?',
+                                'Can you set up SQLAlchemy models?',
+                                'Can you create migrations?'
+                            ]
+                        },
+                        {
+                            title: 'Authentication & Security',
+                            duration: 'Week 11-12, 15-20 hours',
+                            topics: [
+                                { text: 'JWT tokens', priority: 'core' },
+                                { text: 'OAuth2 with FastAPI', priority: 'high-roi' },
+                                { text: 'Password hashing (bcrypt)', priority: 'core' },
+                                { text: 'API key management', priority: 'core' },
+                                { text: 'Rate limiting', priority: 'high-roi' },
+                                { text: 'Input validation', priority: 'core' }
+                            ],
+                            resources: [
+                                { name: 'FastAPI Security', url: 'https://fastapi.tiangolo.com/tutorial/security/' },
+                                { name: 'JWT Introduction', url: 'https://jwt.io/introduction' }
+                            ],
+                            assessment: [
+                                'Can you implement user registration and login?',
+                                'Can you protect routes with authentication?',
+                                'Can you implement rate limiting?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'Blog API with Authentication',
+                        time: '20-30 hours',
+                        description: 'Build a RESTful blog API with user auth (JWT), CRUD operations, PostgreSQL, Pydantic validation, rate limiting, API docs, 80%+ test coverage, deployed to cloud',
+                        validates: 'FastAPI, Databases, Auth, Testing, Deployment'
+                    }
+                },
+                {
+                    id: 'phase3',
+                    title: 'Phase 3: Data Engineering for AI',
+                    duration: '4-5 weeks',
+                    hours: '50-60 hours',
+                    sections: [
+                        {
+                            title: 'NumPy Essentials',
+                            duration: 'Week 13-14, 10-15 hours',
+                            topics: [
+                                { text: 'Array creation and operations', priority: 'high-roi' },
+                                { text: 'Indexing, slicing, masking', priority: 'high-roi' },
+                                { text: 'Broadcasting basics', priority: 'optional' },
+                                { text: 'Why NumPy is faster', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'NumPy Quickstart', url: 'https://numpy.org/doc/stable/user/quickstart.html' }
+                            ],
+                            assessment: [
+                                'Can you manipulate multi-dimensional arrays?',
+                                'Can you perform vectorized operations?'
+                            ]
+                        },
+                        {
+                            title: 'Pandas Mastery',
+                            duration: 'Week 14-17, 35-40 hours',
+                            topics: [
+                                { text: 'DataFrames and Series', priority: 'core' },
+                                { text: 'Reading/writing files (CSV, JSON, Excel)', priority: 'core' },
+                                { text: 'Data cleaning (nulls, duplicates)', priority: 'core' },
+                                { text: 'Filtering and selecting data', priority: 'core' },
+                                { text: 'GroupBy operations', priority: 'core' },
+                                { text: 'Merging and joining', priority: 'core' },
+                                { text: 'Apply, map, vectorized ops', priority: 'high-roi' },
+                                { text: 'DateTime handling', priority: 'high-roi' },
+                                { text: 'Handling large datasets', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'Pandas Tutorial', url: 'https://pandas.pydata.org/docs/getting_started/intro_tutorials/' },
+                                { name: 'Kaggle Pandas Course', url: 'https://www.kaggle.com/learn/pandas' }
+                            ],
+                            assessment: [
+                                'Can you clean a messy CSV efficiently?',
+                                'Can you perform complex groupby aggregations?',
+                                'Can you handle datasets that don\'t fit in memory?'
+                            ]
+                        },
+                        {
+                            title: 'Text Processing for AI',
+                            duration: 'Week 17, 10-12 hours',
+                            topics: [
+                                { text: 'String cleaning and normalization', priority: 'core' },
+                                { text: 'Tokenization basics', priority: 'high-roi' },
+                                { text: 'Regex for patterns', priority: 'high-roi' },
+                                { text: 'Working with JSON', priority: 'core' },
+                                { text: 'Text encoding/decoding', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'Python Regex Tutorial', url: 'https://docs.python.org/3/howto/regex.html' }
+                            ],
+                            assessment: [
+                                'Can you extract emails/URLs with regex?',
+                                'Can you clean user-generated text?',
+                                'Can you handle nested JSON?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'Data Processing Pipeline',
+                        time: '15-20 hours',
+                        description: 'FastAPI endpoint that accepts CSV uploads, cleans/validates data, generates stats, returns JSON, stores in PostgreSQL, handles large files with streaming',
+                        validates: 'Pandas, data cleaning, API integration'
+                    }
+                },
+                {
+                    id: 'phase4',
+                    title: 'Phase 4: ML Foundations',
+                    duration: '5-6 weeks',
+                    hours: '60-70 hours',
+                    sections: [
+                        {
+                            title: 'scikit-learn Core',
+                            duration: 'Week 18-20, 30-35 hours',
+                            topics: [
+                                { text: 'Train/test split and validation', priority: 'core' },
+                                { text: 'Feature scaling', priority: 'core' },
+                                { text: 'Encoding categorical variables', priority: 'core' },
+                                { text: 'Pipeline creation', priority: 'high-roi' },
+                                { text: 'Model persistence (joblib)', priority: 'core' },
+                                { text: 'Logistic Regression', priority: 'high-roi' },
+                                { text: 'Random Forests', priority: 'high-roi' },
+                                { text: 'K-means clustering', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'scikit-learn Guide', url: 'https://scikit-learn.org/stable/user_guide.html' },
+                                { name: 'Kaggle ML Course', url: 'https://www.kaggle.com/learn/intro-to-machine-learning' }
+                            ],
+                            assessment: [
+                                'Can you build a classification pipeline?',
+                                'Can you explain overfitting?',
+                                'Can you save and load models?'
+                            ]
+                        },
+                        {
+                            title: 'Embeddings & Similarity',
+                            duration: 'Week 20-22, 20-25 hours',
+                            topics: [
+                                { text: 'What embeddings are', priority: 'core' },
+                                { text: 'Cosine similarity', priority: 'core' },
+                                { text: 'Euclidean vs cosine', priority: 'high-roi' },
+                                { text: 'When to use embeddings', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'Understanding Embeddings', url: 'https://simonwillison.net/2023/Oct/23/embeddings/' }
+                            ],
+                            assessment: [
+                                'Can you explain embeddings simply?',
+                                'Can you compute similarity scores?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'ML-Powered API',
+                        time: '20-25 hours',
+                        description: 'FastAPI service that trains a classifier, serves predictions via REST, includes versioning, confidence scores, validation, logs predictions, has metrics endpoint',
+                        validates: 'scikit-learn, model serving, FastAPI integration'
+                    }
+                },
+                {
+                    id: 'phase5',
+                    title: 'Phase 5: LLM Integration & AI',
+                    duration: '8-10 weeks',
+                    hours: '100-120 hours',
+                    sections: [
+                        {
                             title: 'LLM API Mastery',
                             duration: 'Week 24-26, 30-35 hours',
                             topics: [
@@ -945,311 +1252,4 @@
         }
     </script>
 </body>
-</html> 'Core Python Syntax',
-                            duration: 'Week 1-2, 20-25 hours',
-                            topics: [
-                                { text: 'Variables, data types, type hints', priority: 'core' },
-                                { text: 'Control flow (if/else, loops)', priority: 'core' },
-                                { text: 'Functions (args, kwargs, decorators)', priority: 'core' },
-                                { text: 'Error handling (try/except)', priority: 'core' },
-                                { text: 'File I/O and context managers', priority: 'high-roi' },
-                                { text: 'Data structures (lists, dicts, sets)', priority: 'core' }
-                            ],
-                            resources: [
-                                { name: 'Python Official Tutorial', url: 'https://docs.python.org/3/tutorial/' },
-                                { name: 'Real Python Basics', url: 'https://realpython.com/learning-paths/python3-introduction/' }
-                            ],
-                            assessment: [
-                                'Can you write a function that reads a CSV and handles errors?',
-                                'Can you use list comprehensions effectively?',
-                                'Do you understand when to use tuples vs lists vs sets?'
-                            ]
-                        },
-                        {
-                            title: 'Object-Oriented Python',
-                            duration: 'Week 2-3, 15-20 hours',
-                            topics: [
-                                { text: 'Classes and objects', priority: 'core' },
-                                { text: '__init__, __str__, __repr__ methods', priority: 'core' },
-                                { text: 'Dataclasses (modern Python)', priority: 'high-roi' },
-                                { text: 'Inheritance and composition', priority: 'high-roi' },
-                                { text: 'Property decorators', priority: 'optional' }
-                            ],
-                            resources: [
-                                { name: 'Real Python - OOP', url: 'https://realpython.com/python3-object-oriented-programming/' },
-                                { name: 'Dataclasses Guide', url: 'https://realpython.com/python-data-classes/' }
-                            ],
-                            assessment: [
-                                'Can you create a User class with dataclass that validates email?',
-                                'Can you explain inheritance vs composition?'
-                            ]
-                        },
-                        {
-                            title: 'Production Python Tools',
-                            duration: 'Week 3-4, 15-20 hours',
-                            topics: [
-                                { text: 'Virtual environments (venv, requirements.txt)', priority: 'core' },
-                                { text: 'Git basics (clone, commit, push, branch)', priority: 'core' },
-                                { text: 'VS Code setup with Python', priority: 'core' },
-                                { text: 'Type hints and mypy', priority: 'high-roi' },
-                                { text: 'Logging (not print statements)', priority: 'core' },
-                                { text: 'Environment variables (.env)', priority: 'core' },
-                                { text: 'Poetry for dependencies', priority: 'optional' }
-                            ],
-                            resources: [
-                                { name: 'Git Handbook', url: 'https://guides.github.com/introduction/git-handbook/' },
-                                { name: 'Virtual Environments', url: 'https://realpython.com/python-virtual-environments-a-primer/' }
-                            ],
-                            assessment: [
-                                'Can you set up a new project with venv?',
-                                'Can you commit and push to GitHub?',
-                                'Can you add type hints and run mypy?'
-                            ]
-                        }
-                    ],
-                    milestone: {
-                        title: 'CLI Task Manager',
-                        time: '10-15 hours',
-                        description: 'Build a command-line task manager with: JSON storage, dataclasses, error handling, logging, type hints, Git management',
-                        validates: 'Python fundamentals, OOP, file I/O, error handling'
-                    }
-                },
-                {
-                    id: 'phase2',
-                    title: 'Phase 2: Backend Engineering',
-                    duration: '6-8 weeks',
-                    hours: '80-100 hours',
-                    sections: [
-                        {
-                            title: 'HTTP & REST Fundamentals',
-                            duration: 'Week 5-6, 15-20 hours',
-                            topics: [
-                                { text: 'HTTP methods (GET, POST, PUT, DELETE)', priority: 'core' },
-                                { text: 'Status codes (200, 400, 401, 404, 500)', priority: 'core' },
-                                { text: 'Headers and authentication', priority: 'core' },
-                                { text: 'JSON serialization', priority: 'core' },
-                                { text: 'Query vs path vs body params', priority: 'core' },
-                                { text: 'REST principles', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'MDN HTTP Overview', url: 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview' },
-                                { name: 'REST API Tutorial', url: 'https://restfulapi.net/' }
-                            ],
-                            assessment: [
-                                'Can you explain PUT vs PATCH?',
-                                'Do you know when to use 401 vs 403?',
-                                'Can you design RESTful routes for a blog?'
-                            ]
-                        },
-                        {
-                            title: 'FastAPI Deep Dive',
-                            duration: 'Week 6-9, 40-50 hours',
-                            topics: [
-                                { text: 'Project setup and structure', priority: 'core' },
-                                { text: 'Route creation', priority: 'core' },
-                                { text: 'Pydantic models for validation', priority: 'core' },
-                                { text: 'Request/response models', priority: 'core' },
-                                { text: 'Dependency injection', priority: 'high-roi' },
-                                { text: 'Error handling', priority: 'core' },
-                                { text: 'Middleware basics', priority: 'high-roi' },
-                                { text: 'Background tasks', priority: 'high-roi' },
-                                { text: 'CORS configuration', priority: 'core' },
-                                { text: 'WebSocket for streaming', priority: 'high-roi' },
-                                { text: 'Testing with pytest', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'FastAPI Official Tutorial', url: 'https://fastapi.tiangolo.com/tutorial/' },
-                                { name: 'FastAPI Best Practices', url: 'https://github.com/zhanymkanov/fastapi-best-practices' }
-                            ],
-                            assessment: [
-                                'Can you build a CRUD API with validation?',
-                                'Can you implement dependency injection?',
-                                'Can you write tests for endpoints?'
-                            ]
-                        },
-                        {
-                            title: 'Database Integration',
-                            duration: 'Week 9-11, 25-30 hours',
-                            topics: [
-                                { text: 'SQL fundamentals (SELECT, JOIN)', priority: 'core' },
-                                { text: 'PostgreSQL setup', priority: 'core' },
-                                { text: 'SQLAlchemy ORM', priority: 'core' },
-                                { text: 'Async database operations', priority: 'high-roi' },
-                                { text: 'Alembic migrations', priority: 'core' },
-                                { text: 'Connection pooling', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'SQLBolt Interactive Tutorial', url: 'https://sqlbolt.com/' },
-                                { name: 'SQLAlchemy Tutorial', url: 'https://docs.sqlalchemy.org/en/20/tutorial/' }
-                            ],
-                            assessment: [
-                                'Can you write complex JOIN queries?',
-                                'Can you set up SQLAlchemy models?',
-                                'Can you create migrations?'
-                            ]
-                        },
-                        {
-                            title: 'Authentication & Security',
-                            duration: 'Week 11-12, 15-20 hours',
-                            topics: [
-                                { text: 'JWT tokens', priority: 'core' },
-                                { text: 'OAuth2 with FastAPI', priority: 'high-roi' },
-                                { text: 'Password hashing (bcrypt)', priority: 'core' },
-                                { text: 'API key management', priority: 'core' },
-                                { text: 'Rate limiting', priority: 'high-roi' },
-                                { text: 'Input validation', priority: 'core' }
-                            ],
-                            resources: [
-                                { name: 'FastAPI Security', url: 'https://fastapi.tiangolo.com/tutorial/security/' },
-                                { name: 'JWT Introduction', url: 'https://jwt.io/introduction' }
-                            ],
-                            assessment: [
-                                'Can you implement user registration and login?',
-                                'Can you protect routes with authentication?',
-                                'Can you implement rate limiting?'
-                            ]
-                        }
-                    ],
-                    milestone: {
-                        title: 'Blog API with Authentication',
-                        time: '20-30 hours',
-                        description: 'Build a RESTful blog API with user auth (JWT), CRUD operations, PostgreSQL, Pydantic validation, rate limiting, API docs, 80%+ test coverage, deployed to cloud',
-                        validates: 'FastAPI, Databases, Auth, Testing, Deployment'
-                    }
-                },
-                {
-                    id: 'phase3',
-                    title: 'Phase 3: Data Engineering for AI',
-                    duration: '4-5 weeks',
-                    hours: '50-60 hours',
-                    sections: [
-                        {
-                            title: 'NumPy Essentials',
-                            duration: 'Week 13-14, 10-15 hours',
-                            topics: [
-                                { text: 'Array creation and operations', priority: 'high-roi' },
-                                { text: 'Indexing, slicing, masking', priority: 'high-roi' },
-                                { text: 'Broadcasting basics', priority: 'optional' },
-                                { text: 'Why NumPy is faster', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'NumPy Quickstart', url: 'https://numpy.org/doc/stable/user/quickstart.html' }
-                            ],
-                            assessment: [
-                                'Can you manipulate multi-dimensional arrays?',
-                                'Can you perform vectorized operations?'
-                            ]
-                        },
-                        {
-                            title: 'Pandas Mastery',
-                            duration: 'Week 14-17, 35-40 hours',
-                            topics: [
-                                { text: 'DataFrames and Series', priority: 'core' },
-                                { text: 'Reading/writing files (CSV, JSON, Excel)', priority: 'core' },
-                                { text: 'Data cleaning (nulls, duplicates)', priority: 'core' },
-                                { text: 'Filtering and selecting data', priority: 'core' },
-                                { text: 'GroupBy operations', priority: 'core' },
-                                { text: 'Merging and joining', priority: 'core' },
-                                { text: 'Apply, map, vectorized ops', priority: 'high-roi' },
-                                { text: 'DateTime handling', priority: 'high-roi' },
-                                { text: 'Handling large datasets', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'Pandas Tutorial', url: 'https://pandas.pydata.org/docs/getting_started/intro_tutorials/' },
-                                { name: 'Kaggle Pandas Course', url: 'https://www.kaggle.com/learn/pandas' }
-                            ],
-                            assessment: [
-                                'Can you clean a messy CSV efficiently?',
-                                'Can you perform complex groupby aggregations?',
-                                'Can you handle datasets that don\'t fit in memory?'
-                            ]
-                        },
-                        {
-                            title: 'Text Processing for AI',
-                            duration: 'Week 17, 10-12 hours',
-                            topics: [
-                                { text: 'String cleaning and normalization', priority: 'core' },
-                                { text: 'Tokenization basics', priority: 'high-roi' },
-                                { text: 'Regex for patterns', priority: 'high-roi' },
-                                { text: 'Working with JSON', priority: 'core' },
-                                { text: 'Text encoding/decoding', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'Python Regex Tutorial', url: 'https://docs.python.org/3/howto/regex.html' }
-                            ],
-                            assessment: [
-                                'Can you extract emails/URLs with regex?',
-                                'Can you clean user-generated text?',
-                                'Can you handle nested JSON?'
-                            ]
-                        }
-                    ],
-                    milestone: {
-                        title: 'Data Processing Pipeline',
-                        time: '15-20 hours',
-                        description: 'FastAPI endpoint that accepts CSV uploads, cleans/validates data, generates stats, returns JSON, stores in PostgreSQL, handles large files with streaming',
-                        validates: 'Pandas, data cleaning, API integration'
-                    }
-                },
-                {
-                    id: 'phase4',
-                    title: 'Phase 4: ML Foundations',
-                    duration: '5-6 weeks',
-                    hours: '60-70 hours',
-                    sections: [
-                        {
-                            title: 'scikit-learn Core',
-                            duration: 'Week 18-20, 30-35 hours',
-                            topics: [
-                                { text: 'Train/test split and validation', priority: 'core' },
-                                { text: 'Feature scaling', priority: 'core' },
-                                { text: 'Encoding categorical variables', priority: 'core' },
-                                { text: 'Pipeline creation', priority: 'high-roi' },
-                                { text: 'Model persistence (joblib)', priority: 'core' },
-                                { text: 'Logistic Regression', priority: 'high-roi' },
-                                { text: 'Random Forests', priority: 'high-roi' },
-                                { text: 'K-means clustering', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'scikit-learn Guide', url: 'https://scikit-learn.org/stable/user_guide.html' },
-                                { name: 'Kaggle ML Course', url: 'https://www.kaggle.com/learn/intro-to-machine-learning' }
-                            ],
-                            assessment: [
-                                'Can you build a classification pipeline?',
-                                'Can you explain overfitting?',
-                                'Can you save and load models?'
-                            ]
-                        },
-                        {
-                            title: 'Embeddings & Similarity',
-                            duration: 'Week 20-22, 20-25 hours',
-                            topics: [
-                                { text: 'What embeddings are', priority: 'core' },
-                                { text: 'Cosine similarity', priority: 'core' },
-                                { text: 'Euclidean vs cosine', priority: 'high-roi' },
-                                { text: 'When to use embeddings', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'Understanding Embeddings', url: 'https://simonwillison.net/2023/Oct/23/embeddings/' }
-                            ],
-                            assessment: [
-                                'Can you explain embeddings simply?',
-                                'Can you compute similarity scores?'
-                            ]
-                        }
-                    ],
-                    milestone: {
-                        title: 'ML-Powered API',
-                        time: '20-25 hours',
-                        description: 'FastAPI service that trains a classifier, serves predictions via REST, includes versioning, confidence scores, validation, logs predictions, has metrics endpoint',
-                        validates: 'scikit-learn, model serving, FastAPI integration'
-                    }
-                },
-                {
-                    id: 'phase5',
-                    title: 'Phase 5: LLM Integration & AI',
-                    duration: '8-10 weeks',
-                    hours: '100-120 hours',
-                    sections: [
-                        {
-                            title:
+</html>
