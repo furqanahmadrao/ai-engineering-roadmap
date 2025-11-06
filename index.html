@@ -24,14 +24,32 @@
             --gray: #64748b;
             --light: #f1f5f9;
             --white: #ffffff;
+            --bg-gradient-start: #667eea;
+            --bg-gradient-end: #764ba2;
+        }
+
+        [data-theme="dark"] {
+            --primary: #818cf8;
+            --primary-dark: #6366f1;
+            --secondary: #a78bfa;
+            --success: #34d399;
+            --warning: #fbbf24;
+            --danger: #f87171;
+            --dark: #f8fafc;
+            --gray: #94a3b8;
+            --light: #1e293b;
+            --white: #0f172a;
+            --bg-gradient-start: #1e293b;
+            --bg-gradient-end: #0f172a;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--dark);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             min-height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -445,10 +463,268 @@
                 font-size: 1.1rem;
             }
         }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--white);
+            border: none;
+            padding: 12px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Search Bar */
+        .search-container {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid var(--light);
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            animation: confetti-fall 3s linear forwards;
+            z-index: 9999;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Motivational Quote */
+        .motivation-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid var(--warning);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .motivation-box p {
+            color: #92400e;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .motivation-box small {
+            color: #78350f;
+            font-size: 0.9rem;
+        }
+
+        /* Import Button */
+        .import-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 20px 10px 20px 0;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .import-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        #importFile {
+            display: none;
+        }
+
+        /* Keyboard Shortcuts Help */
+        .shortcuts-help {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--white);
+            padding: 10px 15px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-size: 0.9rem;
+            color: var(--gray);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .shortcuts-help:hover {
+            background: var(--light);
+            transform: translateY(-2px);
+        }
+
+        /* Smooth Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .phase {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        /* Progress Ring Animation */
+        @keyframes progressPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+            }
+        }
+
+        .progress-fill {
+            animation: progressPulse 2s infinite;
+        }
+
+        /* Highlight Search Results */
+        .highlight {
+            background-color: var(--warning);
+            color: var(--dark);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        /* Modal for Shortcuts */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: var(--gray);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: var(--dark);
+        }
+
+        .shortcut-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .shortcut-key {
+            background: var(--light);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                top: auto;
+                bottom: 80px;
+                left: 10px;
+            }
+
+            .shortcuts-help {
+                bottom: 80px;
+                right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <a href="https://github.com/yourusername/ai-engineering-roadmap" target="_blank" class="github-link">
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">🌓</button>
+
+    <!-- Keyboard Shortcuts Help -->
+    <div class="shortcuts-help" onclick="showShortcuts()" title="View Keyboard Shortcuts">⌨️ Shortcuts</div>
+
+    <!-- GitHub Link -->
+    <a href="https://github.com/furqanahmadrao/ai-engineering-roadmap" target="_blank" class="github-link">
         ⭐ Star on GitHub
     </a>
 
@@ -481,9 +757,22 @@
             </div>
 
             <div style="margin-top: 20px;">
+                <button class="import-btn" onclick="document.getElementById('importFile').click()">📤 Import Progress</button>
+                <input type="file" id="importFile" accept=".json" onchange="importProgress(event)">
                 <button class="export-btn" onclick="exportProgress()">📥 Export Progress</button>
                 <button class="btn-reset" onclick="resetProgress()">🔄 Reset All Progress</button>
             </div>
+        </div>
+
+        <!-- Motivational Quote -->
+        <div class="motivation-box" id="motivationBox">
+            <p id="quoteText">Loading inspiration...</p>
+            <small id="quoteAuthor"></small>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search topics, sections, or phases... (Press '/' to focus)" onkeyup="searchTopics()">
         </div>
 
         <div class="filters">
@@ -505,6 +794,313 @@
                     title: 'Phase 1: Python Foundation',
                     duration: '4-6 weeks',
                     hours: '60-80 hours',
+                    sections: [
+                        {
+                            title: 'Core Python Syntax',
+                            duration: 'Week 1-2, 20-25 hours',
+                            topics: [
+                                { text: 'Variables, data types, type hints', priority: 'core' },
+                                { text: 'Control flow (if/else, loops)', priority: 'core' },
+                                { text: 'Functions (args, kwargs, decorators)', priority: 'core' },
+                                { text: 'Error handling (try/except)', priority: 'core' },
+                                { text: 'File I/O and context managers', priority: 'high-roi' },
+                                { text: 'Data structures (lists, dicts, sets)', priority: 'core' }
+                            ],
+                            resources: [
+                                { name: 'Python Official Tutorial', url: 'https://docs.python.org/3/tutorial/' },
+                                { name: 'Real Python Basics', url: 'https://realpython.com/learning-paths/python3-introduction/' }
+                            ],
+                            assessment: [
+                                'Can you write a function that reads a CSV and handles errors?',
+                                'Can you use list comprehensions effectively?',
+                                'Do you understand when to use tuples vs lists vs sets?'
+                            ]
+                        },
+                        {
+                            title: 'Object-Oriented Python',
+                            duration: 'Week 2-3, 15-20 hours',
+                            topics: [
+                                { text: 'Classes and objects', priority: 'core' },
+                                { text: '__init__, __str__, __repr__ methods', priority: 'core' },
+                                { text: 'Dataclasses (modern Python)', priority: 'high-roi' },
+                                { text: 'Inheritance and composition', priority: 'high-roi' },
+                                { text: 'Property decorators', priority: 'optional' }
+                            ],
+                            resources: [
+                                { name: 'Real Python - OOP', url: 'https://realpython.com/python3-object-oriented-programming/' },
+                                { name: 'Dataclasses Guide', url: 'https://realpython.com/python-data-classes/' }
+                            ],
+                            assessment: [
+                                'Can you create a User class with dataclass that validates email?',
+                                'Can you explain inheritance vs composition?'
+                            ]
+                        },
+                        {
+                            title: 'Production Python Tools',
+                            duration: 'Week 3-4, 15-20 hours',
+                            topics: [
+                                { text: 'Virtual environments (venv, requirements.txt)', priority: 'core' },
+                                { text: 'Git basics (clone, commit, push, branch)', priority: 'core' },
+                                { text: 'VS Code setup with Python', priority: 'core' },
+                                { text: 'Type hints and mypy', priority: 'high-roi' },
+                                { text: 'Logging (not print statements)', priority: 'core' },
+                                { text: 'Environment variables (.env)', priority: 'core' },
+                                { text: 'Poetry for dependencies', priority: 'optional' }
+                            ],
+                            resources: [
+                                { name: 'Git Handbook', url: 'https://guides.github.com/introduction/git-handbook/' },
+                                { name: 'Virtual Environments', url: 'https://realpython.com/python-virtual-environments-a-primer/' }
+                            ],
+                            assessment: [
+                                'Can you set up a new project with venv?',
+                                'Can you commit and push to GitHub?',
+                                'Can you add type hints and run mypy?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'CLI Task Manager',
+                        time: '10-15 hours',
+                        description: 'Build a command-line task manager with: JSON storage, dataclasses, error handling, logging, type hints, Git management',
+                        validates: 'Python fundamentals, OOP, file I/O, error handling'
+                    }
+                },
+                {
+                    id: 'phase2',
+                    title: 'Phase 2: Backend Engineering',
+                    duration: '6-8 weeks',
+                    hours: '80-100 hours',
+                    sections: [
+                        {
+                            title: 'HTTP & REST Fundamentals',
+                            duration: 'Week 5-6, 15-20 hours',
+                            topics: [
+                                { text: 'HTTP methods (GET, POST, PUT, DELETE)', priority: 'core' },
+                                { text: 'Status codes (200, 400, 401, 404, 500)', priority: 'core' },
+                                { text: 'Headers and authentication', priority: 'core' },
+                                { text: 'JSON serialization', priority: 'core' },
+                                { text: 'Query vs path vs body params', priority: 'core' },
+                                { text: 'REST principles', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'MDN HTTP Overview', url: 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview' },
+                                { name: 'REST API Tutorial', url: 'https://restfulapi.net/' }
+                            ],
+                            assessment: [
+                                'Can you explain PUT vs PATCH?',
+                                'Do you know when to use 401 vs 403?',
+                                'Can you design RESTful routes for a blog?'
+                            ]
+                        },
+                        {
+                            title: 'FastAPI Deep Dive',
+                            duration: 'Week 6-9, 40-50 hours',
+                            topics: [
+                                { text: 'Project setup and structure', priority: 'core' },
+                                { text: 'Route creation', priority: 'core' },
+                                { text: 'Pydantic models for validation', priority: 'core' },
+                                { text: 'Request/response models', priority: 'core' },
+                                { text: 'Dependency injection', priority: 'high-roi' },
+                                { text: 'Error handling', priority: 'core' },
+                                { text: 'Middleware basics', priority: 'high-roi' },
+                                { text: 'Background tasks', priority: 'high-roi' },
+                                { text: 'CORS configuration', priority: 'core' },
+                                { text: 'WebSocket for streaming', priority: 'high-roi' },
+                                { text: 'Testing with pytest', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'FastAPI Official Tutorial', url: 'https://fastapi.tiangolo.com/tutorial/' },
+                                { name: 'FastAPI Best Practices', url: 'https://github.com/zhanymkanov/fastapi-best-practices' }
+                            ],
+                            assessment: [
+                                'Can you build a CRUD API with validation?',
+                                'Can you implement dependency injection?',
+                                'Can you write tests for endpoints?'
+                            ]
+                        },
+                        {
+                            title: 'Database Integration',
+                            duration: 'Week 9-11, 25-30 hours',
+                            topics: [
+                                { text: 'SQL fundamentals (SELECT, JOIN)', priority: 'core' },
+                                { text: 'PostgreSQL setup', priority: 'core' },
+                                { text: 'SQLAlchemy ORM', priority: 'core' },
+                                { text: 'Async database operations', priority: 'high-roi' },
+                                { text: 'Alembic migrations', priority: 'core' },
+                                { text: 'Connection pooling', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'SQLBolt Interactive Tutorial', url: 'https://sqlbolt.com/' },
+                                { name: 'SQLAlchemy Tutorial', url: 'https://docs.sqlalchemy.org/en/20/tutorial/' }
+                            ],
+                            assessment: [
+                                'Can you write complex JOIN queries?',
+                                'Can you set up SQLAlchemy models?',
+                                'Can you create migrations?'
+                            ]
+                        },
+                        {
+                            title: 'Authentication & Security',
+                            duration: 'Week 11-12, 15-20 hours',
+                            topics: [
+                                { text: 'JWT tokens', priority: 'core' },
+                                { text: 'OAuth2 with FastAPI', priority: 'high-roi' },
+                                { text: 'Password hashing (bcrypt)', priority: 'core' },
+                                { text: 'API key management', priority: 'core' },
+                                { text: 'Rate limiting', priority: 'high-roi' },
+                                { text: 'Input validation', priority: 'core' }
+                            ],
+                            resources: [
+                                { name: 'FastAPI Security', url: 'https://fastapi.tiangolo.com/tutorial/security/' },
+                                { name: 'JWT Introduction', url: 'https://jwt.io/introduction' }
+                            ],
+                            assessment: [
+                                'Can you implement user registration and login?',
+                                'Can you protect routes with authentication?',
+                                'Can you implement rate limiting?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'Blog API with Authentication',
+                        time: '20-30 hours',
+                        description: 'Build a RESTful blog API with user auth (JWT), CRUD operations, PostgreSQL, Pydantic validation, rate limiting, API docs, 80%+ test coverage, deployed to cloud',
+                        validates: 'FastAPI, Databases, Auth, Testing, Deployment'
+                    }
+                },
+                {
+                    id: 'phase3',
+                    title: 'Phase 3: Data Engineering for AI',
+                    duration: '4-5 weeks',
+                    hours: '50-60 hours',
+                    sections: [
+                        {
+                            title: 'NumPy Essentials',
+                            duration: 'Week 13-14, 10-15 hours',
+                            topics: [
+                                { text: 'Array creation and operations', priority: 'high-roi' },
+                                { text: 'Indexing, slicing, masking', priority: 'high-roi' },
+                                { text: 'Broadcasting basics', priority: 'optional' },
+                                { text: 'Why NumPy is faster', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'NumPy Quickstart', url: 'https://numpy.org/doc/stable/user/quickstart.html' }
+                            ],
+                            assessment: [
+                                'Can you manipulate multi-dimensional arrays?',
+                                'Can you perform vectorized operations?'
+                            ]
+                        },
+                        {
+                            title: 'Pandas Mastery',
+                            duration: 'Week 14-17, 35-40 hours',
+                            topics: [
+                                { text: 'DataFrames and Series', priority: 'core' },
+                                { text: 'Reading/writing files (CSV, JSON, Excel)', priority: 'core' },
+                                { text: 'Data cleaning (nulls, duplicates)', priority: 'core' },
+                                { text: 'Filtering and selecting data', priority: 'core' },
+                                { text: 'GroupBy operations', priority: 'core' },
+                                { text: 'Merging and joining', priority: 'core' },
+                                { text: 'Apply, map, vectorized ops', priority: 'high-roi' },
+                                { text: 'DateTime handling', priority: 'high-roi' },
+                                { text: 'Handling large datasets', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'Pandas Tutorial', url: 'https://pandas.pydata.org/docs/getting_started/intro_tutorials/' },
+                                { name: 'Kaggle Pandas Course', url: 'https://www.kaggle.com/learn/pandas' }
+                            ],
+                            assessment: [
+                                'Can you clean a messy CSV efficiently?',
+                                'Can you perform complex groupby aggregations?',
+                                'Can you handle datasets that don\'t fit in memory?'
+                            ]
+                        },
+                        {
+                            title: 'Text Processing for AI',
+                            duration: 'Week 17, 10-12 hours',
+                            topics: [
+                                { text: 'String cleaning and normalization', priority: 'core' },
+                                { text: 'Tokenization basics', priority: 'high-roi' },
+                                { text: 'Regex for patterns', priority: 'high-roi' },
+                                { text: 'Working with JSON', priority: 'core' },
+                                { text: 'Text encoding/decoding', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'Python Regex Tutorial', url: 'https://docs.python.org/3/howto/regex.html' }
+                            ],
+                            assessment: [
+                                'Can you extract emails/URLs with regex?',
+                                'Can you clean user-generated text?',
+                                'Can you handle nested JSON?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'Data Processing Pipeline',
+                        time: '15-20 hours',
+                        description: 'FastAPI endpoint that accepts CSV uploads, cleans/validates data, generates stats, returns JSON, stores in PostgreSQL, handles large files with streaming',
+                        validates: 'Pandas, data cleaning, API integration'
+                    }
+                },
+                {
+                    id: 'phase4',
+                    title: 'Phase 4: ML Foundations',
+                    duration: '5-6 weeks',
+                    hours: '60-70 hours',
+                    sections: [
+                        {
+                            title: 'scikit-learn Core',
+                            duration: 'Week 18-20, 30-35 hours',
+                            topics: [
+                                { text: 'Train/test split and validation', priority: 'core' },
+                                { text: 'Feature scaling', priority: 'core' },
+                                { text: 'Encoding categorical variables', priority: 'core' },
+                                { text: 'Pipeline creation', priority: 'high-roi' },
+                                { text: 'Model persistence (joblib)', priority: 'core' },
+                                { text: 'Logistic Regression', priority: 'high-roi' },
+                                { text: 'Random Forests', priority: 'high-roi' },
+                                { text: 'K-means clustering', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'scikit-learn Guide', url: 'https://scikit-learn.org/stable/user_guide.html' },
+                                { name: 'Kaggle ML Course', url: 'https://www.kaggle.com/learn/intro-to-machine-learning' }
+                            ],
+                            assessment: [
+                                'Can you build a classification pipeline?',
+                                'Can you explain overfitting?',
+                                'Can you save and load models?'
+                            ]
+                        },
+                        {
+                            title: 'Embeddings & Similarity',
+                            duration: 'Week 20-22, 20-25 hours',
+                            topics: [
+                                { text: 'What embeddings are', priority: 'core' },
+                                { text: 'Cosine similarity', priority: 'core' },
+                                { text: 'Euclidean vs cosine', priority: 'high-roi' },
+                                { text: 'When to use embeddings', priority: 'high-roi' }
+                            ],
+                            resources: [
+                                { name: 'Understanding Embeddings', url: 'https://simonwillison.net/2023/Oct/23/embeddings/' }
+                            ],
+                            assessment: [
+                                'Can you explain embeddings simply?',
+                                'Can you compute similarity scores?'
+                            ]
+                        }
+                    ],
+                    milestone: {
+                        title: 'ML-Powered API',
+                        time: '20-25 hours',
+                        description: 'FastAPI service that trains a classifier, serves predictions via REST, includes versioning, confidence scores, validation, logs predictions, has metrics endpoint',
+                        validates: 'scikit-learn, model serving, FastAPI integration'
+                    }
+                },
+                {
+                    id: 'phase5',
+                    title: 'Phase 5: LLM Integration & AI',
+                    duration: '8-10 weeks',
+                    hours: '100-120 hours',
                     sections: [
                         {
                             title: 'LLM API Mastery',
@@ -817,11 +1413,26 @@
         }
 
         function toggleTopic(itemId) {
-            if (completedItems.has(itemId)) {
+            const wasCompleted = completedItems.has(itemId);
+            
+            if (wasCompleted) {
                 completedItems.delete(itemId);
             } else {
                 completedItems.add(itemId);
+                // Celebrate on completion with a small confetti burst
+                const colors = ['#6366f1', '#8b5cf6', '#10b981', '#f59e0b'];
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.className = 'confetti';
+                        confetti.style.left = (Math.random() * 100) + 'vw';
+                        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                        document.body.appendChild(confetti);
+                        setTimeout(() => confetti.remove(), 3000);
+                    }, i * 50);
+                }
             }
+            
             saveProgress();
             updateStats();
             
@@ -938,318 +1549,224 @@
             URL.revokeObjectURL(url);
         }
 
+        function importProgress(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (data.completedItems && Array.isArray(data.completedItems)) {
+                        completedItems = new Set(data.completedItems);
+                        saveProgress();
+                        renderRoadmap();
+                        updateStats();
+                        showNotification('Progress imported successfully! 🎉');
+                    } else {
+                        throw new Error('Invalid file format');
+                    }
+                } catch (error) {
+                    alert('Error importing file. Please make sure it\'s a valid progress export.');
+                    console.error('Import error:', error);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = 'position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: var(--success); color: white; padding: 15px 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 10001; animation: slideDown 0.3s;';
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.style.animation = 'fadeOut 0.3s';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+
+        function searchTopics() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const allTopicItems = document.querySelectorAll('.topic-item');
+            const allSections = document.querySelectorAll('.section');
+            const allPhases = document.querySelectorAll('.phase');
+
+            if (searchTerm === '') {
+                allTopicItems.forEach(item => item.classList.remove('hidden'));
+                allSections.forEach(section => section.style.display = '');
+                allPhases.forEach(phase => phase.style.display = '');
+                return;
+            }
+
+            let hasVisibleItems = false;
+
+            allPhases.forEach(phase => {
+                let phaseHasVisible = false;
+                const phaseTitle = phase.querySelector('h2').textContent.toLowerCase();
+                const phaseMatches = phaseTitle.includes(searchTerm);
+
+                const sections = phase.querySelectorAll('.section');
+                sections.forEach(section => {
+                    let sectionHasVisible = false;
+                    const sectionTitle = section.querySelector('h3').textContent.toLowerCase();
+                    const sectionMatches = sectionTitle.includes(searchTerm);
+
+                    const items = section.querySelectorAll('.topic-item');
+                    items.forEach(item => {
+                        const text = item.textContent.toLowerCase();
+                        if (text.includes(searchTerm) || sectionMatches || phaseMatches) {
+                            item.classList.remove('hidden');
+                            sectionHasVisible = true;
+                            phaseHasVisible = true;
+                            hasVisibleItems = true;
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+
+                    section.style.display = sectionHasVisible ? '' : 'none';
+                });
+
+                if (phaseHasVisible) {
+                    phase.style.display = '';
+                    phase.classList.add('expanded');
+                } else {
+                    phase.style.display = 'none';
+                }
+            });
+        }
+
+        function celebrateCompletion() {
+            const colors = ['#6366f1', '#8b5cf6', '#10b981', '#f59e0b', '#ef4444'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 30);
+            }
+        }
+
+        function showShortcuts() {
+            document.getElementById('shortcutsModal').style.display = 'block';
+        }
+
+        function closeShortcuts() {
+            document.getElementById('shortcutsModal').style.display = 'none';
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Helper function to check if we're in an input field
+            const isTyping = () => {
+                const element = document.activeElement;
+                return element.tagName === 'INPUT' || 
+                       element.tagName === 'TEXTAREA' || 
+                       element.isContentEditable;
+            };
+
+            // '/' to focus search
+            if (e.key === '/' && !isTyping()) {
+                e.preventDefault();
+                document.getElementById('searchInput').focus();
+            }
+            // 'Escape' to clear search or close modal
+            if (e.key === 'Escape') {
+                if (document.getElementById('shortcutsModal').style.display === 'block') {
+                    closeShortcuts();
+                } else {
+                    document.getElementById('searchInput').value = '';
+                    searchTopics();
+                }
+            }
+            // '?' to show shortcuts
+            if (e.key === '?') {
+                showShortcuts();
+            }
+            // 't' to toggle theme
+            if (e.key === 't' && !isTyping()) {
+                toggleTheme();
+            }
+        });
+
+        // Motivational quotes
+        const quotes = [
+            { text: "The best time to start was yesterday. The next best time is now.", author: "Chinese Proverb" },
+            { text: "Learning is a treasure that will follow its owner everywhere.", author: "Chinese Proverb" },
+            { text: "The expert in anything was once a beginner.", author: "Helen Hayes" },
+            { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+            { text: "The future belongs to those who learn more skills and combine them in creative ways.", author: "Robert Greene" },
+            { text: "Every expert was once a beginner. Every master was once a disaster.", author: "T. Harv Eker" },
+            { text: "AI is going to be the next big wave. Those who learn to ride it will prosper.", author: "Andrew Ng" },
+            { text: "The beautiful thing about learning is that no one can take it away from you.", author: "B.B. King" }
+        ];
+
+        function showRandomQuote() {
+            const quote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quoteText').textContent = '"' + quote.text + '"';
+            document.getElementById('quoteAuthor').textContent = '— ' + quote.author;
+        }
+
+        // Enhanced init function
+        function initEnhanced() {
+            loadTheme();
+            showRandomQuote();
+            // Change quote every 30 seconds
+            setInterval(showRandomQuote, 30000);
+        }
+
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', init);
+            document.addEventListener('DOMContentLoaded', function() {
+                init();
+                initEnhanced();
+            });
         } else {
             init();
+            initEnhanced();
         }
     </script>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="shortcutsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeShortcuts()">&times;</span>
+            <h2 style="margin-bottom: 20px; color: var(--primary);">⌨️ Keyboard Shortcuts</h2>
+            <div class="shortcut-item">
+                <span>Focus Search</span>
+                <span class="shortcut-key">/</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Clear Search / Close Modal</span>
+                <span class="shortcut-key">Esc</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Toggle Dark Mode</span>
+                <span class="shortcut-key">t</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Show Shortcuts</span>
+                <span class="shortcut-key">?</span>
+            </div>
+        </div>
+    </div>
+
 </body>
-</html> 'Core Python Syntax',
-                            duration: 'Week 1-2, 20-25 hours',
-                            topics: [
-                                { text: 'Variables, data types, type hints', priority: 'core' },
-                                { text: 'Control flow (if/else, loops)', priority: 'core' },
-                                { text: 'Functions (args, kwargs, decorators)', priority: 'core' },
-                                { text: 'Error handling (try/except)', priority: 'core' },
-                                { text: 'File I/O and context managers', priority: 'high-roi' },
-                                { text: 'Data structures (lists, dicts, sets)', priority: 'core' }
-                            ],
-                            resources: [
-                                { name: 'Python Official Tutorial', url: 'https://docs.python.org/3/tutorial/' },
-                                { name: 'Real Python Basics', url: 'https://realpython.com/learning-paths/python3-introduction/' }
-                            ],
-                            assessment: [
-                                'Can you write a function that reads a CSV and handles errors?',
-                                'Can you use list comprehensions effectively?',
-                                'Do you understand when to use tuples vs lists vs sets?'
-                            ]
-                        },
-                        {
-                            title: 'Object-Oriented Python',
-                            duration: 'Week 2-3, 15-20 hours',
-                            topics: [
-                                { text: 'Classes and objects', priority: 'core' },
-                                { text: '__init__, __str__, __repr__ methods', priority: 'core' },
-                                { text: 'Dataclasses (modern Python)', priority: 'high-roi' },
-                                { text: 'Inheritance and composition', priority: 'high-roi' },
-                                { text: 'Property decorators', priority: 'optional' }
-                            ],
-                            resources: [
-                                { name: 'Real Python - OOP', url: 'https://realpython.com/python3-object-oriented-programming/' },
-                                { name: 'Dataclasses Guide', url: 'https://realpython.com/python-data-classes/' }
-                            ],
-                            assessment: [
-                                'Can you create a User class with dataclass that validates email?',
-                                'Can you explain inheritance vs composition?'
-                            ]
-                        },
-                        {
-                            title: 'Production Python Tools',
-                            duration: 'Week 3-4, 15-20 hours',
-                            topics: [
-                                { text: 'Virtual environments (venv, requirements.txt)', priority: 'core' },
-                                { text: 'Git basics (clone, commit, push, branch)', priority: 'core' },
-                                { text: 'VS Code setup with Python', priority: 'core' },
-                                { text: 'Type hints and mypy', priority: 'high-roi' },
-                                { text: 'Logging (not print statements)', priority: 'core' },
-                                { text: 'Environment variables (.env)', priority: 'core' },
-                                { text: 'Poetry for dependencies', priority: 'optional' }
-                            ],
-                            resources: [
-                                { name: 'Git Handbook', url: 'https://guides.github.com/introduction/git-handbook/' },
-                                { name: 'Virtual Environments', url: 'https://realpython.com/python-virtual-environments-a-primer/' }
-                            ],
-                            assessment: [
-                                'Can you set up a new project with venv?',
-                                'Can you commit and push to GitHub?',
-                                'Can you add type hints and run mypy?'
-                            ]
-                        }
-                    ],
-                    milestone: {
-                        title: 'CLI Task Manager',
-                        time: '10-15 hours',
-                        description: 'Build a command-line task manager with: JSON storage, dataclasses, error handling, logging, type hints, Git management',
-                        validates: 'Python fundamentals, OOP, file I/O, error handling'
-                    }
-                },
-                {
-                    id: 'phase2',
-                    title: 'Phase 2: Backend Engineering',
-                    duration: '6-8 weeks',
-                    hours: '80-100 hours',
-                    sections: [
-                        {
-                            title: 'HTTP & REST Fundamentals',
-                            duration: 'Week 5-6, 15-20 hours',
-                            topics: [
-                                { text: 'HTTP methods (GET, POST, PUT, DELETE)', priority: 'core' },
-                                { text: 'Status codes (200, 400, 401, 404, 500)', priority: 'core' },
-                                { text: 'Headers and authentication', priority: 'core' },
-                                { text: 'JSON serialization', priority: 'core' },
-                                { text: 'Query vs path vs body params', priority: 'core' },
-                                { text: 'REST principles', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'MDN HTTP Overview', url: 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview' },
-                                { name: 'REST API Tutorial', url: 'https://restfulapi.net/' }
-                            ],
-                            assessment: [
-                                'Can you explain PUT vs PATCH?',
-                                'Do you know when to use 401 vs 403?',
-                                'Can you design RESTful routes for a blog?'
-                            ]
-                        },
-                        {
-                            title: 'FastAPI Deep Dive',
-                            duration: 'Week 6-9, 40-50 hours',
-                            topics: [
-                                { text: 'Project setup and structure', priority: 'core' },
-                                { text: 'Route creation', priority: 'core' },
-                                { text: 'Pydantic models for validation', priority: 'core' },
-                                { text: 'Request/response models', priority: 'core' },
-                                { text: 'Dependency injection', priority: 'high-roi' },
-                                { text: 'Error handling', priority: 'core' },
-                                { text: 'Middleware basics', priority: 'high-roi' },
-                                { text: 'Background tasks', priority: 'high-roi' },
-                                { text: 'CORS configuration', priority: 'core' },
-                                { text: 'WebSocket for streaming', priority: 'high-roi' },
-                                { text: 'Testing with pytest', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'FastAPI Official Tutorial', url: 'https://fastapi.tiangolo.com/tutorial/' },
-                                { name: 'FastAPI Best Practices', url: 'https://github.com/zhanymkanov/fastapi-best-practices' }
-                            ],
-                            assessment: [
-                                'Can you build a CRUD API with validation?',
-                                'Can you implement dependency injection?',
-                                'Can you write tests for endpoints?'
-                            ]
-                        },
-                        {
-                            title: 'Database Integration',
-                            duration: 'Week 9-11, 25-30 hours',
-                            topics: [
-                                { text: 'SQL fundamentals (SELECT, JOIN)', priority: 'core' },
-                                { text: 'PostgreSQL setup', priority: 'core' },
-                                { text: 'SQLAlchemy ORM', priority: 'core' },
-                                { text: 'Async database operations', priority: 'high-roi' },
-                                { text: 'Alembic migrations', priority: 'core' },
-                                { text: 'Connection pooling', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'SQLBolt Interactive Tutorial', url: 'https://sqlbolt.com/' },
-                                { name: 'SQLAlchemy Tutorial', url: 'https://docs.sqlalchemy.org/en/20/tutorial/' }
-                            ],
-                            assessment: [
-                                'Can you write complex JOIN queries?',
-                                'Can you set up SQLAlchemy models?',
-                                'Can you create migrations?'
-                            ]
-                        },
-                        {
-                            title: 'Authentication & Security',
-                            duration: 'Week 11-12, 15-20 hours',
-                            topics: [
-                                { text: 'JWT tokens', priority: 'core' },
-                                { text: 'OAuth2 with FastAPI', priority: 'high-roi' },
-                                { text: 'Password hashing (bcrypt)', priority: 'core' },
-                                { text: 'API key management', priority: 'core' },
-                                { text: 'Rate limiting', priority: 'high-roi' },
-                                { text: 'Input validation', priority: 'core' }
-                            ],
-                            resources: [
-                                { name: 'FastAPI Security', url: 'https://fastapi.tiangolo.com/tutorial/security/' },
-                                { name: 'JWT Introduction', url: 'https://jwt.io/introduction' }
-                            ],
-                            assessment: [
-                                'Can you implement user registration and login?',
-                                'Can you protect routes with authentication?',
-                                'Can you implement rate limiting?'
-                            ]
-                        }
-                    ],
-                    milestone: {
-                        title: 'Blog API with Authentication',
-                        time: '20-30 hours',
-                        description: 'Build a RESTful blog API with user auth (JWT), CRUD operations, PostgreSQL, Pydantic validation, rate limiting, API docs, 80%+ test coverage, deployed to cloud',
-                        validates: 'FastAPI, Databases, Auth, Testing, Deployment'
-                    }
-                },
-                {
-                    id: 'phase3',
-                    title: 'Phase 3: Data Engineering for AI',
-                    duration: '4-5 weeks',
-                    hours: '50-60 hours',
-                    sections: [
-                        {
-                            title: 'NumPy Essentials',
-                            duration: 'Week 13-14, 10-15 hours',
-                            topics: [
-                                { text: 'Array creation and operations', priority: 'high-roi' },
-                                { text: 'Indexing, slicing, masking', priority: 'high-roi' },
-                                { text: 'Broadcasting basics', priority: 'optional' },
-                                { text: 'Why NumPy is faster', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'NumPy Quickstart', url: 'https://numpy.org/doc/stable/user/quickstart.html' }
-                            ],
-                            assessment: [
-                                'Can you manipulate multi-dimensional arrays?',
-                                'Can you perform vectorized operations?'
-                            ]
-                        },
-                        {
-                            title: 'Pandas Mastery',
-                            duration: 'Week 14-17, 35-40 hours',
-                            topics: [
-                                { text: 'DataFrames and Series', priority: 'core' },
-                                { text: 'Reading/writing files (CSV, JSON, Excel)', priority: 'core' },
-                                { text: 'Data cleaning (nulls, duplicates)', priority: 'core' },
-                                { text: 'Filtering and selecting data', priority: 'core' },
-                                { text: 'GroupBy operations', priority: 'core' },
-                                { text: 'Merging and joining', priority: 'core' },
-                                { text: 'Apply, map, vectorized ops', priority: 'high-roi' },
-                                { text: 'DateTime handling', priority: 'high-roi' },
-                                { text: 'Handling large datasets', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'Pandas Tutorial', url: 'https://pandas.pydata.org/docs/getting_started/intro_tutorials/' },
-                                { name: 'Kaggle Pandas Course', url: 'https://www.kaggle.com/learn/pandas' }
-                            ],
-                            assessment: [
-                                'Can you clean a messy CSV efficiently?',
-                                'Can you perform complex groupby aggregations?',
-                                'Can you handle datasets that don\'t fit in memory?'
-                            ]
-                        },
-                        {
-                            title: 'Text Processing for AI',
-                            duration: 'Week 17, 10-12 hours',
-                            topics: [
-                                { text: 'String cleaning and normalization', priority: 'core' },
-                                { text: 'Tokenization basics', priority: 'high-roi' },
-                                { text: 'Regex for patterns', priority: 'high-roi' },
-                                { text: 'Working with JSON', priority: 'core' },
-                                { text: 'Text encoding/decoding', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'Python Regex Tutorial', url: 'https://docs.python.org/3/howto/regex.html' }
-                            ],
-                            assessment: [
-                                'Can you extract emails/URLs with regex?',
-                                'Can you clean user-generated text?',
-                                'Can you handle nested JSON?'
-                            ]
-                        }
-                    ],
-                    milestone: {
-                        title: 'Data Processing Pipeline',
-                        time: '15-20 hours',
-                        description: 'FastAPI endpoint that accepts CSV uploads, cleans/validates data, generates stats, returns JSON, stores in PostgreSQL, handles large files with streaming',
-                        validates: 'Pandas, data cleaning, API integration'
-                    }
-                },
-                {
-                    id: 'phase4',
-                    title: 'Phase 4: ML Foundations',
-                    duration: '5-6 weeks',
-                    hours: '60-70 hours',
-                    sections: [
-                        {
-                            title: 'scikit-learn Core',
-                            duration: 'Week 18-20, 30-35 hours',
-                            topics: [
-                                { text: 'Train/test split and validation', priority: 'core' },
-                                { text: 'Feature scaling', priority: 'core' },
-                                { text: 'Encoding categorical variables', priority: 'core' },
-                                { text: 'Pipeline creation', priority: 'high-roi' },
-                                { text: 'Model persistence (joblib)', priority: 'core' },
-                                { text: 'Logistic Regression', priority: 'high-roi' },
-                                { text: 'Random Forests', priority: 'high-roi' },
-                                { text: 'K-means clustering', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'scikit-learn Guide', url: 'https://scikit-learn.org/stable/user_guide.html' },
-                                { name: 'Kaggle ML Course', url: 'https://www.kaggle.com/learn/intro-to-machine-learning' }
-                            ],
-                            assessment: [
-                                'Can you build a classification pipeline?',
-                                'Can you explain overfitting?',
-                                'Can you save and load models?'
-                            ]
-                        },
-                        {
-                            title: 'Embeddings & Similarity',
-                            duration: 'Week 20-22, 20-25 hours',
-                            topics: [
-                                { text: 'What embeddings are', priority: 'core' },
-                                { text: 'Cosine similarity', priority: 'core' },
-                                { text: 'Euclidean vs cosine', priority: 'high-roi' },
-                                { text: 'When to use embeddings', priority: 'high-roi' }
-                            ],
-                            resources: [
-                                { name: 'Understanding Embeddings', url: 'https://simonwillison.net/2023/Oct/23/embeddings/' }
-                            ],
-                            assessment: [
-                                'Can you explain embeddings simply?',
-                                'Can you compute similarity scores?'
-                            ]
-                        }
-                    ],
-                    milestone: {
-                        title: 'ML-Powered API',
-                        time: '20-25 hours',
-                        description: 'FastAPI service that trains a classifier, serves predictions via REST, includes versioning, confidence scores, validation, logs predictions, has metrics endpoint',
-                        validates: 'scikit-learn, model serving, FastAPI integration'
-                    }
-                },
-                {
-                    id: 'phase5',
-                    title: 'Phase 5: LLM Integration & AI',
-                    duration: '8-10 weeks',
-                    hours: '100-120 hours',
-                    sections: [
-                        {
-                            title:
+</html>
