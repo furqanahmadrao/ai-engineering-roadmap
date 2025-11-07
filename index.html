@@ -358,12 +358,12 @@
             transition: max-height var(--transition-slow), padding var(--transition-slow);
         }
 
-        .phase.expanded .phase-content {
+        details[open] > .phase-content {
             max-height: 5000px; /* Large enough to fit content */
             padding: var(--space-7) var(--space-7);
         }
 
-        .phase.expanded .toggle-icon {
+        details[open] .toggle-icon {
             transform: rotate(180deg);
         }
 
