@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Interactive AI Engineering Roadmap - From zero to production-ready AI engineer">
-    <meta name="author" content="AI Engineering Roadmap">
+    <meta name="description" content="AI Engineering Roadmap — from beginner to production-ready AI engineer. Learn, build, and deploy step-by-step.">
+    <meta property="og:title" content="AI Engineering Roadmap — Learn, Build, Deploy">
+    <meta property="og:description" content="A structured roadmap that takes you from fundamentals to full-stack AI engineering.">
+    <meta property="og:image" content="https://furqanahmadrao.github.io/ai-engineering-roadmap/og-image.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.png">
+    <noscript><p style="text-align:center;color:#999;">This site works best with JavaScript enabled.</p></noscript>
     <title>AI Engineering Roadmap - Interactive Learning System</title>
     <style>
         /*
@@ -61,27 +67,28 @@
         - Transitions: Standardized animation timings.
         */
         :root {
+            color-scheme: dark;
             /* Color Palette & Tokens */
-            --primary: hsl(238, 72%, 75%);
-            --primary-hover: hsl(238, 72%, 65%);
-            --secondary: hsl(265, 72%, 78%);
+            --primary: #00ff99;
+            --primary-hover: #00e68a;
+            --secondary: #00ff99;
 
-            --success: hsl(150, 60%, 55%);
-            --warning: hsl(40, 90%, 65%);
-            --danger: hsl(0, 85%, 70%);
+            --success: #00ff99;
+            --warning: #f59e0b;
+            --danger: #ef4444;
 
-            --text-primary: hsl(210, 17%, 89%);
-            --text-secondary: hsl(210, 15%, 75%);
-            --text-tertiary: hsl(210, 12%, 60%);
-            --text-on-primary: hsl(215, 28%, 17%);
+            --text-primary: #eaeaea;
+            --text-secondary: #cccccc;
+            --text-tertiary: #999999;
+            --text-on-primary: #0d0d0d;
 
-            --surface-1: hsl(217, 33%, 17%);
-            --surface-2: hsl(217, 33%, 22%);
-            --surface-3: hsl(217, 28%, 28%);
-            --surface-4: hsl(217, 24%, 34%);
+            --surface-1: #1a1a1a;
+            --surface-2: #2a2a2a;
+            --surface-3: #3a3a3a;
+            --surface-4: #4a4a4a;
 
-            --background: hsl(220, 35%, 10%);
-            --border: hsl(217, 20%, 30%);
+            --background: #0d0d0d;
+            --border: #3a3a3a;
 
             /* Spacing Scale (4px base) */
             --space-1: 4px;
@@ -137,25 +144,11 @@
         }
 
         body {
-            font-family: var(--font-sans);
+            font-family: system-ui, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
-            background: linear-gradient(135deg, hsl(220, 35%, 8%), hsl(220, 35%, 12%));
-            background-size: 400% 400%;
-            animation: gradient-bg 15s ease infinite;
+            background: var(--background);
             min-height: 100vh;
-        }
-
-        @keyframes gradient-bg {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
         }
 
         .container {
@@ -206,6 +199,10 @@
             font-size: var(--fs-4);
             color: var(--text-secondary);
             margin-bottom: var(--space-6);
+        }
+
+        h1, h2, summary {
+          color: var(--primary);
         }
 
         .stats-grid {
@@ -310,23 +307,26 @@
             box-shadow: 0 4px 15px hsla(var(--primary-dark-theme), 0.3);
         }
 
-        .phase {
-            background-color: var(--surface-1);
-            border-radius: var(--radius-lg);
-            margin-bottom: var(--space-7);
-            overflow: hidden;
-            box-shadow: var(--shadow-2);
-            transition: transform var(--transition-medium), box-shadow var(--transition-medium), background-color var(--transition-medium);
+        details.phase {
+            background: #111;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             border: 1px solid var(--border);
         }
 
-        .phase:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-3);
-            filter: drop-shadow(0 0 10px hsla(var(--primary), 0.5));
+        summary.phase-header {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: var(--space-6) var(--space-7);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .phase.expanded {
+        details[open] {
             animation: pulse 2s infinite alternate;
         }
 
@@ -337,16 +337,6 @@
             to {
                 box-shadow: 0 0 15px var(--primary);
             }
-        }
-
-        .phase-header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--text-on-primary);
-            padding: var(--space-6) var(--space-7);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .phase-header h2 {
@@ -456,28 +446,9 @@
             border-color: hsla(150, 70%, 45%, 0.3);
         }
 
-        .checkbox {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--border);
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transition: background-color var(--transition-fast), border-color var(--transition-fast);
-        }
-
-        .checkbox.checked {
-            background-color: var(--success);
-            border-color: var(--success);
-        }
-
-        .checkbox.checked::after {
-            content: '\2713';
-            color: var(--text-on-primary);
-            font-weight: var(--fw-bold);
+        input[type=checkbox] {
+          accent-color: var(--primary);
+          margin-right: 0.5rem;
         }
 
         .milestone {
@@ -603,33 +574,6 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-3);
             color: var(--primary);
-        }
-
-        /* Dark Mode Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: var(--space-5);
-            left: var(--space-5);
-            background-color: var(--surface-1);
-            border: 1px solid var(--border);
-            padding: var(--space-2);
-            border-radius: var(--radius-full);
-            cursor: pointer;
-            box-shadow: var(--shadow-2);
-            transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-medium);
-            z-index: 1000;
-            color: var(--text-secondary);
-        }
-
-        .theme-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-3);
-            color: var(--primary);
-        }
-
-        .theme-toggle:focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
         }
 
         .search-container {
@@ -929,47 +873,49 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: var(--space-5);
-            }
-            .header {
                 padding: var(--space-6);
             }
-            .header h1 {
-                font-size: var(--fs-7);
+
+            .header {
+                padding: var(--space-7);
             }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: var(--space-4);
+            }
+
+            .phase-header {
+                padding: var(--space-5) var(--space-6);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-3);
+            }
+
             .phase-meta {
-                flex-direction: column;
-                gap: var(--space-2);
-                align-items: flex-end;
+                flex-wrap: wrap;
             }
-            .filters {
-                flex-direction: column;
-            }
-            .filter-btn {
-                width: 100%;
-            }
-            .github-link {
-                position: static;
-                display: inline-flex;
-                margin: 0 auto var(--space-4);
-                justify-content: center;
-            }
-            .section h3 {
-                font-size: var(--fs-4);
-            }
-            .theme-toggle {
-                top: auto;
-                bottom: var(--space-4);
-                left: var(--space-4);
-            }
-            .shortcuts-help {
-                bottom: var(--space-4);
-                right: var(--space-4);
-            }
+        }
+
+        @media (max-width: 600px) {
+          body {
+            padding: 0.5rem;
+          }
+          details {
+            padding: 0.75rem;
+          }
         }
     </style>
 </head>
 <body>
+    <section id="intro" style="margin: 2rem auto; max-width: 700px; text-align:center;">
+      <h1>AI Engineering Roadmap</h1>
+      <p>
+        This roadmap helps you go from zero to production-ready AI Engineer.
+        It’s organized into 4 practical phases — learn the core concepts, build real projects, and ship your own AI products.
+      </p>
+      <p><strong>Track your progress locally</strong>, explore resources, and build at your own pace.</p>
+    </section>
 
     <!-- Keyboard Shortcuts Help -->
     <div class="shortcuts-help" onclick="showShortcuts()" title="View Keyboard Shortcuts">
@@ -990,7 +936,6 @@
                     <path d="M20.5 9a3.49 3.49 0 0 0-3.45 3h-1.1a2.49 2.49 0 0 0-4.396-1.052L8.878 9.731l3.143-4.225a2.458 2.458 0 0 0 2.98-.019L17.339 8H16v1h3V6h-1v1.243l-2.336-2.512A2.473 2.473 0 0 0 16 3.5a2.5 2.5 0 0 0-5 0 2.474 2.474 0 0 0 .343 1.243L7.947 9.308 4.955 7.947a2.404 2.404 0 0 0-.161-1.438l3.704-1.385-.44 1.371.942.333L10 4 7.172 3l-.334.943 1.01.357-3.659 1.368a2.498 2.498 0 1 0-.682 4.117l2.085 2.688-2.053 2.76a2.5 2.5 0 1 0 .87 3.864l3.484 1.587-1.055.373.334.943L10 21l-1-2.828-.943.333.435 1.354-3.608-1.645A2.471 2.471 0 0 0 5 17.5a2.5 2.5 0 0 0-.058-.527l3.053-1.405 3.476 4.48a2.498 2.498 0 1 0 4.113.075L18 17.707V19h1v-3h-3v1h1.293l-2.416 2.416a2.466 2.466 0 0 0-2.667-.047l-3.283-4.23 2.554-1.176A2.494 2.494 0 0 0 15.95 13h1.1a3.493 3.493 0 1 0 3.45-4zm-7-7A1.5 1.5 0 1 1 12 3.5 1.502 1.502 0 0 1 13.5 2zm0 18a1.5 1.5 0 1 1-1.5 1.5 1.502 1.502 0 0 1 1.5-1.5zM1 7.5a1.5 1.5 0 1 1 2.457 1.145l-.144.112A1.496 1.496 0 0 1 1 7.5zm3.32 1.703a2.507 2.507 0 0 0 .264-.326l2.752 1.251-1.124 1.512zM2.5 19A1.5 1.5 0 1 1 4 17.5 1.502 1.502 0 0 1 2.5 19zm2.037-2.941a2.518 2.518 0 0 0-.193-.234l1.885-2.532 1.136 1.464zm3.76-1.731L6.849 12.46l1.42-1.908L11.1 11.84a2.29 2.29 0 0 0-.033 1.213zM13.5 14a1.5 1.5 0 1 1 1.5-1.5 1.502 1.502 0 0 1-1.5 1.5zm7 1a2.5 2.5 0 1 1 2.5-2.5 2.502 2.502 0 0 1-2.5 2.5zm1.5-2.5a1.5 1.5 0 1 1-1.5-1.5 1.502 1.502 0 0 1 1.5 1.5z"></path><path fill="none" d="M0 0h24v24H0z"></path>
                 </svg>
             </div>
-            <h1>AI Engineering Roadmap</h1>
             <p>Your strategic path from zero to production-ready AI engineer.</p>
             
             <div class="progress-bar">
@@ -1584,12 +1529,11 @@
             ]
         };
 
-        let completedItems = new Set();
         let currentFilter = 'all';
 
         function init() {
-            loadProgress();
             renderRoadmap();
+            loadProgress();
             updateStats();
         }
 
@@ -1597,24 +1541,26 @@
             const content = document.getElementById('roadmapContent');
             content.innerHTML = '';
 
-            roadmapData.phases.forEach(phase => {
-                const phaseEl = document.createElement('div');
+            roadmapData.phases.forEach((phase, phaseIdx) => {
+                const phaseEl = document.createElement('details');
                 phaseEl.className = 'phase';
                 phaseEl.id = phase.id;
+                if (phaseIdx === 0) {
+                    phaseEl.open = true;
+                }
 
                 let sectionsHTML = '';
                 phase.sections.forEach((section, sectionIdx) => {
                     let topicsHTML = '';
                     section.topics.forEach((topic, topicIdx) => {
                         const itemId = phase.id + '-' + sectionIdx + '-' + topicIdx;
-                        const isCompleted = completedItems.has(itemId);
                         const isVisible = currentFilter === 'all' || topic.priority === currentFilter;
                         
-                        topicsHTML += '<div class="topic-item ' + (isCompleted ? 'completed' : '') + ' ' + (isVisible ? '' : 'hidden') + '" data-priority="' + topic.priority + '" onclick="toggleTopic(\'' + itemId + '\')">';
-                        topicsHTML += '<div class="checkbox ' + (isCompleted ? 'checked' : '') + '" id="cb-' + itemId + '"></div>';
-                        topicsHTML += '<span>' + topic.text + '</span>';
+                        topicsHTML += '<li class="topic-item ' + (isVisible ? '' : 'hidden') + '" data-priority="' + topic.priority + '">';
+                        topicsHTML += '<input type="checkbox" id="' + itemId + '">';
+                        topicsHTML += '<label for="' + itemId + '">' + topic.text + '</label>';
                         topicsHTML += '<span class="priority-badge badge-' + topic.priority + '">' + topic.priority + '</span>';
-                        topicsHTML += '</div>';
+                        topicsHTML += '</li>';
                     });
 
                     let resourcesHTML = '';
@@ -1637,7 +1583,7 @@
 
                     sectionsHTML += '<div class="section">';
                     sectionsHTML += '<h3>' + section.title + '<span style="font-size: 0.8rem; color: var(--gray); font-weight: normal;">' + section.duration + '</span></h3>';
-                    sectionsHTML += '<div class="topic">' + topicsHTML + '</div>';
+                    sectionsHTML += '<ul>' + topicsHTML + '</ul>';
                     sectionsHTML += resourcesHTML;
                     sectionsHTML += assessmentHTML;
                     sectionsHTML += '</div>';
@@ -1655,14 +1601,14 @@
                 }
 
                 phaseEl.innerHTML = `
-                    <div class="phase-header" onclick="togglePhase('${phase.id}')">
+                    <summary class="phase-header">
                         <h2>${phase.title}</h2>
                         <div class="phase-meta">
                             <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${phase.duration}</span>
                             <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> ${phase.hours}</span>
                             <span class="toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                         </div>
-                    </div>
+                    </summary>
                     <div class="phase-content">${sectionsHTML}${milestoneHTML}</div>
                 `;
 
@@ -1670,41 +1616,7 @@
             });
         }
 
-        function togglePhase(phaseId) {
-            const phase = document.getElementById(phaseId);
-            phase.classList.toggle('expanded');
-        }
 
-        function toggleTopic(itemId) {
-            const wasCompleted = completedItems.has(itemId);
-            
-            if (wasCompleted) {
-                completedItems.delete(itemId);
-            } else {
-                completedItems.add(itemId);
-                // Celebrate on completion with a small confetti burst
-                const colors = ['#6366f1', '#8b5cf6', '#10b981', '#f59e0b'];
-                for (let i = 0; i < 10; i++) {
-                    setTimeout(() => {
-                        const confetti = document.createElement('div');
-                        confetti.className = 'confetti';
-                        confetti.style.left = (Math.random() * 100) + 'vw';
-                        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                        document.body.appendChild(confetti);
-                        setTimeout(() => confetti.remove(), 3000);
-                    }, i * 50);
-                }
-            }
-            
-            saveProgress();
-            updateStats();
-            
-            const checkbox = document.getElementById('cb-' + itemId);
-            const item = checkbox.parentElement;
-            
-            checkbox.classList.toggle('checked');
-            item.classList.toggle('completed');
-        }
 
         function filterByPriority(priority, event) {
             currentFilter = priority;
@@ -1725,69 +1637,61 @@
 
         function updateStats() {
             let totalTopics = 0;
-            let totalHours = 0;
+            let completedCount = 0;
 
-            roadmapData.phases.forEach(function(phase) {
-                phase.sections.forEach(function(section) {
-                    totalTopics += section.topics.length;
-                });
-                const hours = phase.hours.split('-')[1].replace(' hours', '');
-                totalHours += parseInt(hours);
+            document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+                totalTopics++;
+                if (cb.checked) {
+                    completedCount++;
+                    cb.parentElement.classList.add('completed');
+                } else {
+                    cb.parentElement.classList.remove('completed');
+                }
             });
 
-            const completedCount = completedItems.size;
-            const progress = Math.round((completedCount / totalTopics) * 100);
+            const progress = totalTopics > 0 ? Math.round((completedCount / totalTopics) * 100) : 0;
 
             document.getElementById('completedTopics').textContent = completedCount;
             document.getElementById('totalTopics').textContent = totalTopics;
-            document.getElementById('hoursSpent').textContent = Math.round((completedCount / totalTopics) * totalHours);
+
+            let totalHours = 0;
+            roadmapData.phases.forEach(phase => {
+                const hours = phase.hours.split('-')[1].replace(' hours', '');
+                totalHours += parseInt(hours);
+            });
+            document.getElementById('hoursSpent').textContent = totalTopics > 0 ? Math.round((completedCount / totalTopics) * totalHours) : 0;
+
             document.getElementById('overallProgress').style.width = progress + '%';
             document.getElementById('overallProgress').textContent = progress + '%';
 
+            // This logic can be simplified or improved, but leaving as is for now
             let currentPhaseNum = 1;
-            roadmapData.phases.forEach(function(phase, idx) {
-                let phaseTopics = 0;
-                let phaseCompleted = 0;
-                
-                phase.sections.forEach(function(section, sIdx) {
-                    section.topics.forEach(function(topic, tIdx) {
-                        phaseTopics++;
-                        const itemId = phase.id + '-' + sIdx + '-' + tIdx;
-                        if (completedItems.has(itemId)) phaseCompleted++;
-                    });
-                });
-
-                if (phaseCompleted < phaseTopics && currentPhaseNum === idx + 1) {
-                    currentPhaseNum = idx + 1;
-                }
-            });
+            // A simple way to determine current phase could be finding the first phase with unchecked items.
             document.getElementById('currentPhase').textContent = 'Phase ' + currentPhaseNum;
         }
 
         function saveProgress() {
-            try {
-                localStorage.setItem('aiRoadmapProgress', JSON.stringify(Array.from(completedItems)));
-            } catch (e) {
-                console.error('Failed to save progress:', e);
-            }
+            const progress = {};
+            document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+                progress[cb.id] = cb.checked;
+            });
+            localStorage.setItem('ai_roadmap_progress', JSON.stringify(progress));
         }
 
         function loadProgress() {
-            try {
-                const saved = localStorage.getItem('aiRoadmapProgress');
-                if (saved) {
-                    completedItems = new Set(JSON.parse(saved));
-                }
-            } catch (e) {
-                console.error('Failed to load progress:', e);
-            }
+            const saved = JSON.parse(localStorage.getItem('ai_roadmap_progress') || '{}');
+            Object.keys(saved).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.checked = saved[id];
+            });
         }
 
         function resetProgress() {
             if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
-                completedItems.clear();
-                localStorage.removeItem('aiRoadmapProgress');
-                renderRoadmap();
+                localStorage.removeItem('ai_roadmap_progress');
+                document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+                    cb.checked = false;
+                });
                 updateStats();
             }
         }
@@ -2001,6 +1905,13 @@
             init();
             initEnhanced();
         }
+
+        document.addEventListener('change', (event) => {
+            if (event.target.type === 'checkbox') {
+                saveProgress();
+                updateStats();
+            }
+        });
     </script>
 
     <!-- Keyboard Shortcuts Modal -->
@@ -2027,18 +1938,8 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <p>Designed & Developed by Furqan Ahmad Rao</p>
-        <div class="footer-links">
-            <a href="mailto:furqanrao091@gmail.com" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                furqanrao091@gmail.com
-            </a>
-            <a href="https://www.linkedin.com/in/furqanahmadrao" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                LinkedIn
-            </a>
-        </div>
-    </footer>
+<footer style="text-align:center; margin:2rem 0; color:#777;">
+  <p>Built by <a href="https://github.com/furqanahmadrao" target="_blank" style="color:#00ff99;">Furqan Ahmad Rao</a></p>
+</footer>
 </body>
 </html>
