@@ -1,0 +1,1706 @@
+{
+  "version": "2.0.0",
+  "topics": [
+    {
+      "id": "python-programming-for-ai",
+      "title": "Python Programming for AI",
+      "category": "Core",
+      "level": "Beginner",
+      "estimated_hours": 40,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Write clean, efficient, and well-documented Python code",
+        "Use key libraries: NumPy, pandas, Matplotlib, and Scikit-learn effectively for data tasks",
+        "Master python programming for ai concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Python Fundamentals",
+          "url": "#python-fundamentals",
+          "why": "Covers variables, data types, functions, conditionals, loops, and error handling."
+        },
+        {
+          "type": "doc",
+          "title": "Data Structures & Comprehensions",
+          "url": "#data-structures-comprehensions",
+          "why": "Deep dive into lists, tuples, sets, and dictionaries, with a focus on powerful comprehension syntax."
+        }
+      ],
+      "project": {
+        "title": "Data Cleaning & Visualization Project",
+        "deliverables": [
+          "Handles missing values and corrects data types using pandas",
+          "Script runs without errors and outputs 2-3 readable, labeled charts"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "python",
+        "basics",
+        "programming"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "linear-algebra-for-ml",
+      "title": "Linear Algebra for ML",
+      "category": "Core",
+      "level": "Intermediate",
+      "estimated_hours": 40,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Manipulate matrices and vectors efficiently",
+        "Understand how linear algebra underpins ML algorithms",
+        "Master linear algebra for ml concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Vectors and Matrices",
+          "url": "#vectors-and-matrices",
+          "why": "Basic operations, shapes, transposes, and dot products."
+        },
+        {
+          "type": "doc",
+          "title": "Matrix Decompositions",
+          "url": "#matrix-decompositions",
+          "why": "Eigenvalues, eigenvectors, and singular value decomposition (SVD)."
+        }
+      ],
+      "project": {
+        "title": "Linear Regression from Scratch",
+        "deliverables": [
+          "Computes optimal weights using the Normal Equation",
+          "Predicts and plots regression line vs. data"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "math",
+        "ml",
+        "foundation"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "statistics-probability-for-ml",
+      "title": "Statistics & Probability for ML",
+      "category": "Core",
+      "level": "Intermediate",
+      "estimated_hours": 40,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Apply descriptive and inferential statistics to datasets",
+        "Model uncertainty using probability theory and distributions like Gaussian",
+        "Understand concepts like conditional probability and Bayes' theorem"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Descriptive Statistics",
+          "url": "#descriptive-statistics",
+          "why": "Measures of central tendency (mean, median, mode) and dispersion (variance, standard deviation)."
+        },
+        {
+          "type": "doc",
+          "title": "Probability Theory",
+          "url": "#probability-theory",
+          "why": "Events, sample spaces, conditional probability, and Bayes' theorem."
+        }
+      ],
+      "project": {
+        "title": "Exploratory Data Analysis (EDA)",
+        "deliverables": [
+          "Generates a report with key statistical findings and visualizations",
+          "Uses hypothesis testing to validate an assumption about the data"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "statistics",
+        "math",
+        "data",
+        "foundation"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "calculus-for-ml",
+      "title": "Calculus for ML",
+      "category": "Core",
+      "level": "Intermediate",
+      "estimated_hours": 30,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Understand how derivatives represent rates of change",
+        "Grasp the concept of gradients and their role in optimization",
+        "Follow the chain rule for backpropagation"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Derivatives and Rules",
+          "url": "#derivatives-and-rules",
+          "why": "Calculating derivatives of common functions and applying rules like the product and quotient rule."
+        },
+        {
+          "type": "doc",
+          "title": "Gradients in Multiple Dimensions",
+          "url": "#gradients-in-multiple-dimensions",
+          "why": "Partial derivatives, gradients of multivariable functions, and the Jacobian matrix."
+        }
+      ],
+      "project": {
+        "title": "Gradient Descent from Scratch",
+        "deliverables": [
+          "Code correctly calculates gradients and updates parameters",
+          "Visualizes the optimization path on a contour plot"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "math",
+        "calculus",
+        "optimization",
+        "foundation"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "git-version-control",
+      "title": "Git & Version Control",
+      "category": "Core",
+      "level": "Beginner",
+      "estimated_hours": 15,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Manage code versions, branches, and merges effectively",
+        "Collaborate with others on a shared codebase using platforms like GitHub",
+        "Master git & version control concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Core Git Concepts",
+          "url": "#core-git-concepts",
+          "why": "The staging area, commits, and viewing history. Understanding `git add`, `git commit`, `git log`."
+        },
+        {
+          "type": "doc",
+          "title": "Branching and Merging",
+          "url": "#branching-and-merging",
+          "why": "Creating feature branches, switching between them, and merging changes back into the main branch."
+        }
+      ],
+      "project": {
+        "title": "Collaborative Project Simulation",
+        "deliverables": [
+          "Pull request is cleanly mergeable",
+          "Commit history on the feature branch is clear and descriptive"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "tools",
+        "git",
+        "collaboration",
+        "basics"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "shell-command-line-basics",
+      "title": "Shell & Command-Line Basics",
+      "category": "Core",
+      "level": "Beginner",
+      "estimated_hours": 10,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Navigate and manage the filesystem from the command line",
+        "Use common shell commands and pipe outputs for powerful workflows",
+        "Master shell & command-line basics concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Filesystem Navigation",
+          "url": "#filesystem-navigation",
+          "why": "Essential commands like `ls`, `cd`, `pwd`, `mkdir`, `rm`, `cp`, and `mv`."
+        },
+        {
+          "type": "doc",
+          "title": "Text Processing Tools",
+          "url": "#text-processing-tools",
+          "why": "Using `cat`, `grep`, `sed`, and `awk` to search and manipulate text files."
+        }
+      ],
+      "project": {
+        "title": "Simple Log Analysis Script",
+        "deliverables": [
+          "Script is executable and takes a filename as an argument",
+          "Correctly outputs the total count of lines containing 'ERROR'"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "tools",
+        "cli",
+        "shell",
+        "basics"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "machine-learning-foundations",
+      "title": "Machine Learning Foundations",
+      "category": "Optional",
+      "level": "Intermediate",
+      "estimated_hours": 60,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Build, train, and evaluate classical ML models using Scikit-learn",
+        "Understand the bias-variance tradeoff and how to prevent overfitting",
+        "Select appropriate algorithms for regression, classification, and clustering tasks"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Supervised Learning",
+          "url": "#supervised-learning",
+          "why": "Linear/Logistic Regression, K-Nearest Neighbors (KNN), Support Vector Machines (SVMs), Decision Trees, and Random Forests."
+        },
+        {
+          "type": "doc",
+          "title": "Unsupervised Learning",
+          "url": "#unsupervised-learning",
+          "why": "Clustering algorithms (K-Means), dimensionality reduction (PCA), and anomaly detection."
+        }
+      ],
+      "project": {
+        "title": "End-to-End Classification Project",
+        "deliverables": [
+          "Compares at least three different classification algorithms",
+          "Uses cross-validation to report a robust performance metric"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "ml",
+        "supervised",
+        "unsupervised",
+        "scikit-learn"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "deep-learning-fundamentals",
+      "title": "Deep Learning Fundamentals",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 80,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Design, train, and optimize deep learning models using a framework like TensorFlow or PyTorch",
+        "Understand the role of activation functions, optimizers, and loss functions",
+        "Implement common architectures like CNNs for images and RNNs for sequences"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Neural Networks & Backpropagation",
+          "url": "#neural-networks-backpropagation",
+          "why": "The structure of a neuron, layers, forward propagation, and the backpropagation algorithm."
+        },
+        {
+          "type": "doc",
+          "title": "DL Frameworks (TensorFlow/PyTorch)",
+          "url": "#dl-frameworks-tensorflowpytorch",
+          "why": "Using high-level APIs like Keras or PyTorch to build and train models efficiently."
+        }
+      ],
+      "project": {
+        "title": "Image Classifier for Custom Dataset",
+        "deliverables": [
+          "Achieves a reasonable accuracy (>85%) on a validation set",
+          "Demonstrates use of transfer learning from a pre-trained model like ResNet"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "dl",
+        "neural-networks",
+        "pytorch",
+        "tensorflow",
+        "ai"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "sql-and-data-management",
+      "title": "SQL and Data Management",
+      "category": "Optional",
+      "level": "Intermediate",
+      "estimated_hours": 30,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Write complex SQL queries to extract and aggregate data",
+        "Understand database design concepts like normalization",
+        "Master sql and data management concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "SQL Querying",
+          "url": "#sql-querying",
+          "why": "SELECT statements, WHERE clauses, JOINs (INNER, LEFT), GROUP BY, and aggregations."
+        },
+        {
+          "type": "doc",
+          "title": "Advanced SQL",
+          "url": "#advanced-sql",
+          "why": "Subqueries, window functions, and Common Table Expressions (CTEs)."
+        }
+      ],
+      "project": {
+        "title": "Data Analysis via SQL",
+        "deliverables": [
+          "Queries correctly use JOINs and aggregate functions",
+          "Produces a short report summarizing the insights found in the data"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "sql",
+        "data",
+        "database"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "data-engineering-foundations",
+      "title": "Data Engineering Foundations",
+      "category": "Optional",
+      "level": "Intermediate",
+      "estimated_hours": 50,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Understand ETL/ELT concepts and design data pipelines",
+        "Work with different data storage solutions (data warehouses, data lakes)",
+        "Master data engineering foundations concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "ETL/ELT Pipelines",
+          "url": "#etlelt-pipelines",
+          "why": "The concepts of Extract, Transform, Load (ETL) and how to build data pipelines."
+        },
+        {
+          "type": "doc",
+          "title": "Data Warehousing and Data Lakes",
+          "url": "#data-warehousing-and-data-lakes",
+          "why": "Understanding the differences and use cases for structured data warehouses (e.g., BigQuery, Snowflake) and unstructured data lakes (e.g., S3)."
+        }
+      ],
+      "project": {
+        "title": "Build a Mini ETL Pipeline",
+        "deliverables": [
+          "Pipeline runs end-to-end without manual intervention",
+          "Data in the final database is clean and correctly formatted"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "data-engineering",
+        "pipelines",
+        "etl"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "cloud-computing-fundamentals",
+      "title": "Cloud Computing Fundamentals",
+      "category": "Optional",
+      "level": "Beginner",
+      "estimated_hours": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Differentiate between IaaS, PaaS, and SaaS",
+        "Identify core cloud services for compute, storage, and networking",
+        "Master cloud computing fundamentals concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Core Cloud Concepts",
+          "url": "#core-cloud-concepts",
+          "why": "Virtualization, scalability, elasticity, and the pay-as-you-go model."
+        },
+        {
+          "type": "doc",
+          "title": "Core Services: Compute & Storage",
+          "url": "#core-services-compute-storage",
+          "why": "Understanding virtual machines (EC2, Compute Engine), object storage (S3, GCS), and block storage."
+        }
+      ],
+      "project": {
+        "title": "Deploy a Web Server on a Cloud VM",
+        "deliverables": [
+          "Web server is accessible from the public internet",
+          "Security groups/firewall rules are configured to only allow necessary traffic"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "cloud",
+        "aws",
+        "gcp",
+        "azure",
+        "infrastructure"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "working-with-apis-for-ml",
+      "title": "Working with APIs for ML",
+      "category": "Optional",
+      "level": "Intermediate",
+      "estimated_hours": 25,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Fetch data from third-party REST APIs",
+        "Build a simple API endpoint to serve a model prediction",
+        "Master working with apis for ml concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Consuming REST APIs",
+          "url": "#consuming-rest-apis",
+          "why": "HTTP methods (GET, POST), status codes, and JSON data handling using Python's `requests` library."
+        },
+        {
+          "type": "doc",
+          "title": "Building APIs with Flask/FastAPI",
+          "url": "#building-apis-with-flaskfastapi",
+          "why": "Creating simple web servers and API endpoints to expose functionality over HTTP."
+        }
+      ],
+      "project": {
+        "title": "Build a Model Serving API",
+        "deliverables": [
+          "API endpoint successfully returns a JSON prediction when called",
+          "Includes basic input validation"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "api",
+        "deployment",
+        "fastapi",
+        "flask"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "natural-language-processing",
+      "title": "Natural Language Processing",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 60,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Implement text preprocessing and vectorization techniques",
+        "Understand and apply transformer architectures (e.g., BERT, GPT)",
+        "Fine-tune pre-trained language models for specific tasks"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Text Processing & Embeddings",
+          "url": "#text-processing-embeddings",
+          "why": "Tokenization, stemming, lemmatization, and classic vectorization methods like TF-IDF and Word2Vec."
+        },
+        {
+          "type": "doc",
+          "title": "Transformers and Attention",
+          "url": "#transformers-and-attention",
+          "why": "The self-attention mechanism and the encoder-decoder architecture of the transformer model."
+        }
+      ],
+      "project": {
+        "title": "Fine-Tune a Sentiment Classifier",
+        "deliverables": [
+          "Achieves high accuracy (>90%) on the test set",
+          "Code is well-structured and includes evaluation metrics"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "nlp",
+        "transformers",
+        "huggingface",
+        "llm"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "computer-vision",
+      "title": "Computer Vision",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 60,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Build and train advanced CNN-based models",
+        "Implement object detection and image segmentation techniques",
+        "Leverage transfer learning for vision tasks effectively"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Advanced CNN Architectures",
+          "url": "#advanced-cnn-architectures",
+          "why": "Studying influential architectures like ResNet, Inception, and EfficientNet."
+        },
+        {
+          "type": "doc",
+          "title": "Object Detection",
+          "url": "#object-detection",
+          "why": "Algorithms like YOLO and Faster R-CNN for identifying and localizing objects in an image."
+        }
+      ],
+      "project": {
+        "title": "Custom Object Detection",
+        "deliverables": [
+          "Model correctly draws bounding boxes around the target object in test images",
+          "Includes a process for annotating a small custom dataset"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "cv",
+        "image",
+        "cnn",
+        "object-detection"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "reinforcement-learning-rl",
+      "title": "Reinforcement Learning (RL)",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 50,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Understand the core components of an RL problem (agent, environment, state, action, reward)",
+        "Implement foundational RL algorithms like Q-Learning",
+        "Master reinforcement learning (rl) concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "RL Fundamentals",
+          "url": "#rl-fundamentals",
+          "why": "Markov Decision Processes (MDPs), value functions, and policy functions."
+        },
+        {
+          "type": "doc",
+          "title": "Q-Learning and Value-Based Methods",
+          "url": "#q-learning-and-value-based-methods",
+          "why": "Temporal difference learning and the Q-learning algorithm for discrete action spaces."
+        }
+      ],
+      "project": {
+        "title": "Train an Agent for a Gym Environment",
+        "deliverables": [
+          "Agent consistently achieves the target score for the environment",
+          "Visualizes the agent's performance during and after training"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "rl",
+        "reinforcement-learning",
+        "ai"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "time-series-analysis-forecasting",
+      "title": "Time Series Analysis & Forecasting",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 40,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Decompose time series data into trend, seasonality, and residuals",
+        "Apply classical forecasting models like ARIMA",
+        "Use deep learning models like LSTMs for forecasting"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Time Series Decomposition",
+          "url": "#time-series-decomposition",
+          "why": "Identifying and analyzing trend, seasonality, and cyclical components."
+        },
+        {
+          "type": "doc",
+          "title": "Statistical Forecasting Models",
+          "url": "#statistical-forecasting-models",
+          "why": "Models like ARIMA for forecasting based on statistical properties of the series."
+        }
+      ],
+      "project": {
+        "title": "Stock Price or Weather Forecasting",
+        "deliverables": [
+          "Implements both an ARIMA and an LSTM model",
+          "Evaluates forecasts using metrics like Mean Absolute Error (MAE)"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "time-series",
+        "forecasting",
+        "statistics",
+        "lstm"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "recommender-systems",
+      "title": "Recommender Systems",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 40,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Understand and implement collaborative filtering",
+        "Build content-based recommendation models",
+        "Master recommender systems concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Collaborative Filtering",
+          "url": "#collaborative-filtering",
+          "why": "User-based and item-based collaborative filtering techniques, including matrix factorization."
+        },
+        {
+          "type": "doc",
+          "title": "Content-Based Filtering",
+          "url": "#content-based-filtering",
+          "why": "Recommending items based on their attributes and a user's profile."
+        }
+      ],
+      "project": {
+        "title": "Build a Movie Recommender",
+        "deliverables": [
+          "System can generate a list of top N recommendations for a given user ID",
+          "Includes an evaluation of the recommender's performance"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "recsys",
+        "recommender-systems",
+        "ml"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "generative-ai-llms",
+      "title": "Generative AI & LLMs",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 50,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Understand the architecture of modern LLMs like GPT",
+        "Learn techniques for prompting and fine-tuning LLMs",
+        "Grasp the basics of diffusion models for image generation"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "LLM Architecture and Training",
+          "url": "#llm-architecture-and-training",
+          "why": "The transformer decoder, pre-training objectives, and instruction tuning."
+        },
+        {
+          "type": "doc",
+          "title": "Prompt Engineering and RAG",
+          "url": "#prompt-engineering-and-rag",
+          "why": "Few-shot prompting, chain-of-thought, and Retrieval-Augmented Generation (RAG) to enhance LLM performance."
+        }
+      ],
+      "project": {
+        "title": "Build a Q&A Bot with RAG",
+        "deliverables": [
+          "Application can answer questions based on the content of the provided document",
+          "Uses a vector store for efficient document retrieval"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "genai",
+        "llm",
+        "rag",
+        "generative-ai"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "mlops-principles-lifecycle",
+      "title": "MLOps Principles & Lifecycle",
+      "category": "Optional",
+      "level": "Intermediate",
+      "estimated_hours": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Map the end-to-end ML lifecycle from data to production",
+        "Understand the key pillars of MLOps: automation, reproducibility, and monitoring",
+        "Master mlops principles & lifecycle concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "The ML Lifecycle",
+          "url": "#the-ml-lifecycle",
+          "why": "The stages of an ML project: data collection, feature engineering, training, evaluation, deployment, and monitoring."
+        },
+        {
+          "type": "doc",
+          "title": "Reproducibility in ML",
+          "url": "#reproducibility-in-ml",
+          "why": "Techniques for ensuring reproducible results, including experiment tracking, data versioning, and environment management."
+        }
+      ],
+      "project": {
+        "title": "Experiment Tracking with MLflow",
+        "deliverables": [
+          "MLflow UI shows multiple runs with logged metrics",
+          "Can load the best performing model artifact from MLflow"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "mlops",
+        "lifecycle",
+        "reproducibility"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "containerization-with-docker",
+      "title": "Containerization with Docker",
+      "category": "Optional",
+      "level": "Intermediate",
+      "estimated_hours": 25,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Write a Dockerfile to containerize an ML application",
+        "Manage Docker containers and images",
+        "Master containerization with docker concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Docker Fundamentals",
+          "url": "#docker-fundamentals",
+          "why": "Images, containers, and the difference between them. The Docker daemon and client."
+        },
+        {
+          "type": "doc",
+          "title": "Writing a Dockerfile",
+          "url": "#writing-a-dockerfile",
+          "why": "Instructions like `FROM`, `RUN`, `COPY`, and `CMD` to define a custom image."
+        }
+      ],
+      "project": {
+        "title": "Dockerize a Model Serving API",
+        "deliverables": [
+          "The container runs successfully",
+          "Can send a request to the API running inside the container and get a prediction back"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "docker",
+        "containerization",
+        "mlops",
+        "deployment"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "cicd-for-machine-learning",
+      "title": "CI/CD for Machine Learning",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 40,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Design a CI/CD pipeline for an ML project",
+        "Use GitHub Actions or Jenkins to automate ML workflows",
+        "Master ci/cd for machine learning concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Continuous Integration (CI)",
+          "url": "#continuous-integration-ci",
+          "why": "Automating code linting, unit tests, and data validation every time code is committed."
+        },
+        {
+          "type": "doc",
+          "title": "Continuous Delivery/Deployment (CD)",
+          "url": "#continuous-deliverydeployment-cd",
+          "why": "Automating the deployment of a model or an entire ML pipeline to a staging or production environment."
+        }
+      ],
+      "project": {
+        "title": "Build a CI/CD Pipeline with GitHub Actions",
+        "deliverables": [
+          "Workflow triggers and runs successfully on GitHub",
+          "The new Docker image is visible in the container registry after a push"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "cicd",
+        "github-actions",
+        "mlops",
+        "automation"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "model-deployment-serving",
+      "title": "Model Deployment & Serving",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 50,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Understand different model deployment patterns (e.g., online, batch)",
+        "Deploy a model to a cloud service for real-time inference",
+        "Master model deployment & serving concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Deployment Patterns",
+          "url": "#deployment-patterns",
+          "why": "Batch prediction vs. online (real-time) prediction. Deploying as a service vs. embedding in an application."
+        },
+        {
+          "type": "doc",
+          "title": "Serverless Deployment",
+          "url": "#serverless-deployment",
+          "why": "Using cloud functions (AWS Lambda, Google Cloud Functions) to deploy models without managing servers."
+        }
+      ],
+      "project": {
+        "title": "Deploy a Model to a Cloud Platform",
+        "deliverables": [
+          "Model is deployed and accessible via a public URL",
+          "The endpoint can successfully serve predictions"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "deployment",
+        "mlops",
+        "kubernetes",
+        "serverless"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "model-monitoring-observability",
+      "title": "Model Monitoring & Observability",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 40,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Understand the types of ML-specific monitoring (data drift, concept drift)",
+        "Implement logging and monitoring for a deployed model",
+        "Master model monitoring & observability concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Data and Concept Drift",
+          "url": "#data-and-concept-drift",
+          "why": "Understanding how changes in input data distribution (data drift) or the relationship between inputs and outputs (concept drift) can degrade model performance."
+        },
+        {
+          "type": "doc",
+          "title": "Monitoring ML Metrics",
+          "url": "#monitoring-ml-metrics",
+          "why": "Tracking model accuracy, prediction latency, and data statistics over time."
+        }
+      ],
+      "project": {
+        "title": "Drift Detection Proof-of-Concept",
+        "deliverables": [
+          "Script correctly identifies when the distribution of a feature has changed",
+          "Triggers an alert (e.g., a print statement) when drift is detected"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "monitoring",
+        "mlops",
+        "observability",
+        "drift"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "ml-system-design-architecture",
+      "title": "ML System Design & Architecture",
+      "category": "Optional",
+      "level": "Advanced",
+      "estimated_hours": 40,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Apply system design principles to ML problems",
+        "Design architecture for common ML applications (e.g., recommender systems, search)",
+        "Master ml system design & architecture concepts and applications"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Scalability and Reliability",
+          "url": "#scalability-and-reliability",
+          "why": "Designing systems that can handle growing load and are resilient to failures."
+        },
+        {
+          "type": "doc",
+          "title": "Data-Intensive Architectures",
+          "url": "#data-intensive-architectures",
+          "why": "Lambda and Kappa architectures for processing both batch and streaming data."
+        }
+      ],
+      "project": {
+        "title": "Write an ML System Design Document",
+        "deliverables": [
+          "Document includes a clear architecture diagram",
+          "Considers trade-offs between different design choices (e.g., latency vs. cost)"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "system-design",
+        "architecture",
+        "mlops"
+      ],
+      "role_mapping": {},
+      "notes": ""
+    },
+    {
+      "id": "data-engineering-basics",
+      "title": "Data Engineering Fundamentals",
+      "category": "High ROI",
+      "level": "Intermediate",
+      "estimated_hours": 35,
+      "prerequisites": [
+        "python-programming-for-ai"
+      ],
+      "learning_objectives": [
+        "Design and implement ETL pipelines for ML data preparation",
+        "Work with SQL and NoSQL databases effectively",
+        "Handle large-scale data processing with distributed systems"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "Data Engineering on Google Cloud",
+          "url": "https://www.coursera.org/professional-certificates/gcp-data-engineering",
+          "why": "Comprehensive cloud data engineering coverage"
+        },
+        {
+          "type": "doc",
+          "title": "Apache Spark Documentation",
+          "url": "https://spark.apache.org/docs/latest/",
+          "why": "Industry-standard distributed processing framework"
+        }
+      ],
+      "project": {
+        "title": "Scalable Data Pipeline",
+        "deliverables": [
+          "ETL pipeline code",
+          "Data quality tests",
+          "Performance benchmarks"
+        ],
+        "rubric": {
+          "functionality": 15,
+          "reproducibility": 10,
+          "tests": 10,
+          "writeup": 5
+        }
+      },
+      "tags": [
+        "data-engineering",
+        "etl",
+        "sql",
+        "spark"
+      ],
+      "role_mapping": {
+        "ML Engineer": [
+          "Critical for data preprocessing"
+        ],
+        "MLOps Engineer": [
+          "Required for data infrastructure"
+        ],
+        "NLP Engineer": [
+          "Important for text data pipelines"
+        ]
+      },
+      "notes": "Can start with local tools (SQLite, pandas). Cloud tools have free tiers."
+    },
+    {
+      "id": "computer-vision-basics",
+      "title": "Computer Vision Fundamentals",
+      "category": "Advanced",
+      "level": "Advanced",
+      "estimated_hours": 50,
+      "prerequisites": [
+        "deep-learning-fundamentals"
+      ],
+      "learning_objectives": [
+        "Implement CNNs for image classification and object detection",
+        "Apply transfer learning with pre-trained models",
+        "Build and evaluate computer vision systems"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "CS231n: Convolutional Neural Networks",
+          "url": "https://cs231n.github.io/",
+          "why": "Stanford course - gold standard for CV"
+        },
+        {
+          "type": "course",
+          "title": "Fast.ai Practical Deep Learning Part 1",
+          "url": "https://course.fast.ai/",
+          "why": "Hands-on approach with state-of-the-art techniques"
+        }
+      ],
+      "project": {
+        "title": "Object Detection System",
+        "deliverables": [
+          "Trained detection model",
+          "Real-time inference demo",
+          "Performance analysis"
+        ],
+        "rubric": {
+          "functionality": 20,
+          "reproducibility": 12,
+          "tests": 8,
+          "writeup": 10
+        }
+      },
+      "tags": [
+        "computer-vision",
+        "cnn",
+        "object-detection"
+      ],
+      "role_mapping": {
+        "ML Engineer": [
+          "Specialized skill for CV applications"
+        ]
+      },
+      "notes": "GPU required. Use free Colab or Kaggle kernels."
+    },
+    {
+      "id": "nlp-fundamentals",
+      "title": "NLP Fundamentals",
+      "category": "High ROI",
+      "level": "Intermediate",
+      "estimated_hours": 45,
+      "prerequisites": [
+        "deep-learning-fundamentals"
+      ],
+      "learning_objectives": [
+        "Implement text preprocessing and tokenization pipelines",
+        "Build text classification models using RNNs and word embeddings",
+        "Apply sequence-to-sequence models for NLP tasks"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "CS224n: Natural Language Processing with Deep Learning",
+          "url": "https://web.stanford.edu/class/cs224n/",
+          "why": "Stanford NLP course with excellent lectures"
+        },
+        {
+          "type": "book",
+          "title": "Speech and Language Processing",
+          "url": "https://web.stanford.edu/~jurafsky/slp3/",
+          "why": "Comprehensive NLP textbook"
+        }
+      ],
+      "project": {
+        "title": "Text Classification System",
+        "deliverables": [
+          "Trained classifier",
+          "Preprocessing pipeline",
+          "Evaluation report"
+        ],
+        "rubric": {
+          "functionality": 18,
+          "reproducibility": 12,
+          "tests": 8,
+          "writeup": 10
+        }
+      },
+      "tags": [
+        "nlp",
+        "text-processing",
+        "classification"
+      ],
+      "role_mapping": {
+        "NLP Engineer": [
+          "Core competency"
+        ],
+        "ML Engineer": [
+          "Important for text-based applications"
+        ]
+      },
+      "notes": "Start with CPU-based methods. GPU helpful but not required initially."
+    },
+    {
+      "id": "reinforcement-learning",
+      "title": "Reinforcement Learning Basics",
+      "category": "Advanced",
+      "level": "Advanced",
+      "estimated_hours": 55,
+      "prerequisites": [
+        "deep-learning-fundamentals"
+      ],
+      "learning_objectives": [
+        "Implement Q-learning and policy gradient algorithms",
+        "Train agents in simulated environments",
+        "Apply RL to real-world decision-making problems"
+      ],
+      "resources": [
+        {
+          "type": "book",
+          "title": "Reinforcement Learning: An Introduction",
+          "url": "http://incompleteideas.net/book/the-book-2nd.html",
+          "why": "Classic RL textbook by Sutton and Barto"
+        },
+        {
+          "type": "course",
+          "title": "Deep Reinforcement Learning",
+          "url": "https://spinningup.openai.com/",
+          "why": "OpenAI practical guide to deep RL"
+        }
+      ],
+      "project": {
+        "title": "RL Agent for Game Playing",
+        "deliverables": [
+          "Trained agent",
+          "Training visualizations",
+          "Performance comparison"
+        ],
+        "rubric": {
+          "functionality": 20,
+          "reproducibility": 12,
+          "tests": 8,
+          "writeup": 10
+        }
+      },
+      "tags": [
+        "reinforcement-learning",
+        "rl",
+        "agents"
+      ],
+      "role_mapping": {
+        "ML Engineer": [
+          "Specialized skill for RL applications"
+        ]
+      },
+      "notes": "Computationally intensive. Start with simple environments (CartPole, etc.)"
+    },
+    {
+      "id": "model-interpretability",
+      "title": "ML Model Interpretability",
+      "category": "MLOps",
+      "level": "Intermediate",
+      "estimated_hours": 30,
+      "prerequisites": [
+        "machine-learning-foundations"
+      ],
+      "learning_objectives": [
+        "Apply SHAP and LIME for model explanation",
+        "Implement feature importance analysis",
+        "Create interpretable model visualizations"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "SHAP Documentation",
+          "url": "https://shap.readthedocs.io/",
+          "why": "Industry-standard explainability library"
+        },
+        {
+          "type": "book",
+          "title": "Interpretable Machine Learning",
+          "url": "https://christophm.github.io/interpretable-ml-book/",
+          "why": "Comprehensive guide to model interpretability"
+        }
+      ],
+      "project": {
+        "title": "Model Explainability Dashboard",
+        "deliverables": [
+          "SHAP value analysis",
+          "Interactive dashboard",
+          "Interpretation guide"
+        ],
+        "rubric": {
+          "functionality": 15,
+          "reproducibility": 10,
+          "tests": 8,
+          "writeup": 12
+        }
+      },
+      "tags": [
+        "interpretability",
+        "explainability",
+        "shap"
+      ],
+      "role_mapping": {
+        "ML Engineer": [
+          "Important for production models"
+        ],
+        "MLOps Engineer": [
+          "Critical for model governance"
+        ],
+        "NLP Engineer": [
+          "Required for regulated applications"
+        ]
+      },
+      "notes": "Most tools are free and open-source."
+    },
+    {
+      "id": "feature-engineering",
+      "title": "Feature Engineering & Selection",
+      "category": "High ROI",
+      "level": "Intermediate",
+      "estimated_hours": 35,
+      "prerequisites": [
+        "machine-learning-foundations"
+      ],
+      "learning_objectives": [
+        "Design and engineer features from raw data",
+        "Apply dimensionality reduction techniques",
+        "Implement automated feature selection methods"
+      ],
+      "resources": [
+        {
+          "type": "book",
+          "title": "Feature Engineering for Machine Learning",
+          "url": "https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/",
+          "why": "Comprehensive guide to feature engineering"
+        },
+        {
+          "type": "course",
+          "title": "Feature Engineering on Kaggle",
+          "url": "https://www.kaggle.com/learn/feature-engineering",
+          "why": "Practical hands-on course"
+        }
+      ],
+      "project": {
+        "title": "Feature Engineering Pipeline",
+        "deliverables": [
+          "Automated feature extraction",
+          "Feature importance analysis",
+          "Performance comparison"
+        ],
+        "rubric": {
+          "functionality": 15,
+          "reproducibility": 12,
+          "tests": 8,
+          "writeup": 10
+        }
+      },
+      "tags": [
+        "feature-engineering",
+        "preprocessing",
+        "dimensionality-reduction"
+      ],
+      "role_mapping": {
+        "ML Engineer": [
+          "Core skill for model improvement"
+        ],
+        "NLP Engineer": [
+          "Important for text features"
+        ],
+        "MLOps Engineer": [
+          "Helpful for pipeline optimization"
+        ]
+      },
+      "notes": "CPU-based work. No special compute requirements."
+    }
+  ],
+  "capstones": [
+    {
+      "id": "nlp-capstone-placeholder",
+      "title": "NLP Engineering Capstone",
+      "role": "NLP Engineer",
+      "description": "Build a production-grade NLP system demonstrating mastery of natural language processing techniques.",
+      "estimated_hours": 100,
+      "prerequisites": [],
+      "deliverables": [
+        "Complete system",
+        "Documentation",
+        "Deployment"
+      ],
+      "rubric": {
+        "functionality": 30,
+        "reproducibility": 20,
+        "tests": 15,
+        "writeup": 10
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "#"
+      }
+    },
+    {
+      "id": "mlops-capstone-placeholder",
+      "title": "MLOps Engineering Capstone",
+      "role": "MLOps Engineer",
+      "description": "Build a complete ML deployment pipeline demonstrating MLOps best practices.",
+      "estimated_hours": 100,
+      "prerequisites": [],
+      "deliverables": [
+        "CI/CD pipeline",
+        "Monitoring system",
+        "Documentation"
+      ],
+      "rubric": {
+        "functionality": 30,
+        "reproducibility": 20,
+        "tests": 15,
+        "writeup": 10
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "#"
+      }
+    },
+    {
+      "id": "ml-capstone-placeholder",
+      "title": "ML Engineering Capstone",
+      "role": "ML Engineer",
+      "description": "Build an end-to-end ML system from data collection to model deployment.",
+      "estimated_hours": 100,
+      "prerequisites": [],
+      "deliverables": [
+        "Trained model",
+        "API endpoint",
+        "Documentation"
+      ],
+      "rubric": {
+        "functionality": 30,
+        "reproducibility": 20,
+        "tests": 15,
+        "writeup": 10
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "#"
+      }
+    },
+    {
+      "id": "nlp-capstone-1",
+      "title": "NLP Engineering Capstone Project 1",
+      "role": "NLP Engineer",
+      "description": "Advanced NLP project demonstrating specialized skills in natural language processing and understanding.",
+      "estimated_hours": 90,
+      "prerequisites": [],
+      "deliverables": [
+        "System implementation",
+        "Technical documentation",
+        "Performance analysis"
+      ],
+      "rubric": {
+        "functionality": 25,
+        "reproducibility": 15,
+        "tests": 10,
+        "writeup": 10
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "#"
+      }
+    },
+    {
+      "id": "mlops-capstone-1",
+      "title": "MLOps Engineering Capstone Project 1",
+      "role": "MLOps Engineer",
+      "description": "Advanced MLOps project demonstrating specialized skills in production ML systems.",
+      "estimated_hours": 90,
+      "prerequisites": [],
+      "deliverables": [
+        "Infrastructure code",
+        "Monitoring dashboards",
+        "Deployment guide"
+      ],
+      "rubric": {
+        "functionality": 25,
+        "reproducibility": 15,
+        "tests": 10,
+        "writeup": 10
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "#"
+      }
+    },
+    {
+      "id": "ml-capstone-1",
+      "title": "ML Engineering Capstone Project 1",
+      "role": "ML Engineer",
+      "description": "Advanced ML project demonstrating specialized machine learning engineering skills.",
+      "estimated_hours": 90,
+      "prerequisites": [],
+      "deliverables": [
+        "Model artifacts",
+        "API service",
+        "Evaluation report"
+      ],
+      "rubric": {
+        "functionality": 25,
+        "reproducibility": 15,
+        "tests": 10,
+        "writeup": 10
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "#"
+      }
+    },
+    {
+      "id": "nlp-capstone-2",
+      "title": "NLP Engineering Capstone Project 2",
+      "role": "NLP Engineer",
+      "description": "Advanced NLP project demonstrating specialized skills in natural language processing and understanding.",
+      "estimated_hours": 100,
+      "prerequisites": [],
+      "deliverables": [
+        "System implementation",
+        "Technical documentation",
+        "Performance analysis"
+      ],
+      "rubric": {
+        "functionality": 25,
+        "reproducibility": 15,
+        "tests": 10,
+        "writeup": 10
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "#"
+      }
+    },
+    {
+      "id": "mlops-capstone-2",
+      "title": "MLOps Engineering Capstone Project 2",
+      "role": "MLOps Engineer",
+      "description": "Advanced MLOps project demonstrating specialized skills in production ML systems.",
+      "estimated_hours": 100,
+      "prerequisites": [],
+      "deliverables": [
+        "Infrastructure code",
+        "Monitoring dashboards",
+        "Deployment guide"
+      ],
+      "rubric": {
+        "functionality": 25,
+        "reproducibility": 15,
+        "tests": 10,
+        "writeup": 10
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "#"
+      }
+    },
+    {
+      "id": "ml-capstone-2",
+      "title": "ML Engineering Capstone Project 2",
+      "role": "ML Engineer",
+      "description": "Advanced ML project demonstrating specialized machine learning engineering skills.",
+      "estimated_hours": 100,
+      "prerequisites": [],
+      "deliverables": [
+        "Model artifacts",
+        "API service",
+        "Evaluation report"
+      ],
+      "rubric": {
+        "functionality": 25,
+        "reproducibility": 15,
+        "tests": 10,
+        "writeup": 10
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "#"
+      }
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive AI Engineering Roadmap - From foundational skills to advanced LLM engineering and MLOps. Production-ready curriculum with hands-on projects.">
+    <meta name="keywords" content="AI, machine learning, deep learning, LLM, MLOps, NLP, roadmap, curriculum">
+    <meta name="author" content="AI Engineering Roadmap">
+    <title>AI Engineering Roadmap - Production-Ready Curriculum</title>
+    
+    <!-- SEO & Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "AI Engineering Roadmap",
+      "description": "Comprehensive curriculum for becoming a production-ready AI Engineer, covering Core skills, High ROI topics, LLM engineering, and MLOps",
+      "provider": {
+        "@type": "Organization",
+        "name": "AI Engineering Roadmap",
+        "url": "https://furqanahmadrao.github.io/ai-engineering-roadmap/"
+      },
+      "educationalLevel": "Beginner to Advanced",
+      "about": {
+        "@type": "Thing",
+        "name": "Artificial Intelligence Engineering"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT30H"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Noscript fallback for SEO and accessibility -->
+    <noscript>
+        <div class="noscript-container">
+            <h1>AI Engineering Roadmap</h1>
+            <p>A comprehensive curriculum for becoming a production-ready AI Engineer.</p>
+            
+            <h2>Curriculum Overview</h2>
+            <p>This roadmap covers 6 major categories with 30+ topics:</p>
+            
+            <section>
+                <h3>1. Core Skills</h3>
+                <p>Foundational knowledge every AI engineer needs before tackling advanced systems. Includes Python programming, linear algebra, statistics, and calculus fundamentals.</p>
+            </section>
+            
+            <section>
+                <h3>2. High ROI Topics</h3>
+                <p>High-impact topics that provide the best learning-to-career-value ratio. Machine learning fundamentals, data engineering, and feature engineering.</p>
+            </section>
+            
+            <section>
+                <h3>3. Optional Skills</h3>
+                <p>Useful but not critical skills that depend on specialization. Various tools, frameworks, and advanced techniques.</p>
+            </section>
+            
+            <section>
+                <h3>4. Advanced Topics</h3>
+                <p>Cutting-edge or specialized topics for experienced practitioners. Computer vision, reinforcement learning, and advanced ML techniques.</p>
+            </section>
+            
+            <section>
+                <h3>5. LLM Engineering</h3>
+                <p>Large Language Model engineering, including prompt engineering, fine-tuning, RAG systems, vector databases, and LLM agents.</p>
+            </section>
+            
+            <section>
+                <h3>6. MLOps</h3>
+                <p>Production ML systems: deployment, monitoring, CI/CD, infrastructure, and model interpretability.</p>
+            </section>
+            
+            <p><strong>Enable JavaScript to access the interactive roadmap with progress tracking, filters, and detailed project information.</strong></p>
+        </div>
+    </noscript>
+    
+    <!-- Main Application Container -->
+    <div id="app" class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+                    </svg>
+                    <h1>AI Engineering Roadmap</h1>
+                </div>
+                <p class="tagline">Your strategic path from zero to production-ready AI engineer</p>
+                
+                <!-- Progress Overview -->
+                <div class="progress-overview">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span id="progress-text">0 of 30 topics completed (0%)</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Controls Bar -->
+        <div class="controls-bar">
+            <div class="filters">
+                <label>
+                    <span>Category:</span>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="Core">Core</option>
+                        <option value="High ROI">High ROI</option>
+                        <option value="Optional">Optional</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="LLM">LLM</option>
+                        <option value="MLOps">MLOps</option>
+                    </select>
+                </label>
+                
+                <label>
+                    <span>Level:</span>
+                    <select id="level-filter">
+                        <option value="all">All Levels</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </label>
+            </div>
+            
+            <div class="actions">
+                <button id="export-progress" class="btn btn-secondary">
+                    Export Progress
+                </button>
+                <button id="import-progress" class="btn btn-secondary">
+                    Import Progress
+                </button>
+                <button id="reset-progress" class="btn btn-danger">
+                    Reset All
+                </button>
+            </div>
+        </div>
+        
+        <!-- Roadmap Content -->
+        <main id="roadmap-container" class="roadmap-container">
+            <div class="loading">Loading roadmap data...</div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                AI Engineering Roadmap v2.0 | 
+                <a href="https://github.com/furqanahmadrao/ai-engineering-roadmap" target="_blank">GitHub</a> |
+                <a href="ROADMAP_SCHEMA.md">Schema Docs</a>
+            </p>
+        </footer>
+    </div>
+    
+    <!-- Hidden file input for import -->
+    <input type="file" id="import-file-input" accept=".json" style="display: none">
+    
+    <!-- Load validator first -->
+    <script src="../validator.js"></script>
+    
+    <!-- Load main application -->
+    <script src="app.js"></script>
+</body>
+</html>
