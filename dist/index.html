@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive AI Engineering Roadmap - From foundational skills to advanced LLM engineering and MLOps. Production-ready curriculum with hands-on projects.">
+    <meta name="keywords" content="AI, machine learning, deep learning, LLM, MLOps, NLP, roadmap, curriculum">
+    <meta name="author" content="AI Engineering Roadmap">
+    <title>AI Engineering Roadmap - Production-Ready Curriculum</title>
+    
+    <!-- SEO & Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "AI Engineering Roadmap",
+      "description": "Comprehensive curriculum for becoming a production-ready AI Engineer, covering Core skills, High ROI topics, LLM engineering, and MLOps",
+      "provider": {
+        "@type": "Organization",
+        "name": "AI Engineering Roadmap",
+        "url": "https://furqanahmadrao.github.io/ai-engineering-roadmap/"
+      },
+      "educationalLevel": "Beginner to Advanced",
+      "about": {
+        "@type": "Thing",
+        "name": "Artificial Intelligence Engineering"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Online",
+        "courseWorkload": "PT30H"
+      }
+    }
+    </script>
+    
+    <style>
+
+        /*
+        ============================================
+        AI Engineering Roadmap - Visual Polish 2.0
+        ============================================
+        Designer/Developer: Jules
+        Date: 2023-10-27
+        Goal: Implement a consistent, modern, and accessible design system
+              with light/dark modes, all within this single HTML file.
+        */
+
+        /*
+        ============================================
+        CHANGELOG
+        ============================================
+        - Added: Comprehensive CSS variables (theme tokens) for a consistent design system.
+        - Added: Light and dark mode support with auto-detection and manual toggle.
+        - Added: Focus-visible states for enhanced keyboard accessibility.
+        - Added: Smooth transitions and animations respecting 'prefers-reduced-motion'.
+        - Improved: Color palette for better readability and visual hierarchy.
+        - Improved: Typography and spacing using a consistent scale.
+        - Improved: Standardized component styles (buttons, cards, modals, etc.).
+        - Refactored: Replaced hardcoded values with CSS variables.
+        - Fixed: Numerous minor styling inconsistencies.
+        */
+
+        /*
+        ============================================
+        ACCEPTANCE CRITERIA CHECKLIST
+        ============================================
+        [ ] 1. All UI elements use the new design system tokens.
+        [ ] 2. Light and dark modes are visually consistent and readable.
+        [ ] 3. Text contrast meets WCAG AA standards (≥ 4.5:1).
+              - How to test: Use browser dev tools with a contrast checker.
+        [ ] 4. All interactive elements have clear focus states.
+              - How to test: Navigate the app using only the Tab key.
+        [ ] 5. Animations are subtle and disabled if 'prefers-reduced-motion' is on.
+              - How to test: Enable reduced motion in OS/browser settings.
+        [ ] 6. The app remains fully responsive on mobile, tablet, and desktop.
+        [ ] 7. All existing features work as before.
+        */
+
+        /*
+        ============================================
+        DESIGN SYSTEM & THEME TOKENS
+        ============================================
+        This section defines the core visual language of the application.
+        - Colors: Light/dark palettes for brand, UI states, and text.
+        - Spacing: A 4px-based scale for consistent margins, padding, and gaps.
+        - Typography: Font families, sizes, and weights.
+        - Radii: Border-radius values for consistent component shapes.
+        - Shadows: Elevation levels for UI depth.
+        - Transitions: Standardized animation timings.
+        */
+        :root {
+            /* Color Palette & Tokens */
+            --primary: hsl(238, 72%, 75%);
+            --primary-hover: hsl(238, 72%, 65%);
+            --secondary: hsl(265, 72%, 78%);
+
+            --success: hsl(150, 60%, 55%);
+            --warning: hsl(40, 90%, 65%);
+            --danger: hsl(0, 85%, 70%);
+
+            --text-primary: hsl(210, 17%, 89%);
+            --text-secondary: hsl(210, 15%, 75%);
+            --text-tertiary: hsl(210, 12%, 60%);
+            --text-on-primary: hsl(215, 28%, 17%);
+
+            --surface-1: hsl(217, 33%, 17%);
+            --surface-2: hsl(217, 33%, 22%);
+            --surface-3: hsl(217, 28%, 28%);
+            --surface-4: hsl(217, 24%, 34%);
+
+            --background: hsl(220, 35%, 10%);
+            --border: hsl(217, 20%, 30%);
+
+            /* Spacing Scale (4px base) */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 20px;
+            --space-6: 24px;
+            --space-7: 32px;
+            --space-8: 40px;
+            --space-9: 48px;
+
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+            --fs-1: 0.75rem;   /* 12px */
+            --fs-2: 0.875rem;  /* 14px */
+            --fs-3: 1rem;      /* 16px */
+            --fs-4: 1.125rem;  /* 18px */
+            --fs-5: 1.25rem;   /* 20px */
+            --fs-6: 1.5rem;    /* 24px */
+            --fs-7: 1.875rem;  /* 30px */
+            --fs-8: 2.25rem;   /* 36px */
+
+            --fw-regular: 400;
+            --fw-medium: 500;
+            --fw-semibold: 600;
+            --fw-bold: 700;
+
+            /* Radii */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.1);
+            --shadow-2: 0 4px 8px rgba(0, 0, 0, 0.2);
+            --shadow-3: 0 10px 20px rgba(0, 0, 0, 0.3);
+            --shadow-4: 0 20px 30px rgba(0, 0, 0, 0.4);
+
+            /* Transitions */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-medium: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, hsl(220, 35%, 8%), hsl(220, 35%, 12%));
+            background-size: 400% 400%;
+            animation: gradient-bg 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradient-bg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-7);
+        }
+
+        .header {
+            text-align: center;
+            padding: var(--space-8);
+            margin-bottom: var(--space-7);
+        }
+
+        .neural-network-animation {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            margin-bottom: var(--space-6);
+        }
+
+        .neural-network-animation svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 0.5;
+            animation: glow 5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 5px var(--primary));
+            }
+            to {
+                filter: drop-shadow(0 0 20px var(--primary));
+            }
+        }
+
+        .header h1 {
+            font-size: var(--fs-8);
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+            font-weight: var(--fw-bold);
+        }
+
+        .header p {
+            font-size: var(--fs-4);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-6);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-7);
+        }
+
+        .stat-card {
+            background-color: var(--surface-2);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-medium);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-2);
+        }
+
+        .stat-card h3 {
+            font-size: var(--fs-7);
+            color: var(--primary);
+            margin-bottom: var(--space-1);
+            font-weight: var(--fw-bold);
+        }
+
+        .stat-card p {
+            color: var(--text-secondary);
+            font-size: var(--fs-2);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: var(--space-6);
+            background-color: var(--surface-3);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin: var(--space-7) 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width var(--transition-slow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-on-primary);
+            font-weight: var(--fw-bold);
+            width: 0%;
+            animation: glowing-progress 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowing-progress {
+            from {
+                box-shadow: 0 0 5px var(--secondary);
+            }
+            to {
+                box-shadow: 0 0 20px var(--primary);
+            }
+        }
+
+        .filters {
+            background-color: var(--surface-1);
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-7);
+            display: flex;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+            box-shadow: var(--shadow-2);
+            border: 1px solid var(--border);
+        }
+
+        .filter-btn {
+            padding: var(--space-2) var(--space-4);
+            border: none;
+            background-color: var(--surface-2);
+            color: var(--text-secondary);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            font-weight: var(--fw-semibold);
+            transition: background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .filter-btn:hover {
+            background-color: var(--surface-3);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary);
+            color: var(--text-on-primary);
+            box-shadow: 0 4px 15px hsla(var(--primary-light), 0.3);
+        }
+
+        [data-theme="dark"] .filter-btn.active {
+            box-shadow: 0 4px 15px hsla(var(--primary-dark-theme), 0.3);
+        }
+
+        .phase {
+            background-color: var(--surface-1);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-7);
+            overflow: hidden;
+            box-shadow: var(--shadow-2);
+            transition: transform var(--transition-medium), box-shadow var(--transition-medium), background-color var(--transition-medium);
+            border: 1px solid var(--border);
+        }
+
+        .phase:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-3);
+            filter: drop-shadow(0 0 10px hsla(var(--primary), 0.5));
+        }
+
+        .phase.expanded {
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                box-shadow: 0 0 5px var(--primary);
+            }
+            to {
+                box-shadow: 0 0 15px var(--primary);
+            }
+        }
+
+        .phase-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text-on-primary);
+            padding: var(--space-6) var(--space-7);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .phase-header h2 {
+            font-size: var(--fs-7);
+            font-weight: var(--fw-bold);
+        }
+
+        .phase-meta {
+            display: flex;
+            gap: var(--space-5);
+            font-size: var(--fs-2);
+            color: hsla(0, 0%, 100%, 0.8);
+        }
+
+        .phase-content {
+            padding: 0 var(--space-7);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-slow), padding var(--transition-slow);
+        }
+
+        .phase.expanded .phase-content {
+            max-height: 5000px; /* Large enough to fit content */
+            padding: var(--space-7) var(--space-7);
+        }
+
+        .phase.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .toggle-icon {
+            transition: transform var(--transition-medium);
+            font-size: var(--fs-6);
+        }
+
+        .section {
+            margin-bottom: var(--space-6);
+            border-left: 4px solid var(--primary);
+            padding-left: var(--space-6);
+        }
+
+        .section h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+            font-size: var(--fs-6);
+            font-weight: var(--fw-bold);
+        }
+
+        .priority-badge {
+            font-size: var(--fs-1);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-full);
+            font-weight: var(--fw-bold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-core {
+            background-color: var(--danger);
+            color: var(--text-on-primary);
+        }
+
+        .badge-high-roi {
+            background-color: var(--warning);
+            color: var(--text-on-primary);
+        }
+
+        .badge-optional {
+            background-color: var(--surface-4);
+            color: var(--text-secondary);
+        }
+
+        .badge-advanced {
+            background-color: var(--secondary);
+            color: var(--text-on-primary);
+        }
+
+        .topic {
+            margin-bottom: var(--space-2);
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3);
+            background-color: var(--surface-1);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-2);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+
+        .topic-item:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+            box-shadow: var(--shadow-1);
+        }
+
+        .topic-item.completed {
+            background-color: hsla(150, 70%, 45%, 0.1);
+            border-color: hsla(150, 70%, 45%, 0.3);
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background-color var(--transition-fast), border-color var(--transition-fast);
+        }
+
+        .checkbox.checked {
+            background-color: var(--success);
+            border-color: var(--success);
+        }
+
+        .checkbox.checked::after {
+            content: '\2713';
+            color: var(--text-on-primary);
+            font-weight: var(--fw-bold);
+        }
+
+        .milestone {
+            background-color: hsla(40, 90%, 55%, 0.1);
+            border: 2px solid hsla(40, 90%, 55%, 0.3);
+            border-radius: var(--radius-lg);
+            padding: var(--space-7);
+            margin: var(--space-8) 0;
+        }
+
+        .milestone h4 {
+            color: var(--warning);
+            font-size: var(--fs-5);
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-weight: var(--fw-semibold);
+        }
+
+        .milestone-content {
+            color: var(--text-secondary);
+        }
+
+        .milestone-content p {
+            margin-bottom: var(--space-2);
+        }
+
+        .resources, .assessment {
+            background-color: var(--surface-2);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+            border: 1px solid var(--border);
+        }
+
+        .resources h5, .assessment h5 {
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+            font-weight: var(--fw-semibold);
+            font-size: var(--fs-4);
+        }
+
+        .resources ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .resources li {
+            padding: var(--space-1) 0;
+        }
+
+        .resources a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: var(--fw-medium);
+        }
+
+        .resources a:hover {
+            text-decoration: underline;
+        }
+
+        .assessment ul {
+            padding-left: var(--space-5);
+        }
+
+        .assessment ul {
+            padding-left: 20px;
+        }
+
+        .assessment li {
+            margin-bottom: var(--space-2);
+        }
+
+        .btn-reset, .export-btn, .import-btn {
+            border: none;
+            padding: var(--space-3) var(--space-5);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: var(--fw-semibold);
+            margin: var(--space-4) var(--space-2) var(--space-4) 0;
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+        }
+
+        .btn-reset:hover, .export-btn:hover, .import-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .btn-reset {
+            background-color: var(--danger);
+            color: var(--text-on-primary);
+        }
+
+        .export-btn {
+            background-color: var(--success);
+            color: var(--text-on-primary);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .github-link {
+            position: fixed;
+            top: var(--space-5);
+            right: var(--space-5);
+            background-color: var(--surface-1);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-2);
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: var(--fw-semibold);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .github-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-3);
+            color: var(--primary);
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: var(--space-5);
+            left: var(--space-5);
+            background-color: var(--surface-1);
+            border: 1px solid var(--border);
+            padding: var(--space-2);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            box-shadow: var(--shadow-2);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-medium);
+            z-index: 1000;
+            color: var(--text-secondary);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-3);
+            color: var(--primary);
+        }
+
+        .theme-toggle:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .search-container {
+            background-color: var(--surface-1);
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-7);
+            box-shadow: var(--shadow-2);
+            border: 1px solid var(--border);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: var(--space-3) var(--space-5);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            font-size: var(--fs-3);
+            transition: all var(--transition-fast);
+            background-color: var(--surface-2);
+            color: var(--text-primary);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px hsla(var(--primary-light), 0.2);
+            background-color: var(--surface-1);
+        }
+
+        [data-theme="dark"] .search-input:focus {
+            box-shadow: 0 0 0 3px hsla(var(--primary-dark-theme), 0.2);
+        }
+
+        /* Motivational Quote */
+        .motivation-box {
+            background-color: var(--surface-2);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: var(--space-6);
+            margin-bottom: var(--space-7);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .motivation-box::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            margin: var(--space-4) auto 0;
+            background: var(--primary);
+            border-radius: var(--radius-full);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .motivation-box p {
+            color: var(--text-primary);
+            font-style: italic;
+            font-size: var(--fs-4);
+            margin-bottom: var(--space-2);
+        }
+
+        .motivation-box small {
+            color: var(--text-secondary);
+            font-size: var(--fs-2);
+        }
+
+        .import-btn {
+            background-color: var(--primary);
+            color: var(--text-on-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .import-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        #importFile {
+            display: none;
+        }
+
+        /* Keyboard Shortcuts Help */
+        .shortcuts-help {
+            position: fixed;
+            bottom: var(--space-5);
+            right: var(--space-5);
+            background-color: var(--surface-1);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-2);
+            font-size: var(--fs-2);
+            color: var(--text-secondary);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            border: 1px solid var(--border);
+        }
+
+        .shortcuts-help:hover {
+            background-color: var(--surface-2);
+            transform: translateY(-2px);
+            color: var(--primary);
+            box-shadow: var(--shadow-3);
+        }
+
+        .shortcuts-help:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Animations & Accessibility */
+        @media (prefers-reduced-motion: no-preference) {
+            .phase, .stat-card, .filters, .search-container, .motivation-box {
+                animation: slideIn 0.5s ease-out forwards;
+            }
+
+            .progress-fill {
+                animation: progressPulse 2s infinite;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes progressPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 hsla(var(--primary-light), 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px hsla(var(--primary-light), 0);
+            }
+        }
+
+        [data-theme="dark"] @keyframes progressPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 hsla(var(--primary-dark-theme), 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px hsla(var(--primary-dark-theme), 0);
+            }
+        }
+
+        /* Highlight Search Results */
+        .highlight {
+            background-color: var(--warning);
+            color: var(--text-on-primary);
+            padding: 2px 4px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Modal for Shortcuts */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: hsla(0, 0%, 0%, 0.5);
+            animation: fadeIn var(--transition-medium);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--surface-1);
+            margin: 10% auto;
+            padding: var(--space-8);
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 600px;
+            box-shadow: var(--shadow-4);
+            animation: slideDown var(--transition-medium);
+            border: 1px solid var(--border);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            color: var(--text-tertiary);
+            float: right;
+            font-size: var(--fs-7);
+            font-weight: var(--fw-bold);
+            cursor: pointer;
+            transition: color var(--transition-fast);
+        }
+
+        .close:hover {
+            color: var(--text-primary);
+        }
+
+        .shortcut-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .shortcut-key {
+            background-color: var(--surface-3);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-mono);
+            font-weight: var(--fw-bold);
+            color: var(--text-secondary);
+        }
+
+        /* SVG icon alignment */
+        .feather {
+            vertical-align: middle;
+            margin-right: var(--space-2);
+        }
+
+        h1 .feather, h2 .feather, h4 .feather, h5 .feather {
+            margin-right: var(--space-3);
+        }
+
+        .shortcuts-help .feather {
+            margin-right: var(--space-1);
+        }
+
+        .import-btn .feather, .export-btn .feather, .btn-reset .feather {
+            margin-right: var(--space-2);
+        }
+
+        .phase-meta span {
+            display: flex;
+            align-items: center;
+        }
+
+        .phase-meta .feather {
+            margin-right: var(--space-2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: var(--space-7);
+            color: var(--text-tertiary);
+            font-size: var(--fs-2);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-5);
+            margin-top: var(--space-4);
+        }
+
+        .footer-links a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--space-5);
+            }
+            .header {
+                padding: var(--space-6);
+            }
+            .header h1 {
+                font-size: var(--fs-7);
+            }
+            .phase-meta {
+                flex-direction: column;
+                gap: var(--space-2);
+                align-items: flex-end;
+            }
+            .filters {
+                flex-direction: column;
+            }
+            .filter-btn {
+                width: 100%;
+            }
+            .github-link {
+                position: static;
+                display: inline-flex;
+                margin: 0 auto var(--space-4);
+                justify-content: center;
+            }
+            .section h3 {
+                font-size: var(--fs-4);
+            }
+            .theme-toggle {
+                top: auto;
+                bottom: var(--space-4);
+                left: var(--space-4);
+            }
+            .shortcuts-help {
+                bottom: var(--space-4);
+                right: var(--space-4);
+            }
+        }
+
+
+    </style>
+    
+<!-- Built: 2025-11-10T02:59:54.400Z -->
+<!-- Source: site/ directory (modular) -->
+<!-- Build: Single-file for GitHub Pages deployment -->
+</head>
+<body>
+    <!-- Noscript fallback for SEO and accessibility -->
+    <noscript>
+        <div class="noscript-container">
+            <h1>AI Engineering Roadmap</h1>
+            <p>A comprehensive curriculum for becoming a production-ready AI Engineer.</p>
+            
+            <h2>Curriculum Overview</h2>
+            <p>This roadmap covers 6 major categories with 30+ topics:</p>
+            
+            <section>
+                <h3>1. Core Skills</h3>
+                <p>Foundational knowledge every AI engineer needs before tackling advanced systems. Includes Python programming, linear algebra, statistics, and calculus fundamentals.</p>
+            </section>
+            
+            <section>
+                <h3>2. High ROI Topics</h3>
+                <p>High-impact topics that provide the best learning-to-career-value ratio. Machine learning fundamentals, data engineering, and feature engineering.</p>
+            </section>
+            
+            <section>
+                <h3>3. Optional Skills</h3>
+                <p>Useful but not critical skills that depend on specialization. Various tools, frameworks, and advanced techniques.</p>
+            </section>
+            
+            <section>
+                <h3>4. Advanced Topics</h3>
+                <p>Cutting-edge or specialized topics for experienced practitioners. Computer vision, reinforcement learning, and advanced ML techniques.</p>
+            </section>
+            
+            <section>
+                <h3>5. LLM Engineering</h3>
+                <p>Large Language Model engineering, including prompt engineering, fine-tuning, RAG systems, vector databases, and LLM agents.</p>
+            </section>
+            
+            <section>
+                <h3>6. MLOps</h3>
+                <p>Production ML systems: deployment, monitoring, CI/CD, infrastructure, and model interpretability.</p>
+            </section>
+            
+            <p><strong>Enable JavaScript to access the interactive roadmap with progress tracking, filters, and detailed project information.</strong></p>
+        </div>
+    </noscript>
+    
+    <!-- Main Application Container -->
+    <div id="app" class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+                    </svg>
+                    <h1>AI Engineering Roadmap</h1>
+                </div>
+                <p class="tagline">Your strategic path from zero to production-ready AI engineer</p>
+                
+                <!-- Progress Overview -->
+                <div class="progress-overview">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span id="progress-text">0 of 30 topics completed (0%)</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Controls Bar -->
+        <div class="controls-bar">
+            <div class="filters">
+                <label>
+                    <span>Category:</span>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="Core">Core</option>
+                        <option value="High ROI">High ROI</option>
+                        <option value="Optional">Optional</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="LLM">LLM</option>
+                        <option value="MLOps">MLOps</option>
+                    </select>
+                </label>
+                
+                <label>
+                    <span>Level:</span>
+                    <select id="level-filter">
+                        <option value="all">All Levels</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </label>
+            </div>
+            
+            <div class="actions">
+                <button id="export-progress" class="btn btn-secondary">
+                    Export Progress
+                </button>
+                <button id="import-progress" class="btn btn-secondary">
+                    Import Progress
+                </button>
+                <button id="reset-progress" class="btn btn-danger">
+                    Reset All
+                </button>
+            </div>
+        </div>
+        
+        <!-- Roadmap Content -->
+        <main id="roadmap-container" class="roadmap-container">
+            <div class="loading">Loading roadmap data...</div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                AI Engineering Roadmap v2.0 | 
+                <a href="https://github.com/furqanahmadrao/ai-engineering-roadmap" target="_blank">GitHub</a> |
+                <a href="ROADMAP_SCHEMA.md">Schema Docs</a>
+            </p>
+        </footer>
+    </div>
+    
+    <!-- Hidden file input for import -->
+    <input type="file" id="import-file-input" accept=".json" style="display: none">
+    
+    <!-- Load validator first -->
+    <script>
+/**
+ * AI Engineering Roadmap - Schema Validator
+ * 
+ * Validates roadmap.json against the canonical schema defined in ROADMAP_SCHEMA.md
+ * This validator runs in-browser and provides human-readable error messages.
+ * 
+ * Usage:
+ *   const result = validateRoadmap(roadmapData);
+ *   if (!result.valid) {
+ *     console.error('Validation errors:', result.errors);
+ *   }
+ */
+
+/**
+ * JSON Schema for AI Engineering Roadmap
+ * This is the canonical schema - must match ROADMAP_SCHEMA.md
+ */
+const ROADMAP_SCHEMA = {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Engineering Roadmap Schema",
+  "description": "Schema for the AI Engineering Roadmap curriculum data",
+  "type": "object",
+  "required": ["version", "topics", "capstones"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version for compatibility tracking",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "topics": {
+      "type": "array",
+      "description": "Array of learning topics in the roadmap",
+      "minItems": 30,
+      "items": {
+        "$ref": "#/definitions/topic"
+      }
+    },
+    "capstones": {
+      "type": "array",
+      "description": "Array of capstone projects",
+      "minItems": 9,
+      "items": {
+        "$ref": "#/definitions/capstone"
+      }
+    }
+  },
+  "definitions": {
+    "topic": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "category",
+        "level",
+        "estimated_hours",
+        "learning_objectives",
+        "resources",
+        "project"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable slug identifier (lowercase, hyphenated)",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string",
+          "description": "Short, descriptive title of the topic",
+          "minLength": 3,
+          "maxLength": 80
+        },
+        "category": {
+          "type": "string",
+          "description": "Primary category for organization",
+          "enum": ["Core", "High ROI", "Optional", "Advanced", "LLM", "MLOps"]
+        },
+        "level": {
+          "type": "string",
+          "description": "Difficulty level",
+          "enum": ["Beginner", "Intermediate", "Advanced"]
+        },
+        "estimated_hours": {
+          "type": "number",
+          "description": "Estimated time to complete (in hours)",
+          "minimum": 1,
+          "maximum": 200
+        },
+        "prerequisites": {
+          "type": "array",
+          "description": "Array of topic IDs that should be completed first",
+          "items": {
+            "type": "string"
+          }
+        },
+        "learning_objectives": {
+          "type": "array",
+          "description": "3 measurable learning outcomes",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 10
+          }
+        },
+        "resources": {
+          "type": "array",
+          "description": "2-4 curated learning resources",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/definitions/resource"
+          }
+        },
+        "project": {
+          "$ref": "#/definitions/project",
+          "description": "Hands-on project for this topic"
+        },
+        "assessments": {
+          "type": "array",
+          "description": "Optional assessments (quizzes, challenges)",
+          "items": {
+            "$ref": "#/definitions/assessment"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "description": "Searchable tags (technologies, concepts)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "role_mapping": {
+          "type": "object",
+          "description": "Mapping of this topic to AI engineering roles",
+          "properties": {
+            "NLP Engineer": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "MLOps Engineer": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "ML Engineer": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes on compute requirements, cost, common pitfalls"
+        }
+      }
+    },
+    "resource": {
+      "type": "object",
+      "required": ["type", "title", "url"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["course", "doc", "repo", "article", "video", "book"]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 3
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "why": {
+          "type": "string",
+          "description": "Why this resource is recommended"
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "required": ["title", "deliverables", "rubric"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 5
+        },
+        "deliverables": {
+          "type": "array",
+          "description": "What the learner must produce",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "rubric": {
+          "type": "object",
+          "description": "Grading criteria (key: criteria, value: max points)",
+          "properties": {
+            "functionality": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 50
+            },
+            "reproducibility": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "tests": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 15
+            },
+            "writeup": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 15
+            }
+          },
+          "additionalProperties": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "required": ["type", "description"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["quiz", "challenge", "peer-review"]
+        },
+        "description": {
+          "type": "string"
+        },
+        "answer_key_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Optional link to answer key or solution"
+        }
+      }
+    },
+    "capstone": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "role",
+        "description",
+        "estimated_hours",
+        "deliverables",
+        "rubric",
+        "starter_template"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["NLP Engineer", "MLOps Engineer", "ML Engineer"]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 50
+        },
+        "estimated_hours": {
+          "type": "number",
+          "minimum": 20,
+          "maximum": 200
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "deliverables": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 3
+        },
+        "rubric": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "starter_template": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["notebook", "repo", "readme"]
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        },
+        "dataset": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "url": { "type": "string" },
+            "size": { "type": "string" }
+          }
+        },
+        "compute_guidance": {
+          "type": "string",
+          "description": "Recommendations for compute resources and estimated costs"
+        }
+      }
+    }
+  }
+};
+
+/**
+ * Simple JSON Schema validator (subset implementation)
+ * This is a lightweight validator that handles the most common schema features.
+ * For production, consider using ajv or similar library.
+ */
+class SchemaValidator {
+  constructor(schema) {
+    this.schema = schema;
+    this.errors = [];
+  }
+
+  validate(data, schema = this.schema, path = 'root') {
+    this.errors = [];
+    this._validate(data, schema, path);
+    return {
+      valid: this.errors.length === 0,
+      errors: this.errors
+    };
+  }
+
+  _validate(data, schema, path) {
+    // Type validation
+    if (schema.type) {
+      if (!this._checkType(data, schema.type)) {
+        this._addError(path, `Expected type ${schema.type}, got ${typeof data}`);
+        return;
+      }
+    }
+
+    // Required properties
+    if (schema.required && schema.type === 'object') {
+      for (const prop of schema.required) {
+        if (!(prop in data)) {
+          this._addError(`${path}.${prop}`, `Required property missing`);
+        }
+      }
+    }
+
+    // Properties validation
+    if (schema.properties && schema.type === 'object') {
+      for (const [prop, propSchema] of Object.entries(schema.properties)) {
+        if (prop in data) {
+          this._validate(data[prop], propSchema, `${path}.${prop}`);
+        }
+      }
+    }
+
+    // Array validation
+    if (schema.type === 'array') {
+      if (schema.minItems !== undefined && data.length < schema.minItems) {
+        this._addError(path, `Array must have at least ${schema.minItems} items, got ${data.length}`);
+      }
+      if (schema.maxItems !== undefined && data.length > schema.maxItems) {
+        this._addError(path, `Array must have at most ${schema.maxItems} items, got ${data.length}`);
+      }
+      if (schema.items) {
+        data.forEach((item, index) => {
+          this._validate(item, schema.items, `${path}[${index}]`);
+        });
+      }
+    }
+
+    // String validation
+    if (schema.type === 'string') {
+      if (schema.minLength !== undefined && data.length < schema.minLength) {
+        this._addError(path, `String must be at least ${schema.minLength} characters, got ${data.length}`);
+      }
+      if (schema.maxLength !== undefined && data.length > schema.maxLength) {
+        this._addError(path, `String must be at most ${schema.maxLength} characters, got ${data.length}`);
+      }
+      if (schema.pattern) {
+        const regex = new RegExp(schema.pattern);
+        if (!regex.test(data)) {
+          this._addError(path, `String does not match pattern ${schema.pattern}`);
+        }
+      }
+      if (schema.enum && !schema.enum.includes(data)) {
+        this._addError(path, `Value must be one of: ${schema.enum.join(', ')}. Got: ${data}`);
+      }
+    }
+
+    // Number validation
+    if (schema.type === 'number') {
+      if (schema.minimum !== undefined && data < schema.minimum) {
+        this._addError(path, `Number must be at least ${schema.minimum}, got ${data}`);
+      }
+      if (schema.maximum !== undefined && data > schema.maximum) {
+        this._addError(path, `Number must be at most ${schema.maximum}, got ${data}`);
+      }
+    }
+
+    // $ref resolution
+    if (schema.$ref) {
+      const refPath = schema.$ref.split('/');
+      let refSchema = this.schema;
+      for (const part of refPath.slice(1)) {
+        refSchema = refSchema[part];
+      }
+      this._validate(data, refSchema, path);
+    }
+  }
+
+  _checkType(data, type) {
+    if (type === 'array') {
+      return Array.isArray(data);
+    }
+    if (type === 'object') {
+      return typeof data === 'object' && data !== null && !Array.isArray(data);
+    }
+    if (type === 'number') {
+      return typeof data === 'number' && !isNaN(data);
+    }
+    return typeof data === type;
+  }
+
+  _addError(path, message) {
+    this.errors.push({ path, message });
+  }
+}
+
+/**
+ * Validates roadmap data against the schema
+ * @param {Object} roadmapData - The roadmap data to validate
+ * @returns {Object} - { valid: boolean, errors: Array, warnings: Array }
+ */
+function validateRoadmap(roadmapData) {
+  const validator = new SchemaValidator(ROADMAP_SCHEMA);
+  const result = validator.validate(roadmapData);
+
+  // Additional custom validations
+  const warnings = [];
+
+  if (result.valid && roadmapData.topics) {
+    // Check for duplicate topic IDs
+    const topicIds = new Set();
+    roadmapData.topics.forEach((topic, index) => {
+      if (topicIds.has(topic.id)) {
+        result.errors.push({
+          path: `root.topics[${index}].id`,
+          message: `Duplicate topic ID: ${topic.id}`
+        });
+        result.valid = false;
+      }
+      topicIds.add(topic.id);
+    });
+
+    // Check for invalid prerequisite references
+    roadmapData.topics.forEach((topic, index) => {
+      if (topic.prerequisites) {
+        topic.prerequisites.forEach(prereqId => {
+          if (!topicIds.has(prereqId)) {
+            warnings.push({
+              path: `root.topics[${index}].prerequisites`,
+              message: `Prerequisite ID "${prereqId}" not found in topics`
+            });
+          }
+        });
+      }
+    });
+
+    // Check capstone prerequisites
+    if (roadmapData.capstones) {
+      roadmapData.capstones.forEach((capstone, index) => {
+        if (capstone.prerequisites) {
+          capstone.prerequisites.forEach(prereqId => {
+            if (!topicIds.has(prereqId)) {
+              warnings.push({
+                path: `root.capstones[${index}].prerequisites`,
+                message: `Prerequisite ID "${prereqId}" not found in topics`
+              });
+            }
+          });
+        }
+      });
+
+      // Check for duplicate capstone IDs
+      const capstoneIds = new Set();
+      roadmapData.capstones.forEach((capstone, index) => {
+        if (capstoneIds.has(capstone.id)) {
+          result.errors.push({
+            path: `root.capstones[${index}].id`,
+            message: `Duplicate capstone ID: ${capstone.id}`
+          });
+          result.valid = false;
+        }
+        capstoneIds.add(capstone.id);
+      });
+
+      // Check role distribution for capstones
+      const roleCount = {};
+      roadmapData.capstones.forEach(capstone => {
+        roleCount[capstone.role] = (roleCount[capstone.role] || 0) + 1;
+      });
+
+      const expectedRoles = ['NLP Engineer', 'MLOps Engineer', 'ML Engineer'];
+      expectedRoles.forEach(role => {
+        if (!roleCount[role] || roleCount[role] < 3) {
+          warnings.push({
+            path: 'root.capstones',
+            message: `Expected at least 3 capstones for role "${role}", found ${roleCount[role] || 0}`
+          });
+        }
+      });
+    }
+  }
+
+  return {
+    valid: result.valid,
+    errors: result.errors,
+    warnings: warnings
+  };
+}
+
+/**
+ * Format validation results as human-readable text
+ * @param {Object} result - Validation result from validateRoadmap
+ * @returns {string} - Formatted message
+ */
+function formatValidationResult(result) {
+  if (result.valid && result.warnings.length === 0) {
+    return '✅ Validation passed! No errors or warnings.';
+  }
+
+  let output = [];
+
+  if (!result.valid) {
+    output.push('❌ VALIDATION FAILED\n');
+    output.push('Errors:');
+    result.errors.forEach(err => {
+      output.push(`  • ${err.path}: ${err.message}`);
+    });
+  } else {
+    output.push('✅ Validation passed with warnings\n');
+  }
+
+  if (result.warnings.length > 0) {
+    output.push('\nWarnings:');
+    result.warnings.forEach(warn => {
+      output.push(`  ⚠ ${warn.path}: ${warn.message}`);
+    });
+  }
+
+  return output.join('\n');
+}
+
+// Export for use in Node.js or browser
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    ROADMAP_SCHEMA,
+    validateRoadmap,
+    formatValidationResult,
+    SchemaValidator
+  };
+}
+
+    </script>
+    
+    <!-- Load main application -->
+    <script>
+// Inline roadmap data
+const INLINE_ROADMAP_DATA = {"version":"2.0.0","topics":[{"id":"python-programming-for-ai","title":"Python Programming for AI","category":"Core","level":"Beginner","estimated_hours":40,"prerequisites":[],"learning_objectives":["Write clean, efficient, and well-documented Python code","Use key libraries: NumPy, pandas, Matplotlib, and Scikit-learn effectively for data tasks","Master python programming for ai concepts and applications"],"resources":[{"type":"doc","title":"Python Fundamentals","url":"#python-fundamentals","why":"Covers variables, data types, functions, conditionals, loops, and error handling."},{"type":"doc","title":"Data Structures & Comprehensions","url":"#data-structures-comprehensions","why":"Deep dive into lists, tuples, sets, and dictionaries, with a focus on powerful comprehension syntax."}],"project":{"title":"Data Cleaning & Visualization Project","deliverables":["Handles missing values and corrects data types using pandas","Script runs without errors and outputs 2-3 readable, labeled charts"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["python","basics","programming"],"role_mapping":{},"notes":""},{"id":"linear-algebra-for-ml","title":"Linear Algebra for ML","category":"Core","level":"Intermediate","estimated_hours":40,"prerequisites":[],"learning_objectives":["Manipulate matrices and vectors efficiently","Understand how linear algebra underpins ML algorithms","Master linear algebra for ml concepts and applications"],"resources":[{"type":"doc","title":"Vectors and Matrices","url":"#vectors-and-matrices","why":"Basic operations, shapes, transposes, and dot products."},{"type":"doc","title":"Matrix Decompositions","url":"#matrix-decompositions","why":"Eigenvalues, eigenvectors, and singular value decomposition (SVD)."}],"project":{"title":"Linear Regression from Scratch","deliverables":["Computes optimal weights using the Normal Equation","Predicts and plots regression line vs. data"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["math","ml","foundation"],"role_mapping":{},"notes":""},{"id":"statistics-probability-for-ml","title":"Statistics & Probability for ML","category":"Core","level":"Intermediate","estimated_hours":40,"prerequisites":[],"learning_objectives":["Apply descriptive and inferential statistics to datasets","Model uncertainty using probability theory and distributions like Gaussian","Understand concepts like conditional probability and Bayes' theorem"],"resources":[{"type":"doc","title":"Descriptive Statistics","url":"#descriptive-statistics","why":"Measures of central tendency (mean, median, mode) and dispersion (variance, standard deviation)."},{"type":"doc","title":"Probability Theory","url":"#probability-theory","why":"Events, sample spaces, conditional probability, and Bayes' theorem."}],"project":{"title":"Exploratory Data Analysis (EDA)","deliverables":["Generates a report with key statistical findings and visualizations","Uses hypothesis testing to validate an assumption about the data"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["statistics","math","data","foundation"],"role_mapping":{},"notes":""},{"id":"calculus-for-ml","title":"Calculus for ML","category":"Core","level":"Intermediate","estimated_hours":30,"prerequisites":[],"learning_objectives":["Understand how derivatives represent rates of change","Grasp the concept of gradients and their role in optimization","Follow the chain rule for backpropagation"],"resources":[{"type":"doc","title":"Derivatives and Rules","url":"#derivatives-and-rules","why":"Calculating derivatives of common functions and applying rules like the product and quotient rule."},{"type":"doc","title":"Gradients in Multiple Dimensions","url":"#gradients-in-multiple-dimensions","why":"Partial derivatives, gradients of multivariable functions, and the Jacobian matrix."}],"project":{"title":"Gradient Descent from Scratch","deliverables":["Code correctly calculates gradients and updates parameters","Visualizes the optimization path on a contour plot"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["math","calculus","optimization","foundation"],"role_mapping":{},"notes":""},{"id":"git-version-control","title":"Git & Version Control","category":"Core","level":"Beginner","estimated_hours":15,"prerequisites":[],"learning_objectives":["Manage code versions, branches, and merges effectively","Collaborate with others on a shared codebase using platforms like GitHub","Master git & version control concepts and applications"],"resources":[{"type":"doc","title":"Core Git Concepts","url":"#core-git-concepts","why":"The staging area, commits, and viewing history. Understanding `git add`, `git commit`, `git log`."},{"type":"doc","title":"Branching and Merging","url":"#branching-and-merging","why":"Creating feature branches, switching between them, and merging changes back into the main branch."}],"project":{"title":"Collaborative Project Simulation","deliverables":["Pull request is cleanly mergeable","Commit history on the feature branch is clear and descriptive"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["tools","git","collaboration","basics"],"role_mapping":{},"notes":""},{"id":"shell-command-line-basics","title":"Shell & Command-Line Basics","category":"Core","level":"Beginner","estimated_hours":10,"prerequisites":[],"learning_objectives":["Navigate and manage the filesystem from the command line","Use common shell commands and pipe outputs for powerful workflows","Master shell & command-line basics concepts and applications"],"resources":[{"type":"doc","title":"Filesystem Navigation","url":"#filesystem-navigation","why":"Essential commands like `ls`, `cd`, `pwd`, `mkdir`, `rm`, `cp`, and `mv`."},{"type":"doc","title":"Text Processing Tools","url":"#text-processing-tools","why":"Using `cat`, `grep`, `sed`, and `awk` to search and manipulate text files."}],"project":{"title":"Simple Log Analysis Script","deliverables":["Script is executable and takes a filename as an argument","Correctly outputs the total count of lines containing 'ERROR'"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["tools","cli","shell","basics"],"role_mapping":{},"notes":""},{"id":"machine-learning-foundations","title":"Machine Learning Foundations","category":"Optional","level":"Intermediate","estimated_hours":60,"prerequisites":[],"learning_objectives":["Build, train, and evaluate classical ML models using Scikit-learn","Understand the bias-variance tradeoff and how to prevent overfitting","Select appropriate algorithms for regression, classification, and clustering tasks"],"resources":[{"type":"doc","title":"Supervised Learning","url":"#supervised-learning","why":"Linear/Logistic Regression, K-Nearest Neighbors (KNN), Support Vector Machines (SVMs), Decision Trees, and Random Forests."},{"type":"doc","title":"Unsupervised Learning","url":"#unsupervised-learning","why":"Clustering algorithms (K-Means), dimensionality reduction (PCA), and anomaly detection."}],"project":{"title":"End-to-End Classification Project","deliverables":["Compares at least three different classification algorithms","Uses cross-validation to report a robust performance metric"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["ml","supervised","unsupervised","scikit-learn"],"role_mapping":{},"notes":""},{"id":"deep-learning-fundamentals","title":"Deep Learning Fundamentals","category":"Optional","level":"Advanced","estimated_hours":80,"prerequisites":[],"learning_objectives":["Design, train, and optimize deep learning models using a framework like TensorFlow or PyTorch","Understand the role of activation functions, optimizers, and loss functions","Implement common architectures like CNNs for images and RNNs for sequences"],"resources":[{"type":"doc","title":"Neural Networks & Backpropagation","url":"#neural-networks-backpropagation","why":"The structure of a neuron, layers, forward propagation, and the backpropagation algorithm."},{"type":"doc","title":"DL Frameworks (TensorFlow/PyTorch)","url":"#dl-frameworks-tensorflowpytorch","why":"Using high-level APIs like Keras or PyTorch to build and train models efficiently."}],"project":{"title":"Image Classifier for Custom Dataset","deliverables":["Achieves a reasonable accuracy (>85%) on a validation set","Demonstrates use of transfer learning from a pre-trained model like ResNet"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["dl","neural-networks","pytorch","tensorflow","ai"],"role_mapping":{},"notes":""},{"id":"sql-and-data-management","title":"SQL and Data Management","category":"Optional","level":"Intermediate","estimated_hours":30,"prerequisites":[],"learning_objectives":["Write complex SQL queries to extract and aggregate data","Understand database design concepts like normalization","Master sql and data management concepts and applications"],"resources":[{"type":"doc","title":"SQL Querying","url":"#sql-querying","why":"SELECT statements, WHERE clauses, JOINs (INNER, LEFT), GROUP BY, and aggregations."},{"type":"doc","title":"Advanced SQL","url":"#advanced-sql","why":"Subqueries, window functions, and Common Table Expressions (CTEs)."}],"project":{"title":"Data Analysis via SQL","deliverables":["Queries correctly use JOINs and aggregate functions","Produces a short report summarizing the insights found in the data"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["sql","data","database"],"role_mapping":{},"notes":""},{"id":"data-engineering-foundations","title":"Data Engineering Foundations","category":"Optional","level":"Intermediate","estimated_hours":50,"prerequisites":[],"learning_objectives":["Understand ETL/ELT concepts and design data pipelines","Work with different data storage solutions (data warehouses, data lakes)","Master data engineering foundations concepts and applications"],"resources":[{"type":"doc","title":"ETL/ELT Pipelines","url":"#etlelt-pipelines","why":"The concepts of Extract, Transform, Load (ETL) and how to build data pipelines."},{"type":"doc","title":"Data Warehousing and Data Lakes","url":"#data-warehousing-and-data-lakes","why":"Understanding the differences and use cases for structured data warehouses (e.g., BigQuery, Snowflake) and unstructured data lakes (e.g., S3)."}],"project":{"title":"Build a Mini ETL Pipeline","deliverables":["Pipeline runs end-to-end without manual intervention","Data in the final database is clean and correctly formatted"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["data-engineering","pipelines","etl"],"role_mapping":{},"notes":""},{"id":"cloud-computing-fundamentals","title":"Cloud Computing Fundamentals","category":"Optional","level":"Beginner","estimated_hours":20,"prerequisites":[],"learning_objectives":["Differentiate between IaaS, PaaS, and SaaS","Identify core cloud services for compute, storage, and networking","Master cloud computing fundamentals concepts and applications"],"resources":[{"type":"doc","title":"Core Cloud Concepts","url":"#core-cloud-concepts","why":"Virtualization, scalability, elasticity, and the pay-as-you-go model."},{"type":"doc","title":"Core Services: Compute & Storage","url":"#core-services-compute-storage","why":"Understanding virtual machines (EC2, Compute Engine), object storage (S3, GCS), and block storage."}],"project":{"title":"Deploy a Web Server on a Cloud VM","deliverables":["Web server is accessible from the public internet","Security groups/firewall rules are configured to only allow necessary traffic"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["cloud","aws","gcp","azure","infrastructure"],"role_mapping":{},"notes":""},{"id":"working-with-apis-for-ml","title":"Working with APIs for ML","category":"Optional","level":"Intermediate","estimated_hours":25,"prerequisites":[],"learning_objectives":["Fetch data from third-party REST APIs","Build a simple API endpoint to serve a model prediction","Master working with apis for ml concepts and applications"],"resources":[{"type":"doc","title":"Consuming REST APIs","url":"#consuming-rest-apis","why":"HTTP methods (GET, POST), status codes, and JSON data handling using Python's `requests` library."},{"type":"doc","title":"Building APIs with Flask/FastAPI","url":"#building-apis-with-flaskfastapi","why":"Creating simple web servers and API endpoints to expose functionality over HTTP."}],"project":{"title":"Build a Model Serving API","deliverables":["API endpoint successfully returns a JSON prediction when called","Includes basic input validation"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["api","deployment","fastapi","flask"],"role_mapping":{},"notes":""},{"id":"natural-language-processing","title":"Natural Language Processing","category":"Optional","level":"Advanced","estimated_hours":60,"prerequisites":[],"learning_objectives":["Implement text preprocessing and vectorization techniques","Understand and apply transformer architectures (e.g., BERT, GPT)","Fine-tune pre-trained language models for specific tasks"],"resources":[{"type":"doc","title":"Text Processing & Embeddings","url":"#text-processing-embeddings","why":"Tokenization, stemming, lemmatization, and classic vectorization methods like TF-IDF and Word2Vec."},{"type":"doc","title":"Transformers and Attention","url":"#transformers-and-attention","why":"The self-attention mechanism and the encoder-decoder architecture of the transformer model."}],"project":{"title":"Fine-Tune a Sentiment Classifier","deliverables":["Achieves high accuracy (>90%) on the test set","Code is well-structured and includes evaluation metrics"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["nlp","transformers","huggingface","llm"],"role_mapping":{},"notes":""},{"id":"computer-vision","title":"Computer Vision","category":"Optional","level":"Advanced","estimated_hours":60,"prerequisites":[],"learning_objectives":["Build and train advanced CNN-based models","Implement object detection and image segmentation techniques","Leverage transfer learning for vision tasks effectively"],"resources":[{"type":"doc","title":"Advanced CNN Architectures","url":"#advanced-cnn-architectures","why":"Studying influential architectures like ResNet, Inception, and EfficientNet."},{"type":"doc","title":"Object Detection","url":"#object-detection","why":"Algorithms like YOLO and Faster R-CNN for identifying and localizing objects in an image."}],"project":{"title":"Custom Object Detection","deliverables":["Model correctly draws bounding boxes around the target object in test images","Includes a process for annotating a small custom dataset"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["cv","image","cnn","object-detection"],"role_mapping":{},"notes":""},{"id":"reinforcement-learning-rl","title":"Reinforcement Learning (RL)","category":"Optional","level":"Advanced","estimated_hours":50,"prerequisites":[],"learning_objectives":["Understand the core components of an RL problem (agent, environment, state, action, reward)","Implement foundational RL algorithms like Q-Learning","Master reinforcement learning (rl) concepts and applications"],"resources":[{"type":"doc","title":"RL Fundamentals","url":"#rl-fundamentals","why":"Markov Decision Processes (MDPs), value functions, and policy functions."},{"type":"doc","title":"Q-Learning and Value-Based Methods","url":"#q-learning-and-value-based-methods","why":"Temporal difference learning and the Q-learning algorithm for discrete action spaces."}],"project":{"title":"Train an Agent for a Gym Environment","deliverables":["Agent consistently achieves the target score for the environment","Visualizes the agent's performance during and after training"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["rl","reinforcement-learning","ai"],"role_mapping":{},"notes":""},{"id":"time-series-analysis-forecasting","title":"Time Series Analysis & Forecasting","category":"Optional","level":"Advanced","estimated_hours":40,"prerequisites":[],"learning_objectives":["Decompose time series data into trend, seasonality, and residuals","Apply classical forecasting models like ARIMA","Use deep learning models like LSTMs for forecasting"],"resources":[{"type":"doc","title":"Time Series Decomposition","url":"#time-series-decomposition","why":"Identifying and analyzing trend, seasonality, and cyclical components."},{"type":"doc","title":"Statistical Forecasting Models","url":"#statistical-forecasting-models","why":"Models like ARIMA for forecasting based on statistical properties of the series."}],"project":{"title":"Stock Price or Weather Forecasting","deliverables":["Implements both an ARIMA and an LSTM model","Evaluates forecasts using metrics like Mean Absolute Error (MAE)"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["time-series","forecasting","statistics","lstm"],"role_mapping":{},"notes":""},{"id":"recommender-systems","title":"Recommender Systems","category":"Optional","level":"Advanced","estimated_hours":40,"prerequisites":[],"learning_objectives":["Understand and implement collaborative filtering","Build content-based recommendation models","Master recommender systems concepts and applications"],"resources":[{"type":"doc","title":"Collaborative Filtering","url":"#collaborative-filtering","why":"User-based and item-based collaborative filtering techniques, including matrix factorization."},{"type":"doc","title":"Content-Based Filtering","url":"#content-based-filtering","why":"Recommending items based on their attributes and a user's profile."}],"project":{"title":"Build a Movie Recommender","deliverables":["System can generate a list of top N recommendations for a given user ID","Includes an evaluation of the recommender's performance"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["recsys","recommender-systems","ml"],"role_mapping":{},"notes":""},{"id":"generative-ai-llms","title":"Generative AI & LLMs","category":"Optional","level":"Advanced","estimated_hours":50,"prerequisites":[],"learning_objectives":["Understand the architecture of modern LLMs like GPT","Learn techniques for prompting and fine-tuning LLMs","Grasp the basics of diffusion models for image generation"],"resources":[{"type":"doc","title":"LLM Architecture and Training","url":"#llm-architecture-and-training","why":"The transformer decoder, pre-training objectives, and instruction tuning."},{"type":"doc","title":"Prompt Engineering and RAG","url":"#prompt-engineering-and-rag","why":"Few-shot prompting, chain-of-thought, and Retrieval-Augmented Generation (RAG) to enhance LLM performance."}],"project":{"title":"Build a Q&A Bot with RAG","deliverables":["Application can answer questions based on the content of the provided document","Uses a vector store for efficient document retrieval"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["genai","llm","rag","generative-ai"],"role_mapping":{},"notes":""},{"id":"mlops-principles-lifecycle","title":"MLOps Principles & Lifecycle","category":"Optional","level":"Intermediate","estimated_hours":20,"prerequisites":[],"learning_objectives":["Map the end-to-end ML lifecycle from data to production","Understand the key pillars of MLOps: automation, reproducibility, and monitoring","Master mlops principles & lifecycle concepts and applications"],"resources":[{"type":"doc","title":"The ML Lifecycle","url":"#the-ml-lifecycle","why":"The stages of an ML project: data collection, feature engineering, training, evaluation, deployment, and monitoring."},{"type":"doc","title":"Reproducibility in ML","url":"#reproducibility-in-ml","why":"Techniques for ensuring reproducible results, including experiment tracking, data versioning, and environment management."}],"project":{"title":"Experiment Tracking with MLflow","deliverables":["MLflow UI shows multiple runs with logged metrics","Can load the best performing model artifact from MLflow"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["mlops","lifecycle","reproducibility"],"role_mapping":{},"notes":""},{"id":"containerization-with-docker","title":"Containerization with Docker","category":"Optional","level":"Intermediate","estimated_hours":25,"prerequisites":[],"learning_objectives":["Write a Dockerfile to containerize an ML application","Manage Docker containers and images","Master containerization with docker concepts and applications"],"resources":[{"type":"doc","title":"Docker Fundamentals","url":"#docker-fundamentals","why":"Images, containers, and the difference between them. The Docker daemon and client."},{"type":"doc","title":"Writing a Dockerfile","url":"#writing-a-dockerfile","why":"Instructions like `FROM`, `RUN`, `COPY`, and `CMD` to define a custom image."}],"project":{"title":"Dockerize a Model Serving API","deliverables":["The container runs successfully","Can send a request to the API running inside the container and get a prediction back"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["docker","containerization","mlops","deployment"],"role_mapping":{},"notes":""},{"id":"cicd-for-machine-learning","title":"CI/CD for Machine Learning","category":"Optional","level":"Advanced","estimated_hours":40,"prerequisites":[],"learning_objectives":["Design a CI/CD pipeline for an ML project","Use GitHub Actions or Jenkins to automate ML workflows","Master ci/cd for machine learning concepts and applications"],"resources":[{"type":"doc","title":"Continuous Integration (CI)","url":"#continuous-integration-ci","why":"Automating code linting, unit tests, and data validation every time code is committed."},{"type":"doc","title":"Continuous Delivery/Deployment (CD)","url":"#continuous-deliverydeployment-cd","why":"Automating the deployment of a model or an entire ML pipeline to a staging or production environment."}],"project":{"title":"Build a CI/CD Pipeline with GitHub Actions","deliverables":["Workflow triggers and runs successfully on GitHub","The new Docker image is visible in the container registry after a push"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["cicd","github-actions","mlops","automation"],"role_mapping":{},"notes":""},{"id":"model-deployment-serving","title":"Model Deployment & Serving","category":"Optional","level":"Advanced","estimated_hours":50,"prerequisites":[],"learning_objectives":["Understand different model deployment patterns (e.g., online, batch)","Deploy a model to a cloud service for real-time inference","Master model deployment & serving concepts and applications"],"resources":[{"type":"doc","title":"Deployment Patterns","url":"#deployment-patterns","why":"Batch prediction vs. online (real-time) prediction. Deploying as a service vs. embedding in an application."},{"type":"doc","title":"Serverless Deployment","url":"#serverless-deployment","why":"Using cloud functions (AWS Lambda, Google Cloud Functions) to deploy models without managing servers."}],"project":{"title":"Deploy a Model to a Cloud Platform","deliverables":["Model is deployed and accessible via a public URL","The endpoint can successfully serve predictions"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["deployment","mlops","kubernetes","serverless"],"role_mapping":{},"notes":""},{"id":"model-monitoring-observability","title":"Model Monitoring & Observability","category":"Optional","level":"Advanced","estimated_hours":40,"prerequisites":[],"learning_objectives":["Understand the types of ML-specific monitoring (data drift, concept drift)","Implement logging and monitoring for a deployed model","Master model monitoring & observability concepts and applications"],"resources":[{"type":"doc","title":"Data and Concept Drift","url":"#data-and-concept-drift","why":"Understanding how changes in input data distribution (data drift) or the relationship between inputs and outputs (concept drift) can degrade model performance."},{"type":"doc","title":"Monitoring ML Metrics","url":"#monitoring-ml-metrics","why":"Tracking model accuracy, prediction latency, and data statistics over time."}],"project":{"title":"Drift Detection Proof-of-Concept","deliverables":["Script correctly identifies when the distribution of a feature has changed","Triggers an alert (e.g., a print statement) when drift is detected"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["monitoring","mlops","observability","drift"],"role_mapping":{},"notes":""},{"id":"ml-system-design-architecture","title":"ML System Design & Architecture","category":"Optional","level":"Advanced","estimated_hours":40,"prerequisites":[],"learning_objectives":["Apply system design principles to ML problems","Design architecture for common ML applications (e.g., recommender systems, search)","Master ml system design & architecture concepts and applications"],"resources":[{"type":"doc","title":"Scalability and Reliability","url":"#scalability-and-reliability","why":"Designing systems that can handle growing load and are resilient to failures."},{"type":"doc","title":"Data-Intensive Architectures","url":"#data-intensive-architectures","why":"Lambda and Kappa architectures for processing both batch and streaming data."}],"project":{"title":"Write an ML System Design Document","deliverables":["Document includes a clear architecture diagram","Considers trade-offs between different design choices (e.g., latency vs. cost)"],"rubric":{"functionality":10,"reproducibility":10,"tests":5,"writeup":5}},"tags":["system-design","architecture","mlops"],"role_mapping":{},"notes":""},{"id":"data-engineering-basics","title":"Data Engineering Fundamentals","category":"High ROI","level":"Intermediate","estimated_hours":35,"prerequisites":["python-programming-for-ai"],"learning_objectives":["Design and implement ETL pipelines for ML data preparation","Work with SQL and NoSQL databases effectively","Handle large-scale data processing with distributed systems"],"resources":[{"type":"course","title":"Data Engineering on Google Cloud","url":"https://www.coursera.org/professional-certificates/gcp-data-engineering","why":"Comprehensive cloud data engineering coverage"},{"type":"doc","title":"Apache Spark Documentation","url":"https://spark.apache.org/docs/latest/","why":"Industry-standard distributed processing framework"}],"project":{"title":"Scalable Data Pipeline","deliverables":["ETL pipeline code","Data quality tests","Performance benchmarks"],"rubric":{"functionality":15,"reproducibility":10,"tests":10,"writeup":5}},"tags":["data-engineering","etl","sql","spark"],"role_mapping":{"ML Engineer":["Critical for data preprocessing"],"MLOps Engineer":["Required for data infrastructure"],"NLP Engineer":["Important for text data pipelines"]},"notes":"Can start with local tools (SQLite, pandas). Cloud tools have free tiers."},{"id":"computer-vision-basics","title":"Computer Vision Fundamentals","category":"Advanced","level":"Advanced","estimated_hours":50,"prerequisites":["deep-learning-fundamentals"],"learning_objectives":["Implement CNNs for image classification and object detection","Apply transfer learning with pre-trained models","Build and evaluate computer vision systems"],"resources":[{"type":"course","title":"CS231n: Convolutional Neural Networks","url":"https://cs231n.github.io/","why":"Stanford course - gold standard for CV"},{"type":"course","title":"Fast.ai Practical Deep Learning Part 1","url":"https://course.fast.ai/","why":"Hands-on approach with state-of-the-art techniques"}],"project":{"title":"Object Detection System","deliverables":["Trained detection model","Real-time inference demo","Performance analysis"],"rubric":{"functionality":20,"reproducibility":12,"tests":8,"writeup":10}},"tags":["computer-vision","cnn","object-detection"],"role_mapping":{"ML Engineer":["Specialized skill for CV applications"]},"notes":"GPU required. Use free Colab or Kaggle kernels."},{"id":"nlp-fundamentals","title":"NLP Fundamentals","category":"High ROI","level":"Intermediate","estimated_hours":45,"prerequisites":["deep-learning-fundamentals"],"learning_objectives":["Implement text preprocessing and tokenization pipelines","Build text classification models using RNNs and word embeddings","Apply sequence-to-sequence models for NLP tasks"],"resources":[{"type":"course","title":"CS224n: Natural Language Processing with Deep Learning","url":"https://web.stanford.edu/class/cs224n/","why":"Stanford NLP course with excellent lectures"},{"type":"book","title":"Speech and Language Processing","url":"https://web.stanford.edu/~jurafsky/slp3/","why":"Comprehensive NLP textbook"}],"project":{"title":"Text Classification System","deliverables":["Trained classifier","Preprocessing pipeline","Evaluation report"],"rubric":{"functionality":18,"reproducibility":12,"tests":8,"writeup":10}},"tags":["nlp","text-processing","classification"],"role_mapping":{"NLP Engineer":["Core competency"],"ML Engineer":["Important for text-based applications"]},"notes":"Start with CPU-based methods. GPU helpful but not required initially."},{"id":"reinforcement-learning","title":"Reinforcement Learning Basics","category":"Advanced","level":"Advanced","estimated_hours":55,"prerequisites":["deep-learning-fundamentals"],"learning_objectives":["Implement Q-learning and policy gradient algorithms","Train agents in simulated environments","Apply RL to real-world decision-making problems"],"resources":[{"type":"book","title":"Reinforcement Learning: An Introduction","url":"http://incompleteideas.net/book/the-book-2nd.html","why":"Classic RL textbook by Sutton and Barto"},{"type":"course","title":"Deep Reinforcement Learning","url":"https://spinningup.openai.com/","why":"OpenAI practical guide to deep RL"}],"project":{"title":"RL Agent for Game Playing","deliverables":["Trained agent","Training visualizations","Performance comparison"],"rubric":{"functionality":20,"reproducibility":12,"tests":8,"writeup":10}},"tags":["reinforcement-learning","rl","agents"],"role_mapping":{"ML Engineer":["Specialized skill for RL applications"]},"notes":"Computationally intensive. Start with simple environments (CartPole, etc.)"},{"id":"model-interpretability","title":"ML Model Interpretability","category":"MLOps","level":"Intermediate","estimated_hours":30,"prerequisites":["machine-learning-foundations"],"learning_objectives":["Apply SHAP and LIME for model explanation","Implement feature importance analysis","Create interpretable model visualizations"],"resources":[{"type":"doc","title":"SHAP Documentation","url":"https://shap.readthedocs.io/","why":"Industry-standard explainability library"},{"type":"book","title":"Interpretable Machine Learning","url":"https://christophm.github.io/interpretable-ml-book/","why":"Comprehensive guide to model interpretability"}],"project":{"title":"Model Explainability Dashboard","deliverables":["SHAP value analysis","Interactive dashboard","Interpretation guide"],"rubric":{"functionality":15,"reproducibility":10,"tests":8,"writeup":12}},"tags":["interpretability","explainability","shap"],"role_mapping":{"ML Engineer":["Important for production models"],"MLOps Engineer":["Critical for model governance"],"NLP Engineer":["Required for regulated applications"]},"notes":"Most tools are free and open-source."},{"id":"feature-engineering","title":"Feature Engineering & Selection","category":"High ROI","level":"Intermediate","estimated_hours":35,"prerequisites":["machine-learning-foundations"],"learning_objectives":["Design and engineer features from raw data","Apply dimensionality reduction techniques","Implement automated feature selection methods"],"resources":[{"type":"book","title":"Feature Engineering for Machine Learning","url":"https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/","why":"Comprehensive guide to feature engineering"},{"type":"course","title":"Feature Engineering on Kaggle","url":"https://www.kaggle.com/learn/feature-engineering","why":"Practical hands-on course"}],"project":{"title":"Feature Engineering Pipeline","deliverables":["Automated feature extraction","Feature importance analysis","Performance comparison"],"rubric":{"functionality":15,"reproducibility":12,"tests":8,"writeup":10}},"tags":["feature-engineering","preprocessing","dimensionality-reduction"],"role_mapping":{"ML Engineer":["Core skill for model improvement"],"NLP Engineer":["Important for text features"],"MLOps Engineer":["Helpful for pipeline optimization"]},"notes":"CPU-based work. No special compute requirements."}],"capstones":[{"id":"nlp-capstone-placeholder","title":"NLP Engineering Capstone","role":"NLP Engineer","description":"Build a production-grade NLP system demonstrating mastery of natural language processing techniques.","estimated_hours":100,"prerequisites":[],"deliverables":["Complete system","Documentation","Deployment"],"rubric":{"functionality":30,"reproducibility":20,"tests":15,"writeup":10},"starter_template":{"type":"repo","url":"#"}},{"id":"mlops-capstone-placeholder","title":"MLOps Engineering Capstone","role":"MLOps Engineer","description":"Build a complete ML deployment pipeline demonstrating MLOps best practices.","estimated_hours":100,"prerequisites":[],"deliverables":["CI/CD pipeline","Monitoring system","Documentation"],"rubric":{"functionality":30,"reproducibility":20,"tests":15,"writeup":10},"starter_template":{"type":"repo","url":"#"}},{"id":"ml-capstone-placeholder","title":"ML Engineering Capstone","role":"ML Engineer","description":"Build an end-to-end ML system from data collection to model deployment.","estimated_hours":100,"prerequisites":[],"deliverables":["Trained model","API endpoint","Documentation"],"rubric":{"functionality":30,"reproducibility":20,"tests":15,"writeup":10},"starter_template":{"type":"repo","url":"#"}},{"id":"nlp-capstone-1","title":"NLP Engineering Capstone Project 1","role":"NLP Engineer","description":"Advanced NLP project demonstrating specialized skills in natural language processing and understanding.","estimated_hours":90,"prerequisites":[],"deliverables":["System implementation","Technical documentation","Performance analysis"],"rubric":{"functionality":25,"reproducibility":15,"tests":10,"writeup":10},"starter_template":{"type":"repo","url":"#"}},{"id":"mlops-capstone-1","title":"MLOps Engineering Capstone Project 1","role":"MLOps Engineer","description":"Advanced MLOps project demonstrating specialized skills in production ML systems.","estimated_hours":90,"prerequisites":[],"deliverables":["Infrastructure code","Monitoring dashboards","Deployment guide"],"rubric":{"functionality":25,"reproducibility":15,"tests":10,"writeup":10},"starter_template":{"type":"repo","url":"#"}},{"id":"ml-capstone-1","title":"ML Engineering Capstone Project 1","role":"ML Engineer","description":"Advanced ML project demonstrating specialized machine learning engineering skills.","estimated_hours":90,"prerequisites":[],"deliverables":["Model artifacts","API service","Evaluation report"],"rubric":{"functionality":25,"reproducibility":15,"tests":10,"writeup":10},"starter_template":{"type":"repo","url":"#"}},{"id":"nlp-capstone-2","title":"NLP Engineering Capstone Project 2","role":"NLP Engineer","description":"Advanced NLP project demonstrating specialized skills in natural language processing and understanding.","estimated_hours":100,"prerequisites":[],"deliverables":["System implementation","Technical documentation","Performance analysis"],"rubric":{"functionality":25,"reproducibility":15,"tests":10,"writeup":10},"starter_template":{"type":"repo","url":"#"}},{"id":"mlops-capstone-2","title":"MLOps Engineering Capstone Project 2","role":"MLOps Engineer","description":"Advanced MLOps project demonstrating specialized skills in production ML systems.","estimated_hours":100,"prerequisites":[],"deliverables":["Infrastructure code","Monitoring dashboards","Deployment guide"],"rubric":{"functionality":25,"reproducibility":15,"tests":10,"writeup":10},"starter_template":{"type":"repo","url":"#"}},{"id":"ml-capstone-2","title":"ML Engineering Capstone Project 2","role":"ML Engineer","description":"Advanced ML project demonstrating specialized machine learning engineering skills.","estimated_hours":100,"prerequisites":[],"deliverables":["Model artifacts","API service","Evaluation report"],"rubric":{"functionality":25,"reproducibility":15,"tests":10,"writeup":10},"starter_template":{"type":"repo","url":"#"}}]};
+
+/**
+ * AI Engineering Roadmap - Main Application
+ * Phase 1: Core functionality with localStorage progress tracking
+ */
+
+// Global state
+let roadmapData = null;
+let progress = {
+  completedTopics: new Set(),
+  timestamps: {}
+};
+
+// Constants
+const STORAGE_KEY = 'ai-roadmap-progress';
+
+/**
+ * Initialize the application
+ */
+async function init() {
+  console.log('Initializing AI Engineering Roadmap...');
+  
+  // Load progress from localStorage
+  loadProgress();
+  
+  // Load roadmap data
+  try {
+    const response = Promise.resolve({ json: async () => INLINE_ROADMAP_DATA });
+    roadmapData = await response.json();
+    
+    // Validate the data
+    const validationResult = validateRoadmap(roadmapData);
+    if (!validationResult.valid) {
+      console.error('Roadmap validation failed:', validationResult.errors);
+      showError('Invalid roadmap data. Please check the console for details.');
+      return;
+    }
+    
+    console.log(`✅ Loaded ${roadmapData.topics.length} topics and ${roadmapData.capstones.length} capstones`);
+    
+    // Render the roadmap
+    renderRoadmap();
+    
+    // Setup event listeners
+    setupEventListeners();
+    
+    // Update progress display
+    updateProgressDisplay();
+    
+  } catch (error) {
+    console.error('Failed to load roadmap:', error);
+    showError('Failed to load roadmap data. Please refresh the page.');
+  }
+}
+
+/**
+ * Load progress from localStorage
+ */
+function loadProgress() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      const data = JSON.parse(stored);
+      progress.completedTopics = new Set(data.completedTopics || []);
+      progress.timestamps = data.timestamps || {};
+      console.log(`✅ Loaded progress: ${progress.completedTopics.size} topics completed`);
+    }
+  } catch (error) {
+    console.error('Failed to load progress:', error);
+  }
+}
+
+/**
+ * Save progress to localStorage
+ */
+function saveProgress() {
+  try {
+    const data = {
+      completedTopics: Array.from(progress.completedTopics),
+      timestamps: progress.timestamps,
+      lastUpdated: new Date().toISOString()
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    console.log('✅ Progress saved');
+  } catch (error) {
+    console.error('Failed to save progress:', error);
+  }
+}
+
+/**
+ * Render the roadmap
+ */
+function renderRoadmap() {
+  const container = document.getElementById('roadmap-container');
+  if (!container || !roadmapData) return;
+  
+  // Group topics by category
+  const categories = groupByCategory(roadmapData.topics);
+  
+  // Clear loading message
+  container.innerHTML = '';
+  
+  // Render each category
+  Object.keys(categories).sort().forEach(categoryName => {
+    const categorySection = createCategorySection(categoryName, categories[categoryName]);
+    container.appendChild(categorySection);
+  });
+}
+
+/**
+ * Group topics by category
+ */
+function groupByCategory(topics) {
+  const groups = {};
+  topics.forEach(topic => {
+    if (!groups[topic.category]) {
+      groups[topic.category] = [];
+    }
+    groups[topic.category].push(topic);
+  });
+  return groups;
+}
+
+/**
+ * Create a category section
+ */
+function createCategorySection(categoryName, topics) {
+  const section = document.createElement('section');
+  section.className = 'category-section';
+  section.setAttribute('data-category', categoryName);
+  
+  // Category header
+  const header = document.createElement('h2');
+  header.className = 'category-header';
+  header.innerHTML = `
+    <span class="category-badge">${categoryName}</span>
+    <span class="category-count">${topics.length} topics</span>
+  `;
+  section.appendChild(header);
+  
+  // Topics grid
+  const grid = document.createElement('div');
+  grid.className = 'topics-grid';
+  
+  topics.forEach(topic => {
+    const topicCard = createTopicCard(topic);
+    grid.appendChild(topicCard);
+  });
+  
+  section.appendChild(grid);
+  return section;
+}
+
+/**
+ * Create a topic card
+ */
+function createTopicCard(topic) {
+  const isCompleted = progress.completedTopics.has(topic.id);
+  
+  const card = document.createElement('details');
+  card.className = `topic-card ${isCompleted ? 'completed' : ''}`;
+  card.setAttribute('data-topic-id', topic.id);
+  card.setAttribute('data-level', topic.level);
+  
+  // Summary (card header)
+  const summary = document.createElement('summary');
+  summary.className = 'topic-summary';
+  summary.innerHTML = `
+    <div class="topic-header">
+      <div class="topic-title-row">
+        <h3 class="topic-title">${topic.title}</h3>
+        <span class="topic-level level-${topic.level.toLowerCase()}">${topic.level}</span>
+      </div>
+      <div class="topic-meta">
+        <span class="topic-hours">⏱️ ${topic.estimated_hours}h</span>
+        <span class="topic-category">${topic.category}</span>
+      </div>
+    </div>
+    <label class="checkbox-label" onclick="event.stopPropagation()">
+      <input type="checkbox" class="topic-checkbox" data-topic-id="${topic.id}" ${isCompleted ? 'checked' : ''}>
+      <span>${isCompleted ? 'Completed' : 'Mark Complete'}</span>
+    </label>
+  `;
+  card.appendChild(summary);
+  
+  // Details (card content)
+  const content = document.createElement('div');
+  content.className = 'topic-content';
+  
+  // Learning objectives
+  content.innerHTML += `
+    <div class="topic-section">
+      <h4>📋 Learning Objectives</h4>
+      <ul>
+        ${topic.learning_objectives.map(obj => `<li>${obj}</li>`).join('')}
+      </ul>
+    </div>
+  `;
+  
+  // Resources
+  content.innerHTML += `
+    <div class="topic-section">
+      <h4>📚 Resources</h4>
+      <ul class="resources-list">
+        ${topic.resources.map(res => `
+          <li>
+            <a href="${res.url}" target="_blank" rel="noopener noreferrer">
+              <span class="resource-type">[${res.type}]</span> ${res.title}
+            </a>
+            ${res.why ? `<p class="resource-why">${res.why}</p>` : ''}
+          </li>
+        `).join('')}
+      </ul>
+    </div>
+  `;
+  
+  // Project
+  if (topic.project) {
+    content.innerHTML += `
+      <div class="topic-section">
+        <h4>🚀 Project: ${topic.project.title}</h4>
+        <p><strong>Deliverables:</strong></p>
+        <ul>
+          ${topic.project.deliverables.map(d => `<li>${d}</li>`).join('')}
+        </ul>
+        <p><strong>Grading Rubric:</strong></p>
+        <ul class="rubric-list">
+          ${Object.entries(topic.project.rubric).map(([criterion, points]) => 
+            `<li>${criterion}: ${points} points</li>`
+          ).join('')}
+        </ul>
+      </div>
+    `;
+  }
+  
+  // Prerequisites
+  if (topic.prerequisites && topic.prerequisites.length > 0) {
+    content.innerHTML += `
+      <div class="topic-section">
+        <p><strong>Prerequisites:</strong> ${topic.prerequisites.join(', ')}</p>
+      </div>
+    `;
+  }
+  
+  // Tags
+  if (topic.tags && topic.tags.length > 0) {
+    content.innerHTML += `
+      <div class="topic-section">
+        <div class="tags">
+          ${topic.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        </div>
+      </div>
+    `;
+  }
+  
+  // Notes
+  if (topic.notes) {
+    content.innerHTML += `
+      <div class="topic-section topic-notes">
+        <p>💡 <strong>Note:</strong> ${topic.notes}</p>
+      </div>
+    `;
+  }
+  
+  card.appendChild(content);
+  return card;
+}
+
+/**
+ * Setup event listeners
+ */
+function setupEventListeners() {
+  // Topic completion checkboxes
+  document.addEventListener('change', (e) => {
+    if (e.target.classList.contains('topic-checkbox')) {
+      const topicId = e.target.dataset.topicId;
+      toggleTopicCompletion(topicId, e.target.checked);
+    }
+  });
+  
+  // Category filter
+  document.getElementById('category-filter')?.addEventListener('change', applyFilters);
+  
+  // Level filter
+  document.getElementById('level-filter')?.addEventListener('change', applyFilters);
+  
+  // Export progress
+  document.getElementById('export-progress')?.addEventListener('click', exportProgress);
+  
+  // Import progress
+  document.getElementById('import-progress')?.addEventListener('click', () => {
+    document.getElementById('import-file-input')?.click();
+  });
+  
+  document.getElementById('import-file-input')?.addEventListener('change', importProgress);
+  
+  // Reset progress
+  document.getElementById('reset-progress')?.addEventListener('click', resetProgress);
+}
+
+/**
+ * Toggle topic completion
+ */
+function toggleTopicCompletion(topicId, completed) {
+  if (completed) {
+    progress.completedTopics.add(topicId);
+    progress.timestamps[topicId] = new Date().toISOString();
+  } else {
+    progress.completedTopics.delete(topicId);
+    delete progress.timestamps[topicId];
+  }
+  
+  // Update UI
+  const card = document.querySelector(`[data-topic-id="${topicId}"]`);
+  if (card) {
+    card.classList.toggle('completed', completed);
+  }
+  
+  // Save and update display
+  saveProgress();
+  updateProgressDisplay();
+}
+
+/**
+ * Update progress display
+ */
+function updateProgressDisplay() {
+  if (!roadmapData) return;
+  
+  const total = roadmapData.topics.length;
+  const completed = progress.completedTopics.size;
+  const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
+  
+  // Update progress bar
+  const progressFill = document.getElementById('progress-fill');
+  if (progressFill) {
+    progressFill.style.width = `${percentage}%`;
+  }
+  
+  // Update progress text
+  const progressText = document.getElementById('progress-text');
+  if (progressText) {
+    progressText.textContent = `${completed} of ${total} topics completed (${percentage}%)`;
+  }
+}
+
+/**
+ * Apply filters
+ */
+function applyFilters() {
+  const categoryFilter = document.getElementById('category-filter')?.value || 'all';
+  const levelFilter = document.getElementById('level-filter')?.value || 'all';
+  
+  document.querySelectorAll('.category-section').forEach(section => {
+    const category = section.dataset.category;
+    const shouldShowCategory = categoryFilter === 'all' || categoryFilter === category;
+    section.style.display = shouldShowCategory ? 'block' : 'none';
+  });
+  
+  document.querySelectorAll('.topic-card').forEach(card => {
+    const level = card.dataset.level;
+    const shouldShowLevel = levelFilter === 'all' || levelFilter === level;
+    card.style.display = shouldShowLevel ? 'block' : 'none';
+  });
+}
+
+/**
+ * Export progress as JSON
+ */
+function exportProgress() {
+  const data = {
+    completedTopics: Array.from(progress.completedTopics),
+    timestamps: progress.timestamps,
+    exportedAt: new Date().toISOString()
+  };
+  
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `ai-roadmap-progress-${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  
+  console.log('✅ Progress exported');
+}
+
+/**
+ * Import progress from JSON
+ */
+function importProgress(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const data = JSON.parse(e.target.result);
+      
+      // Validate imported data
+      if (!data.completedTopics || !Array.isArray(data.completedTopics)) {
+        throw new Error('Invalid progress data format');
+      }
+      
+      // Load the data
+      progress.completedTopics = new Set(data.completedTopics);
+      progress.timestamps = data.timestamps || {};
+      
+      // Save and update UI
+      saveProgress();
+      renderRoadmap();
+      updateProgressDisplay();
+      
+      alert(`✅ Successfully imported progress: ${progress.completedTopics.size} topics completed`);
+      console.log('✅ Progress imported');
+      
+    } catch (error) {
+      console.error('Failed to import progress:', error);
+      alert('❌ Failed to import progress. Please check the file format.');
+    }
+  };
+  reader.readAsText(file);
+  
+  // Reset file input
+  event.target.value = '';
+}
+
+/**
+ * Reset all progress
+ */
+function resetProgress() {
+  if (!confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+    return;
+  }
+  
+  progress.completedTopics.clear();
+  progress.timestamps = {};
+  
+  saveProgress();
+  renderRoadmap();
+  updateProgressDisplay();
+  
+  console.log('✅ Progress reset');
+}
+
+/**
+ * Show error message
+ */
+function showError(message) {
+  const container = document.getElementById('roadmap-container');
+  if (container) {
+    container.innerHTML = `
+      <div class="error-message">
+        <h2>❌ Error</h2>
+        <p>${message}</p>
+      </div>
+    `;
+  }
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+    </script>
+</body>
+</html>
