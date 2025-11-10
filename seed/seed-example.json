@@ -1,0 +1,662 @@
+{
+  "version": "2.0.0",
+  "topics": [
+    {
+      "id": "python-fundamentals",
+      "title": "Python Programming for AI",
+      "category": "Core",
+      "level": "Beginner",
+      "estimated_hours": 40,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Write clean, efficient Python code following PEP 8 standards",
+        "Manipulate data structures (lists, dicts, sets) for ML preprocessing",
+        "Use NumPy and pandas for data analysis tasks"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "Python for Everybody",
+          "url": "https://www.py4e.com/",
+          "why": "Comprehensive intro with free video lectures"
+        },
+        {
+          "type": "doc",
+          "title": "Official Python Tutorial",
+          "url": "https://docs.python.org/3/tutorial/",
+          "why": "Authoritative reference for language features"
+        }
+      ],
+      "project": {
+        "title": "Data Analysis CLI Tool",
+        "deliverables": [
+          "GitHub repo with source code",
+          "README with usage examples",
+          "Unit tests with >80% coverage"
+        ],
+        "rubric": {
+          "functionality": 10,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": ["python", "programming", "basics"],
+      "role_mapping": {
+        "NLP Engineer": ["Foundation for all Python-based NLP work"],
+        "MLOps Engineer": ["Required for scripting and automation"],
+        "ML Engineer": ["Core programming skill"]
+      },
+      "notes": "No special compute requirements. Works on any laptop."
+    },
+    {
+      "id": "linear-algebra-ml",
+      "title": "Linear Algebra for Machine Learning",
+      "category": "Core",
+      "level": "Intermediate",
+      "estimated_hours": 30,
+      "prerequisites": ["python-fundamentals"],
+      "learning_objectives": [
+        "Perform matrix operations efficiently using NumPy",
+        "Explain how linear transformations relate to ML algorithms",
+        "Implement gradient descent using vector calculus"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "Mathematics for Machine Learning: Linear Algebra",
+          "url": "https://www.coursera.org/learn/linear-algebra-machine-learning",
+          "why": "Designed specifically for ML practitioners"
+        },
+        {
+          "type": "video",
+          "title": "3Blue1Brown Essence of Linear Algebra",
+          "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+          "why": "Intuitive visual explanations"
+        }
+      ],
+      "project": {
+        "title": "Linear Regression from Scratch",
+        "deliverables": [
+          "Implementation using only NumPy (no sklearn)",
+          "Visualization of cost function convergence",
+          "Comparison with sklearn implementation"
+        ],
+        "rubric": {
+          "functionality": 15,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 5
+        }
+      },
+      "tags": ["math", "linear-algebra", "foundations"],
+      "role_mapping": {
+        "ML Engineer": ["Essential for understanding model internals"],
+        "NLP Engineer": ["Required for word embeddings and transformers"],
+        "MLOps Engineer": ["Helpful for debugging model behavior"]
+      },
+      "notes": "Mathematical foundation - invest time here for long-term benefits."
+    },
+    {
+      "id": "statistics-probability",
+      "title": "Statistics & Probability for ML",
+      "category": "Core",
+      "level": "Intermediate",
+      "estimated_hours": 35,
+      "prerequisites": ["python-fundamentals"],
+      "learning_objectives": [
+        "Apply hypothesis testing to evaluate model performance",
+        "Calculate and interpret confidence intervals for predictions",
+        "Use probability distributions to model data uncertainty"
+      ],
+      "resources": [
+        {
+          "type": "book",
+          "title": "Think Stats",
+          "url": "https://greenteapress.com/thinkstats2/html/index.html",
+          "why": "Free, practical approach with Python examples"
+        },
+        {
+          "type": "course",
+          "title": "Introduction to Probability and Data",
+          "url": "https://www.coursera.org/learn/probability-intro",
+          "why": "Solid foundation with R/Python labs"
+        }
+      ],
+      "project": {
+        "title": "A/B Test Analysis Pipeline",
+        "deliverables": [
+          "Statistical analysis notebook",
+          "Automated report generator",
+          "Visualizations of test results"
+        ],
+        "rubric": {
+          "functionality": 12,
+          "reproducibility": 10,
+          "tests": 5,
+          "writeup": 8
+        }
+      },
+      "tags": ["statistics", "probability", "foundations"],
+      "role_mapping": {
+        "ML Engineer": ["Critical for experiment design and evaluation"],
+        "MLOps Engineer": ["Required for A/B testing and monitoring"],
+        "NLP Engineer": ["Needed for model evaluation"]
+      }
+    },
+    {
+      "id": "supervised-learning",
+      "title": "Supervised Learning Fundamentals",
+      "category": "High ROI",
+      "level": "Intermediate",
+      "estimated_hours": 50,
+      "prerequisites": ["linear-algebra-ml", "statistics-probability"],
+      "learning_objectives": [
+        "Implement and compare classification and regression algorithms",
+        "Apply cross-validation and hyperparameter tuning techniques",
+        "Diagnose and fix overfitting and underfitting problems"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "Machine Learning by Andrew Ng",
+          "url": "https://www.coursera.org/learn/machine-learning",
+          "why": "Gold standard introduction to ML fundamentals"
+        },
+        {
+          "type": "doc",
+          "title": "Scikit-learn User Guide",
+          "url": "https://scikit-learn.org/stable/user_guide.html",
+          "why": "Comprehensive reference with examples"
+        },
+        {
+          "type": "article",
+          "title": "A Few Useful Things to Know About Machine Learning",
+          "url": "https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf",
+          "why": "Essential practical insights"
+        }
+      ],
+      "project": {
+        "title": "End-to-End ML Pipeline",
+        "deliverables": [
+          "Data preprocessing and feature engineering code",
+          "Model training with cross-validation",
+          "Model comparison report with metrics",
+          "Saved model artifacts"
+        ],
+        "rubric": {
+          "functionality": 15,
+          "reproducibility": 12,
+          "tests": 8,
+          "writeup": 10
+        }
+      },
+      "tags": ["machine-learning", "supervised-learning", "sklearn"],
+      "role_mapping": {
+        "ML Engineer": ["Core competency for most ML roles"],
+        "NLP Engineer": ["Foundation for text classification"],
+        "MLOps Engineer": ["Understanding required for deployment"]
+      },
+      "notes": "Start with sklearn before moving to deep learning frameworks."
+    },
+    {
+      "id": "deep-learning-basics",
+      "title": "Deep Learning Fundamentals",
+      "category": "High ROI",
+      "level": "Advanced",
+      "estimated_hours": 60,
+      "prerequisites": ["supervised-learning", "linear-algebra-ml"],
+      "learning_objectives": [
+        "Build and train neural networks from scratch using NumPy",
+        "Implement backpropagation and gradient descent algorithms",
+        "Use PyTorch or TensorFlow to create production-ready models"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "Deep Learning Specialization",
+          "url": "https://www.coursera.org/specializations/deep-learning",
+          "why": "Comprehensive coverage from basics to advanced"
+        },
+        {
+          "type": "book",
+          "title": "Deep Learning Book",
+          "url": "https://www.deeplearningbook.org/",
+          "why": "Authoritative theoretical foundation"
+        },
+        {
+          "type": "course",
+          "title": "Fast.ai Practical Deep Learning",
+          "url": "https://course.fast.ai/",
+          "why": "Top-down, practical approach"
+        }
+      ],
+      "project": {
+        "title": "Image Classifier with CNN",
+        "deliverables": [
+          "Trained CNN model (PyTorch or TensorFlow)",
+          "Training monitoring with TensorBoard",
+          "Model evaluation metrics and confusion matrix",
+          "Inference API or notebook"
+        ],
+        "rubric": {
+          "functionality": 20,
+          "reproducibility": 15,
+          "tests": 10,
+          "writeup": 10
+        }
+      },
+      "tags": ["deep-learning", "neural-networks", "pytorch", "tensorflow"],
+      "role_mapping": {
+        "ML Engineer": ["Essential for modern ML systems"],
+        "NLP Engineer": ["Foundation for transformer models"],
+        "MLOps Engineer": ["Required for deploying DL models"]
+      },
+      "notes": "GPU recommended for training. Use Google Colab free tier or Kaggle kernels."
+    },
+    {
+      "id": "llm-fundamentals",
+      "title": "Large Language Model Fundamentals",
+      "category": "LLM",
+      "level": "Advanced",
+      "estimated_hours": 45,
+      "prerequisites": ["deep-learning-basics"],
+      "learning_objectives": [
+        "Explain the transformer architecture and attention mechanism",
+        "Fine-tune a pre-trained LLM on a custom dataset",
+        "Implement prompt engineering techniques for various tasks"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "Hugging Face NLP Course",
+          "url": "https://huggingface.co/learn/nlp-course/chapter1/1",
+          "why": "Free, hands-on, industry-standard library"
+        },
+        {
+          "type": "article",
+          "title": "Attention Is All You Need",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "why": "Original transformer paper - essential reading"
+        },
+        {
+          "type": "doc",
+          "title": "OpenAI Prompt Engineering Guide",
+          "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+          "why": "Best practices from OpenAI"
+        }
+      ],
+      "project": {
+        "title": "Fine-tuned Text Classification Model",
+        "deliverables": [
+          "Fine-tuned BERT or similar model",
+          "Training scripts with logging",
+          "Evaluation on test set with metrics",
+          "Deployed model on Hugging Face Hub"
+        ],
+        "rubric": {
+          "functionality": 20,
+          "reproducibility": 15,
+          "tests": 10,
+          "writeup": 10
+        }
+      },
+      "tags": ["llm", "transformers", "nlp", "huggingface"],
+      "role_mapping": {
+        "NLP Engineer": ["Core skill for modern NLP"],
+        "ML Engineer": ["Increasingly important for general ML"],
+        "MLOps Engineer": ["Required for LLM deployment"]
+      },
+      "notes": "GPU required for fine-tuning. Free tier on Colab or Kaggle works for small models."
+    },
+    {
+      "id": "vector-databases",
+      "title": "Vector Databases & Embeddings",
+      "category": "LLM",
+      "level": "Intermediate",
+      "estimated_hours": 25,
+      "prerequisites": ["llm-fundamentals"],
+      "learning_objectives": [
+        "Generate and store embeddings using modern embedding models",
+        "Implement semantic search using vector similarity",
+        "Compare vector database solutions (Pinecone, Weaviate, ChromaDB)"
+      ],
+      "resources": [
+        {
+          "type": "doc",
+          "title": "Pinecone Learning Center",
+          "url": "https://www.pinecone.io/learn/",
+          "why": "Comprehensive vector DB tutorials"
+        },
+        {
+          "type": "article",
+          "title": "Vector Embeddings Explained",
+          "url": "https://www.deeplearning.ai/short-courses/google-cloud-vertex-ai/",
+          "why": "Clear explanation of embedding concepts"
+        }
+      ],
+      "project": {
+        "title": "Semantic Search Engine",
+        "deliverables": [
+          "Embedding generation pipeline",
+          "Vector database setup (ChromaDB or similar)",
+          "Search API with top-k retrieval",
+          "Demo notebook with examples"
+        ],
+        "rubric": {
+          "functionality": 15,
+          "reproducibility": 12,
+          "tests": 8,
+          "writeup": 10
+        }
+      },
+      "tags": ["vector-db", "embeddings", "semantic-search", "rag"],
+      "role_mapping": {
+        "NLP Engineer": ["Critical for RAG systems"],
+        "ML Engineer": ["Useful for recommendation systems"],
+        "MLOps Engineer": ["Required for deploying search systems"]
+      },
+      "notes": "ChromaDB is free and runs locally. Cloud options (Pinecone) have free tiers."
+    },
+    {
+      "id": "prompt-engineering",
+      "title": "Prompt Engineering & LLM APIs",
+      "category": "LLM",
+      "level": "Intermediate",
+      "estimated_hours": 20,
+      "prerequisites": ["llm-fundamentals"],
+      "learning_objectives": [
+        "Design effective prompts using few-shot and chain-of-thought techniques",
+        "Implement LLM API calls with error handling and retries",
+        "Optimize prompts for cost and quality trade-offs"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "ChatGPT Prompt Engineering for Developers",
+          "url": "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",
+          "why": "Free course by Andrew Ng and OpenAI"
+        },
+        {
+          "type": "doc",
+          "title": "Anthropic Prompt Engineering Guide",
+          "url": "https://docs.anthropic.com/claude/docs/prompt-engineering",
+          "why": "Advanced techniques and best practices"
+        }
+      ],
+      "project": {
+        "title": "LLM-Powered Data Extraction Tool",
+        "deliverables": [
+          "Prompt templates for structured extraction",
+          "Python script with API integration",
+          "Test suite with example inputs/outputs",
+          "Cost and performance analysis"
+        ],
+        "rubric": {
+          "functionality": 15,
+          "reproducibility": 10,
+          "tests": 10,
+          "writeup": 10
+        }
+      },
+      "tags": ["prompt-engineering", "llm", "api", "openai"],
+      "role_mapping": {
+        "NLP Engineer": ["Essential for building LLM applications"],
+        "ML Engineer": ["Useful for augmenting ML pipelines"],
+        "MLOps Engineer": ["Required for LLM deployment"]
+      },
+      "notes": "API costs can add up. Start with free tiers or local models (Ollama)."
+    },
+    {
+      "id": "mlops-basics",
+      "title": "MLOps Fundamentals",
+      "category": "MLOps",
+      "level": "Intermediate",
+      "estimated_hours": 40,
+      "prerequisites": ["supervised-learning"],
+      "learning_objectives": [
+        "Version control ML experiments using MLflow or Weights & Biases",
+        "Containerize ML models using Docker",
+        "Deploy models as REST APIs using FastAPI or Flask"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "Full Stack Deep Learning",
+          "url": "https://fullstackdeeplearning.com/",
+          "why": "Comprehensive MLOps coverage"
+        },
+        {
+          "type": "doc",
+          "title": "MLflow Documentation",
+          "url": "https://mlflow.org/docs/latest/index.html",
+          "why": "Industry-standard experiment tracking"
+        },
+        {
+          "type": "repo",
+          "title": "ML Model Deployment Examples",
+          "url": "https://github.com/trainindata/deploying-machine-learning-models",
+          "why": "Practical deployment patterns"
+        }
+      ],
+      "project": {
+        "title": "Containerized ML API",
+        "deliverables": [
+          "Trained model with experiment tracking",
+          "Dockerized FastAPI application",
+          "CI/CD pipeline (GitHub Actions)",
+          "Deployment documentation"
+        ],
+        "rubric": {
+          "functionality": 18,
+          "reproducibility": 15,
+          "tests": 10,
+          "writeup": 12
+        }
+      },
+      "tags": ["mlops", "deployment", "docker", "fastapi"],
+      "role_mapping": {
+        "MLOps Engineer": ["Core competency"],
+        "ML Engineer": ["Required for production systems"],
+        "NLP Engineer": ["Needed for deploying NLP models"]
+      },
+      "notes": "Docker Desktop is free. Cloud deployment can use free tiers (Render, Railway)."
+    },
+    {
+      "id": "model-monitoring",
+      "title": "ML Model Monitoring & Observability",
+      "category": "MLOps",
+      "level": "Advanced",
+      "estimated_hours": 30,
+      "prerequisites": ["mlops-basics"],
+      "learning_objectives": [
+        "Detect data drift and model degradation in production",
+        "Implement logging and alerting for ML systems",
+        "Set up dashboards for model performance monitoring"
+      ],
+      "resources": [
+        {
+          "type": "article",
+          "title": "Monitoring Machine Learning Models in Production",
+          "url": "https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/",
+          "why": "Comprehensive overview of monitoring strategies"
+        },
+        {
+          "type": "doc",
+          "title": "Evidently AI Documentation",
+          "url": "https://docs.evidentlyai.com/",
+          "why": "Open-source monitoring toolkit"
+        }
+      ],
+      "project": {
+        "title": "Model Monitoring Dashboard",
+        "deliverables": [
+          "Data drift detection pipeline",
+          "Performance metrics dashboard",
+          "Alerting system for anomalies",
+          "Integration with deployed model"
+        ],
+        "rubric": {
+          "functionality": 18,
+          "reproducibility": 12,
+          "tests": 10,
+          "writeup": 10
+        }
+      },
+      "tags": ["mlops", "monitoring", "observability", "drift-detection"],
+      "role_mapping": {
+        "MLOps Engineer": ["Critical for production systems"],
+        "ML Engineer": ["Important for maintaining models"],
+        "NLP Engineer": ["Required for LLM monitoring"]
+      },
+      "notes": "Most monitoring tools have free tiers or open-source options."
+    },
+    {
+      "id": "rag-systems",
+      "title": "Retrieval-Augmented Generation (RAG)",
+      "category": "LLM",
+      "level": "Advanced",
+      "estimated_hours": 50,
+      "prerequisites": ["llm-fundamentals", "vector-databases", "prompt-engineering"],
+      "learning_objectives": [
+        "Build end-to-end RAG pipelines with document ingestion and retrieval",
+        "Optimize retrieval quality using reranking and hybrid search",
+        "Implement evaluation metrics for RAG system performance"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "Building Applications with Vector Databases",
+          "url": "https://www.deeplearning.ai/short-courses/building-applications-vector-databases/",
+          "why": "Hands-on RAG implementation course"
+        },
+        {
+          "type": "article",
+          "title": "RAG Best Practices",
+          "url": "https://www.llamaindex.ai/blog/a-cheat-sheet-and-some-recipes-for-building-advanced-rag-803a9d94c41b",
+          "why": "Advanced RAG techniques and patterns"
+        },
+        {
+          "type": "repo",
+          "title": "LangChain RAG Examples",
+          "url": "https://github.com/langchain-ai/langchain/tree/master/templates",
+          "why": "Production-ready RAG templates"
+        }
+      ],
+      "project": {
+        "title": "Document Q&A System with RAG",
+        "deliverables": [
+          "Document ingestion and chunking pipeline",
+          "Vector database with embeddings",
+          "RAG query system with LLM integration",
+          "Evaluation suite with test queries",
+          "Web interface (Streamlit or Gradio)"
+        ],
+        "rubric": {
+          "functionality": 25,
+          "reproducibility": 15,
+          "tests": 10,
+          "writeup": 15
+        }
+      },
+      "tags": ["rag", "llm", "vector-db", "langchain", "llamaindex"],
+      "role_mapping": {
+        "NLP Engineer": ["High-demand skill for LLM applications"],
+        "ML Engineer": ["Increasingly common pattern"],
+        "MLOps Engineer": ["Required for deploying RAG systems"]
+      },
+      "notes": "Can build with free tools (ChromaDB + local LLM). Cloud LLM APIs add cost (~$5-20 for learning)."
+    },
+    {
+      "id": "llm-agents",
+      "title": "LLM Agents & Tool Use",
+      "category": "LLM",
+      "level": "Advanced",
+      "estimated_hours": 40,
+      "prerequisites": ["llm-fundamentals", "prompt-engineering"],
+      "learning_objectives": [
+        "Design and implement autonomous LLM agents with tool calling",
+        "Build multi-agent systems with specialized roles",
+        "Implement safety guardrails and error handling for agents"
+      ],
+      "resources": [
+        {
+          "type": "course",
+          "title": "LangChain for LLM Application Development",
+          "url": "https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/",
+          "why": "Free course on agent frameworks"
+        },
+        {
+          "type": "doc",
+          "title": "OpenAI Function Calling Guide",
+          "url": "https://platform.openai.com/docs/guides/function-calling",
+          "why": "Official guide for tool integration"
+        },
+        {
+          "type": "article",
+          "title": "Building Autonomous Agents",
+          "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+          "why": "Comprehensive overview by OpenAI researcher"
+        }
+      ],
+      "project": {
+        "title": "Multi-Tool Research Agent",
+        "deliverables": [
+          "Agent with search, calculator, and API tools",
+          "Conversation memory system",
+          "Tool execution logging and debugging",
+          "Safety mechanisms (rate limiting, content filtering)",
+          "Demo interface showing agent reasoning"
+        ],
+        "rubric": {
+          "functionality": 25,
+          "reproducibility": 15,
+          "tests": 12,
+          "writeup": 13
+        }
+      },
+      "tags": ["llm-agents", "tool-use", "langchain", "autonomous-systems"],
+      "role_mapping": {
+        "NLP Engineer": ["Cutting-edge LLM application pattern"],
+        "ML Engineer": ["Emerging area for ML systems"],
+        "MLOps Engineer": ["Complex deployment requirements"]
+      },
+      "notes": "Agent systems can be expensive to run. Use local models or budget API limits."
+    }
+  ],
+  "capstones": [
+    {
+      "id": "production-rag-qa-system",
+      "title": "Production RAG Q&A System",
+      "role": "NLP Engineer",
+      "description": "Build a production-grade Retrieval-Augmented Generation system that answers questions using a custom knowledge base. The system includes document ingestion, chunking strategies, vector database integration, embedding generation, retrieval optimization with reranking, LLM integration, and evaluation metrics. Deploy as a web application with user authentication and usage tracking.",
+      "estimated_hours": 100,
+      "prerequisites": ["rag-systems", "llm-fundamentals", "vector-databases", "prompt-engineering"],
+      "deliverables": [
+        "Complete GitHub repository with source code and documentation",
+        "Deployed web application (Hugging Face Spaces, Streamlit Cloud, or similar)",
+        "Technical writeup explaining architecture, design decisions, and trade-offs",
+        "Demo video showing various query examples and edge cases",
+        "Evaluation report with metrics (accuracy, latency, cost per query)",
+        "API documentation for programmatic access"
+      ],
+      "rubric": {
+        "functionality": 35,
+        "reproducibility": 20,
+        "tests": 15,
+        "writeup": 15,
+        "deployment": 15
+      },
+      "starter_template": {
+        "type": "repo",
+        "url": "https://github.com/example/rag-production-template"
+      },
+      "dataset": {
+        "name": "Wikipedia subset or custom domain documents",
+        "url": "https://huggingface.co/datasets/wikipedia",
+        "size": "500MB-2GB recommended for meaningful evaluation"
+      },
+      "compute_guidance": "Embedding generation: 1-3 hours on CPU (free Colab/Kaggle). Vector DB: ChromaDB runs locally (free). LLM: Use API (OpenAI ~$10-30) or local model (Ollama, free but slower). Total cloud cost estimate: $10-50 depending on choices."
+    }
+  ]
+}
