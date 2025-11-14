@@ -1,3 +1,19 @@
+# AI Engineering Roadmap — Phase 0 Quickstart (Validator)
+
+This repository is being upgraded to a production‑ready static site. Phase 0 establishes the canonical JSON Schema and validates a seed roadmap.
+
+Quick start (no build required):
+- Open `site/index.html` in your browser.
+- Click “Validate site/roadmap.json” to verify the roadmap dataset.
+- Optionally choose a file to validate `seed/seed-example.json` or your own JSON.
+- See `ROADMAP_SCHEMA.md` for the schema and field explanations.
+
+Acceptance criteria for Phase 0:
+- `site/roadmap.json` validates in-browser.
+- `ROADMAP_SCHEMA.md` documents the schema.
+
+---
+
 # AI Application Engineer
 
 **Reality Check:** 6-12 months to employable. This roadmap is optimized for skill retention through immediate application. Every section ends with a project that proves you can actually build, not just understand.
