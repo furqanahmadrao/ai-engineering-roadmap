@@ -1,0 +1,278 @@
+{
+  "version": "2.0.0-phase0",
+  "topics": [
+    {
+      "id": "python-fundamentals",
+      "title": "Python Fundamentals",
+      "category": "Core",
+      "level": "Beginner",
+      "estimated_hours": 10,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Write Python scripts using functions and modules",
+        "Use virtual environments and pip",
+        "Handle files and errors"
+      ],
+      "resources": [
+        {"type": "course", "title": "Python Beginner Track", "url": "https://www.learnpython.org/", "why": "Hands-on exercises"},
+        {"type": "doc", "title": "Python Official Tutorial", "url": "https://docs.python.org/3/tutorial/", "why": "Canonical reference"}
+      ],
+      "project": {
+        "title": "CLI Utility",
+        "deliverables": ["repo", "README"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "quiz", "description": "Basics quiz"}],
+      "tags": ["python"],
+      "role_mapping": {"ML Engineer": ["Scripting"], "Data Engineer": ["ETL basics"]},
+      "notes": "Run locally; no GPU required"
+    },
+    {
+      "id": "git-and-github",
+      "title": "Git & GitHub",
+      "category": "Core",
+      "level": "Beginner",
+      "estimated_hours": 6,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Create branches and PRs",
+        "Resolve simple merge conflicts",
+        "Use GitHub Issues and Actions basics"
+      ],
+      "resources": [
+        {"type": "course", "title": "Git Basics", "url": "https://git-scm.com/docs/gittutorial", "why": "Official tutorial"},
+        {"type": "article", "title": "Understanding Pull Requests", "url": "https://docs.github.com/en/pull-requests", "why": "Workflow clarity"}
+      ],
+      "project": {
+        "title": "Feature Branch Flow",
+        "deliverables": ["repo", "PR screenshot"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "checkpoint", "description": "Open a PR"}],
+      "tags": ["git", "github"],
+      "role_mapping": {"All": ["Collaboration"]},
+      "notes": "Use a public sample repo"
+    },
+    {
+      "id": "python-for-data",
+      "title": "Python for Data",
+      "category": "Core",
+      "level": "Beginner",
+      "estimated_hours": 8,
+      "prerequisites": ["python-fundamentals"],
+      "learning_objectives": [
+        "Use pandas for data wrangling",
+        "Plot with matplotlib or seaborn",
+        "Write clean notebooks"
+      ],
+      "resources": [
+        {"type": "course", "title": "Pandas 101", "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/", "why": "Official tutorials"},
+        {"type": "article", "title": "Seaborn Intro", "url": "https://seaborn.pydata.org/tutorial/introduction.html", "why": "Quick plotting"}
+      ],
+      "project": {
+        "title": "EDA Notebook",
+        "deliverables": ["notebook", "README"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "quiz", "description": "Pandas basics"}],
+      "tags": ["pandas", "eda"],
+      "role_mapping": {"Data Scientist": ["EDA"], "ML Engineer": ["Data prep"]},
+      "notes": "Small datasets only"
+    },
+    {
+      "id": "ml-fundamentals",
+      "title": "ML Fundamentals",
+      "category": "Core",
+      "level": "Beginner",
+      "estimated_hours": 12,
+      "prerequisites": ["python-for-data"],
+      "learning_objectives": [
+        "Split data and evaluate",
+        "Train baseline models",
+        "Avoid data leakage"
+      ],
+      "resources": [
+        {"type": "course", "title": "Intro to ML", "url": "https://scikit-learn.org/stable/tutorial/index.html", "why": "Hands-on"},
+        {"type": "doc", "title": "Model Evaluation", "url": "https://scikit-learn.org/stable/modules/model_evaluation.html", "why": "Key metrics"}
+      ],
+      "project": {
+        "title": "Classification Baseline",
+        "deliverables": ["repo", "notebook", "report"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "quiz", "description": "ML basics"}],
+      "tags": ["scikit-learn"],
+      "role_mapping": {"ML Engineer": ["Modeling basics"]},
+      "notes": "CPU okay"
+    },
+    {
+      "id": "data-versioning",
+      "title": "Data Versioning",
+      "category": "High ROI",
+      "level": "Intermediate",
+      "estimated_hours": 6,
+      "prerequisites": ["git-and-github"],
+      "learning_objectives": [
+        "Track datasets with DVC or Git LFS",
+        "Reproduce experiments",
+        "Use meaningful dataset tags"
+      ],
+      "resources": [
+        {"type": "doc", "title": "DVC Get Started", "url": "https://dvc.org/doc/start", "why": "Popular tool"},
+        {"type": "article", "title": "Data Versioning Guide", "url": "https://www.iterative.ai/blog/data-versioning", "why": "Context"}
+      ],
+      "project": {
+        "title": "Versioned Dataset",
+        "deliverables": ["repo", "report"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "checkpoint", "description": "DVC pipeline"}],
+      "tags": ["dvc", "versioning"],
+      "role_mapping": {"MLOps Engineer": ["Data lineage"]},
+      "notes": "Use remote storage free tier"
+    },
+    {
+      "id": "experiment-tracking",
+      "title": "Experiment Tracking",
+      "category": "High ROI",
+      "level": "Intermediate",
+      "estimated_hours": 6,
+      "prerequisites": ["ml-fundamentals"],
+      "learning_objectives": [
+        "Log metrics & params",
+        "Compare runs",
+        "Promote a best model"
+      ],
+      "resources": [
+        {"type": "repo", "title": "MLflow", "url": "https://github.com/mlflow/mlflow", "why": "Common OSS"},
+        {"type": "article", "title": "Run Tracking Basics", "url": "https://mlflow.org/docs/latest/tracking.html", "why": "Core docs"}
+      ],
+      "project": {
+        "title": "Tracked Training",
+        "deliverables": ["repo", "artifact"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "checkpoint", "description": "Metric logged"}],
+      "tags": ["mlflow", "tracking"],
+      "role_mapping": {"MLOps Engineer": ["Observability"]},
+      "notes": "Local backend ok"
+    },
+    {
+      "id": "llm-basics",
+      "title": "LLM Basics",
+      "category": "LLM",
+      "level": "Beginner",
+      "estimated_hours": 10,
+      "prerequisites": ["python-fundamentals"],
+      "learning_objectives": [
+        "Tokenization and prompts",
+        "Call an LLM API",
+        "Measure simple quality"
+      ],
+      "resources": [
+        {"type": "article", "title": "Prompting Guide", "url": "https://www.promptingguide.ai/", "why": "Primer"},
+        {"type": "repo", "title": "OpenAI Cookbook", "url": "https://github.com/openai/openai-cookbook", "why": "Practical examples"}
+      ],
+      "project": {
+        "title": "Prompt Mini-app",
+        "deliverables": ["repo", "README", "demo"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "quiz", "description": "Prompting"}],
+      "tags": ["llm", "prompt"],
+      "role_mapping": {"LLM Engineer": ["Prompting"]},
+      "notes": "Free tier API ok"
+    },
+    {
+      "id": "rag-intro",
+      "title": "RAG Intro",
+      "category": "LLM",
+      "level": "Intermediate",
+      "estimated_hours": 12,
+      "prerequisites": ["llm-basics"],
+      "learning_objectives": [
+        "Embed and index documents",
+        "Retrieve and ground responses",
+        "Evaluate RAG quality"
+      ],
+      "resources": [
+        {"type": "article", "title": "RAG Explained", "url": "https://www.pinecone.io/learn/retrieval-augmented-generation/", "why": "Concepts"},
+        {"type": "repo", "title": "RAG Example", "url": "https://github.com/langchain-ai/langchain", "why": "Starter code"}
+      ],
+      "project": {
+        "title": "Tiny RAG",
+        "deliverables": ["repo", "deployed demo", "writeup"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "checkpoint", "description": "Index built"}],
+      "tags": ["rag", "embeddings"],
+      "role_mapping": {"LLM Engineer": ["RAG"]},
+      "notes": "Use free vector DB tier or local"
+    },
+    {
+      "id": "deployment-basics",
+      "title": "Deployment Basics",
+      "category": "MLOps",
+      "level": "Intermediate",
+      "estimated_hours": 8,
+      "prerequisites": ["ml-fundamentals"],
+      "learning_objectives": [
+        "Package a model",
+        "Expose an HTTP endpoint",
+        "Add simple logging"
+      ],
+      "resources": [
+        {"type": "repo", "title": "FastAPI", "url": "https://github.com/tiangolo/fastapi", "why": "Simple API"},
+        {"type": "article", "title": "Container Basics", "url": "https://docs.docker.com/get-started/", "why": "Packaging"}
+      ],
+      "project": {
+        "title": "Model API",
+        "deliverables": ["repo", "Dockerfile", "README"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "checkpoint", "description": "Endpoint live"}],
+      "tags": ["deployment", "api"],
+      "role_mapping": {"MLOps Engineer": ["Serving"]},
+      "notes": "Local Docker ok"
+    },
+    {
+      "id": "monitoring-intro",
+      "title": "Monitoring Intro",
+      "category": "MLOps",
+      "level": "Intermediate",
+      "estimated_hours": 6,
+      "prerequisites": ["deployment-basics"],
+      "learning_objectives": [
+        "Log requests & latency",
+        "Track basic drift",
+        "Set alerts"
+      ],
+      "resources": [
+        {"type": "article", "title": "Intro to Monitoring", "url": "https://sre.google/sre-book/monitoring-distributed-systems/", "why": "Principles"},
+        {"type": "repo", "title": "Prometheus", "url": "https://github.com/prometheus/prometheus", "why": "Open source"}
+      ],
+      "project": {
+        "title": "Monitored Service",
+        "deliverables": ["repo", "dashboard screenshot"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "assessments": [{"type": "checkpoint", "description": "Metrics visible"}],
+      "tags": ["monitoring"],
+      "role_mapping": {"MLOps Engineer": ["Observability"]},
+      "notes": "Use Docker Compose"
+    }
+  ],
+  "capstones": [
+    {
+      "id": "ml-engineer-capstone-1",
+      "title": "End-to-End ML System",
+      "roles": ["ML Engineer"],
+      "project": {
+        "title": "From Data to Deployment",
+        "deliverables": ["repo", "demo", "writeup"],
+        "rubric": {"functionality": 10, "reproducibility": 10, "tests": 5, "writeup": 5}
+      },
+      "rubric_url": "https://example.com/capstones/ml-engineer-capstone-1"
+    }
+  ]
+}
