@@ -80,5 +80,5 @@ jobs:
         with:
           anthropic_api_key: "router-managed"
           claude_args: |
-            --allowed-tools "Edit,MultiEdit,Glob,Grep,LS,Read,Write,mcp__github_comment__update_claude_comment,Bash(git *),Bash(gh *),Bash(npm *),Bash(curl *),Bash(mkdir *),Bash(touch *),Bash(mv *)"
+            --allowedTools "Edit,MultiEdit,Glob,Grep,LS,Read,Write,mcp__github_comment__update_claude_comment,Bash(git *),Bash(gh *),Bash(npm *),Bash(curl *),Bash(mkdir *),Bash(touch *),Bash(mv *)"
             --system-prompt "You have also been granted tools for editing files and also always push the local branch to main so it doesnt causes conflict if it causes create a new one and in commit messages include your identity as claude and mail as <noreply@anthropic.com> not as github action bot in commit messages"
